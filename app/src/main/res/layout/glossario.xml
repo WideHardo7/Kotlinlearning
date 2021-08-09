@@ -5,104 +5,108 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView4"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="242dp"
-            android:background="@drawable/contorno"
-            android:fontFamily="sans-serif-light"
-            android:gravity="center"
-            android:text="GLOSSARIO"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="34sp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/contorno"
-            android:text="Variabili"
-            android:textColor="@color/cardview_dark_background"
-            app:backgroundTint="#00FFFFFF" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="242dp"
+                android:background="@drawable/contorno"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="GLOSSARIO"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="34sp" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/contorno"
-            android:text="stringhe"
-            android:textColor="@color/cardview_dark_background"
-            app:backgroundTint="#00FFFFFF"
-            />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/contorno"
+                android:text="Variabili"
+                android:textColor="@color/cardview_dark_background"
+                app:backgroundTint="#00FFFFFF" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/contorno"
-            android:text="condizioni e cicli"
-            android:textColor="@color/cardview_dark_background"
-            app:backgroundTint="#00FFFFFF" />
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/contorno"
+                android:text="stringhe"
+                android:textColor="@color/cardview_dark_background"
+                app:backgroundTint="#00FFFFFF" />
 
-        <Button
-            android:id="@+id/button13"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/contorno"
-            android:text="funzioni"
-            android:textColor="@color/cardview_dark_background"
-            app:backgroundTint="#00FFFFFF" />
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/contorno"
+                android:text="condizioni e cicli"
+                android:textColor="@color/cardview_dark_background"
+                app:backgroundTint="#00FFFFFF" />
 
-        <Button
-            android:id="@+id/button14"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/contorno"
-            android:text="null-safety"
-            android:textColor="@color/cardview_dark_background"
-            app:backgroundTint="#00FFFFFF" />
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/contorno"
+                android:text="funzioni"
+                android:textColor="@color/cardview_dark_background"
+                app:backgroundTint="#00FFFFFF" />
 
-        <Button
-            android:id="@+id/button15"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/contorno"
-            android:text="array e collection"
-            android:textColor="@color/cardview_dark_background"
-            app:backgroundTint="#00FFFFFF" />
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/contorno"
+                android:text="null-safety"
+                android:textColor="@color/cardview_dark_background"
+                app:backgroundTint="#00FFFFFF" />
 
-        <Button
-            android:id="@+id/button16"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/contorno"
-            android:text="classi"
-            android:textColor="@color/cardview_dark_background"
-            app:backgroundTint="#00FFFFFF" />
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/contorno"
+                android:text="array e collection"
+                android:textColor="@color/cardview_dark_background"
+                app:backgroundTint="#00FFFFFF" />
 
-        <Button
-            android:id="@+id/button17"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/contorno"
-            android:text="ereditarietà"
-            android:textColor="@color/cardview_dark_background"
-            app:backgroundTint="#00FFFFFF" />
+            <Button
+                android:id="@+id/button16"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/contorno"
+                android:text="classi"
+                android:textColor="@color/cardview_dark_background"
+                app:backgroundTint="#00FFFFFF" />
 
-        <Button
-            android:id="@+id/button18"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="@drawable/contorno"
-            android:text="lambda functions"
-            android:textColor="@color/cardview_dark_background"
-            app:backgroundTint="#00FFFFFF" />
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/contorno"
+                android:text="ereditarietà"
+                android:textColor="@color/cardview_dark_background"
+                app:backgroundTint="#00FFFFFF" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/button18"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/contorno"
+                android:text="lambda functions"
+                android:textColor="@color/cardview_dark_background"
+                app:backgroundTint="#00FFFFFF" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
