@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <style name="Bottone">
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:backgroundTint">@color/secondaryColor</item>
+   </style>
+</resources>
