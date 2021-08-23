@@ -24,5 +24,12 @@
     <string name="ac.array">ARRAY E COLLECTION</string>
     <string name="ac.classi">CLASSI</string>
     <string name="ac.ereditarietà"> ereditarietà</string>
+    // stringhe layout completamento_quiz
+    <string name="sblocco_argomento">Hai sbloccato l \' argomento successivo!</string>
+    <string name="non_sblocco_argomento">Non hai sbloccato l \' argomento successivo!</string>
+    <string name="punteggio">Punteggio:&#160;<br />  0/5</string>
+    <string name="b.riprova">Riprova</string>
+    //stringhe layout glossario
+    <string name="glossario">GLOSSARIO</string>
 
 </resources>

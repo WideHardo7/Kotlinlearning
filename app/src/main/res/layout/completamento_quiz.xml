@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/immagine_punteggio"
         android:layout_width="243dp"
         android:layout_height="243dp"
         android:layout_marginStart="84dp"
@@ -20,7 +20,7 @@
         app:srcCompat="?android:attr/galleryItemBackground" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/punteggio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
@@ -29,15 +29,15 @@
         android:layout_marginEnd="158dp"
         android:layout_marginRight="158dp"
         android:gravity="center"
-        android:text="Score: \nx/5"
+        android:text="@string/punteggio"
         android:textAllCaps="true"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/immagine_punteggio" />
 
     <TextView
-        android:id="@+id/textView34"
+        android:id="@+id/sblocco_argomento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -46,14 +46,15 @@
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:gravity="center"
-        android:text="Hai sbloccato l'argomento successivo!"
+        android:text="@string/sblocco_argomento"
         android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        app:layout_constraintTop_toBottomOf="@+id/punteggio" />
 
     <Button
-        android:id="@+id/button27"
+
+        android:id="@+id/b.home"
         android:layout_width="150dp"
         android:layout_height="65dp"
         android:layout_marginStart="158dp"
@@ -62,12 +63,14 @@
         android:layout_marginEnd="159dp"
         android:layout_marginRight="159dp"
         android:text="home"
+        style="@style/Bottone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+        app:layout_constraintTop_toBottomOf="@+id/sblocco_argomento" />
 
     <Button
-        android:id="@+id/button28"
+        style="@style/Bottone"
+        android:id="@+id/b.try_again"
         android:layout_width="150dp"
         android:layout_height="65dp"
         android:layout_marginStart="130dp"
@@ -75,8 +78,8 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="131dp"
         android:layout_marginRight="131dp"
-        android:text="try again"
+        android:text="@string/b.riprova"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button27" />
+        app:layout_constraintTop_toBottomOf="@+id/b.home" />
 </androidx.constraintlayout.widget.ConstraintLayout>

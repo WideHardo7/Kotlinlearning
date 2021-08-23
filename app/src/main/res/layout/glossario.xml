@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,24 +18,24 @@
 
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/glossario"
                 android:layout_width="match_parent"
 
                 android:layout_height="242dp"
                 android:background="@drawable/contorno3"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
-                android:text="GLOSSARIO"
+                android:text="@string/glossario"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="34sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/g.b.variabili"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="-5dp"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
-                android:text="Variabili"
+                android:text="@string/b.variabili"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
@@ -119,10 +120,7 @@
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
-            <TextView
-                android:id="@+id/textView35"
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
+
 
         </LinearLayout>
     </ScrollView>
