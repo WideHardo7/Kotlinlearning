@@ -30,12 +30,12 @@
 
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/livello_base"
                 android:layout_width="match_parent"
                 android:layout_height="63dp"
                 android:background="@drawable/contorno"
                 android:gravity="center"
-                android:text="Livello: Base"
+                android:text="@string/livello_base"
                 android:textAllCaps="true"
                 android:textColor="@color/cardview_dark_background"
                 android:textStyle="bold"
@@ -46,31 +46,31 @@
                 android:layout_height="380dp">
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/b.variabili"
                     style="@style/Bottone"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="36dp"
                     android:layout_marginLeft="36dp"
                     android:layout_marginTop="66dp"
-                    android:text="Variabili"
+                    android:text="@string/b.variabili"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/b.stringhe"
                     style="@style/Bottone"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="66dp"
                     android:layout_marginEnd="36dp"
                     android:layout_marginRight="36dp"
-                    android:text="Stringhe"
+                    android:text="@string/b.strighe"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/b.cicli"
                     style="@style/Bottone"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
@@ -79,13 +79,13 @@
                     android:layout_marginTop="210dp"
                     android:layout_marginEnd="130dp"
                     android:layout_marginRight="130dp"
-                    android:text="Condizioni e cicli"
+                    android:text="@string/b.cicli"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar2"
+                    android:id="@+id/m.pb.variabili"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -94,10 +94,10 @@
                     android:layout_marginTop="85dp"
                     android:clickable="false"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button4" />
+                    app:layout_constraintTop_toTopOf="@+id/b.variabili" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar3"
+                    android:id="@+id/m.pb.stringhe"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -106,10 +106,10 @@
                     android:layout_marginRight="36dp"
                     android:clickable="false"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button5" />
+                    app:layout_constraintTop_toTopOf="@+id/b.stringhe" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar4"
+                    android:id="@+id/m.pb.cicli"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -117,17 +117,17 @@
                     android:clickable="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button6" />
+                    app:layout_constraintTop_toTopOf="@+id/b.cicli" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/livello_intermedio"
                 android:layout_width="match_parent"
                 android:layout_height="63dp"
                 android:background="@drawable/contorno"
                 android:gravity="center"
-                android:text="Livello: intermedio"
+                android:text="@string/livello_intermedio"
                 android:textAllCaps="true"
                 android:textColor="@color/cardview_dark_background"
                 android:textStyle="bold"
@@ -138,31 +138,31 @@
                 android:layout_height="380dp">
 
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/b.funzioni"
                     style="@style/Bottone"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="36dp"
                     android:layout_marginLeft="36dp"
                     android:layout_marginTop="66dp"
-                    android:text="Funzioni"
+                    android:text="@string/b.funzioni"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button8"
+                    android:id="@+id/b.null_safety"
                     style="@style/Bottone"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="66dp"
                     android:layout_marginEnd="36dp"
                     android:layout_marginRight="36dp"
-                    android:text="Null-safety"
+                    android:text="@string/b.null_safety"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button9"
+                    android:id="@+id/b.array"
                     style="@style/Bottone"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
@@ -171,13 +171,13 @@
                     android:layout_marginTop="210dp"
                     android:layout_marginEnd="130dp"
                     android:layout_marginRight="130dp"
-                    android:text="array e collection"
+                    android:text="@string/b.array"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar5"
+                    android:id="@+id/m.pb.funzioni"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -186,10 +186,10 @@
                     android:layout_marginTop="85dp"
                     android:clickable="false"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button7" />
+                    app:layout_constraintTop_toTopOf="@+id/b.funzioni" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar6"
+                    android:id="@+id/m.pb.null"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -198,10 +198,10 @@
                     android:layout_marginRight="36dp"
                     android:clickable="false"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button8" />
+                    app:layout_constraintTop_toTopOf="@+id/b.null_safety" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar7"
+                    android:id="@+id/m.pb.array"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -209,17 +209,17 @@
                     android:clickable="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button9" />
+                    app:layout_constraintTop_toTopOf="@+id/b.array" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/livello_avanzato"
                 android:layout_width="match_parent"
                 android:layout_height="63dp"
                 android:background="@drawable/contorno"
                 android:gravity="center"
-                android:text="Livello: avanzato"
+                android:text="@string/livello_avanzato"
                 android:textAllCaps="true"
                 android:textColor="@color/cardview_dark_background"
                 android:textStyle="bold"
@@ -230,31 +230,31 @@
                 android:layout_height="380dp">
 
                 <Button
-                    android:id="@+id/button10"
+                    android:id="@+id/b.classi"
                     style="@style/Bottone"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="36dp"
                     android:layout_marginLeft="36dp"
                     android:layout_marginTop="66dp"
-                    android:text="Classi"
+                    android:text="@string/b.classi"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button11"
+                    android:id="@+id/b.ereditarietà"
                     style="@style/Bottone"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="66dp"
                     android:layout_marginEnd="36dp"
                     android:layout_marginRight="36dp"
-                    android:text="ereditarietà"
+                    android:text="@string/b.ereditarietà"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button12"
+                    android:id="@+id/b.lambda"
                     style="@style/Bottone"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
@@ -263,13 +263,13 @@
                     android:layout_marginTop="210dp"
                     android:layout_marginEnd="130dp"
                     android:layout_marginRight="130dp"
-                    android:text="lambda functions"
+                    android:text="@string/b.lambda"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar8"
+                    android:id="@+id/m.pb.classi"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -278,10 +278,10 @@
                     android:layout_marginTop="85dp"
                     android:clickable="false"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button10" />
+                    app:layout_constraintTop_toTopOf="@+id/b.classi" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar9"
+                    android:id="@+id/m.pb.ereditarietà"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -290,10 +290,10 @@
                     android:layout_marginRight="36dp"
                     android:clickable="false"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button11" />
+                    app:layout_constraintTop_toTopOf="@+id/b.ereditarietà" />
 
                 <ProgressBar
-                    android:id="@+id/progressBar10"
+                    android:id="@+id/m.pb.lambda"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -301,7 +301,7 @@
                     android:clickable="false"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/button12" />
+                    app:layout_constraintTop_toTopOf="@+id/b.lambda" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
