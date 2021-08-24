@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="10dp">
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,7 +14,8 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
 
             <TextView
@@ -42,84 +43,88 @@
             <Button
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="-5dp"
-                android:id="@+id/button2"
+                android:id="@+id/g.b.stringhe"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
-                android:text="stringhe"
+                android:text="@string/b.strighe"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/g.b.cicli"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
-                android:text="condizioni e cicli"
+                android:text="@string/b.cicli"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/g.b.funzioni"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
-                android:text="funzioni"
+                android:text="@string/b.funzioni"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/g.b.null"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
-                android:text="null-safety"
+                android:text="@string/b.null_safety"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/g.b.array"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
-                android:text="array e collection"
+                android:text="@string/b.array"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button16"
+                android:id="@+id/g.b.classi"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
-                android:text="classi"
+                android:text="@string/b.classi"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button17"
+                android:id="@+id/g.b.ereditarietà"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
-                android:text="ereditarietà"
+                android:text="@string/b.ereditarietà"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button18"
+                android:id="@+id/g.b.lambda"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
-                android:text="lambda functions"
+                android:text="@string/b.lambda"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>

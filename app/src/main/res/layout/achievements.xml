@@ -35,8 +35,9 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="73dp"
                 android:gravity="center_vertical"
-                android:text="@string/ac.variabili"
+                android:text="@string/b.variabili"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="true"
                 android:paddingLeft="23dp"/>
 
             <TextView
@@ -45,8 +46,9 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="146dp"
                 android:gravity="center_vertical"
-                android:text="@string/ac.stringhe"
+                android:text="@string/b.strighe"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="true"
                 android:paddingLeft="23dp"/>
 
             <TextView
@@ -55,8 +57,9 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="219dp"
                 android:gravity="center_vertical"
-                android:text="@string/ac.cicli"
+                android:text="@string/b.cicli"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="true"
                 android:paddingLeft="23dp"/>
 
             <TextView
@@ -65,8 +68,9 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="292dp"
                 android:gravity="center_vertical"
-                android:text="@string/ac.funzioni"
+                android:text="@string/b.funzioni"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="true"
                 android:paddingLeft="23dp"/>
 
             <TextView
@@ -75,8 +79,9 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="365dp"
                 android:gravity="center_vertical"
-                android:text="@string/ac.null"
+                android:text="@string/b.null_safety"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="true"
                 android:paddingLeft="23dp"/>
 
             <TextView
@@ -85,8 +90,9 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="438dp"
                 android:gravity="center_vertical"
-                android:text="@string/ac.array"
+                android:text="@string/b.array"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="true"
                 android:paddingLeft="23dp"/>
 
             <TextView
@@ -95,8 +101,9 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="511dp"
                 android:gravity="center_vertical"
-                android:text="@string/ac.classi"
+                android:text="@string/b.classi"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="true"
                 android:paddingLeft="23dp"/>
 
             <TextView
@@ -105,7 +112,7 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="584dp"
                 android:gravity="center_vertical"
-                android:text="@string/ac.ereditarietà"
+                android:text="@string/b.ereditarietà"
                 android:textAllCaps="true"
                 app:layout_constraintTop_toTopOf="parent"
                 android:paddingLeft="23dp"/>
@@ -116,8 +123,9 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="657dp"
                 android:gravity="center_vertical"
-                android:text="@string/ac.lambda"
+                android:text="@string/b.lambda"
                 app:layout_constraintTop_toTopOf="parent"
+                android:textAllCaps="true"
                 android:paddingLeft="23dp"/>
 
 
