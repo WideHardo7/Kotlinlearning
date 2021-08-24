@@ -10,7 +10,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/teoria.nome.argomento"
             android:layout_width="match_parent"
             android:layout_height="140dp"
             android:background="#81673AB7"
@@ -30,7 +30,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/teoria_teoria"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"

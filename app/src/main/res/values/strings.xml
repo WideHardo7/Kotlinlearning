@@ -15,22 +15,18 @@
     <string name="b.lambda"> Lambda Functions</string>
     // stringhe layout achievements
     <string name="Achievements"> ACHIEVEMENTS</string>
-    <string name="ac.variabili">VARIABILI</string>
-    <string name="ac.stringhe"> STRINGHE</string>
-    <string name="ac.cicli"> CONDIZIONI E CICLI</string>
-    <string name="ac.funzioni">FUNZIONI</string>
-    <string name="ac.null">NULL-SAFETY</string>
-    <string name="ac.lambda"> LAMBDA FUNCTIONS</string>
-    <string name="ac.array">ARRAY E COLLECTION</string>
-    <string name="ac.classi">CLASSI</string>
-    <string name="ac.ereditarietà"> ereditarietà</string>
+
     // stringhe layout completamento_quiz
     <string name="sblocco_argomento" >Hai sbloccato l\' argomento successivo!</string>
     <string name="non_sblocco_argomento" >Non hai sbloccato l\' argomento successivo!</string>
-    <string name="punteggio">Punteggio:&#160;<br />  0/5</string>
+    <string name="punteggio">Punteggio:&#160;</string>
     <string name="b.riprova">Riprova</string>
     //stringhe layout glossario
     <string name="glossario">GLOSSARIO</string>
+    //stringhe usate in test_conoscenze
+    <string name="domanda_conoscenze"> Vuoi verificare le tue conoscenze con un test?</string>
+    <string name="b.Salta">Salta</string>
+    <string name="b.Procedi">Procedi</string>
 
 
 </resources>

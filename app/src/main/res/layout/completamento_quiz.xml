@@ -35,6 +35,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/immagine_punteggio" />
+    <TextView
+        android:id="@+id/risultato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:text="0/5"
+        app:layout_constraintBottom_toTopOf="@+id/sblocco_argomento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/punteggio" />
 
     <TextView
         android:id="@+id/sblocco_argomento"
@@ -82,4 +95,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b.home" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
