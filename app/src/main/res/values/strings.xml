@@ -27,6 +27,14 @@
     <string name="domanda_conoscenze"> Vuoi verificare le tue conoscenze con un test?</string>
     <string name="b.Salta">Salta</string>
     <string name="b.Procedi">Procedi</string>
+    //stringhe usate in test_conoscenze_valutazione
+    <string name="andamento_conoscenze_buono">Buono</string>
+    <string name="andamento_conoscenze_ottimo">Ottimo</string>
+    <string name="andamento_conoscenze_discreto">Discreto</string>
+    <string name="andamento_conoscenze_eccellente">Eccellente</string>
+    <string name="livello_conoscenze_base">Livello sbloccato: &#160; \n Base</string>
+    <string name="livello_conoscenze_intermedio">Livello sbloccato: &#160; \n Intermedio</string>
+    <string name="livello_conoscenze_Avanzato">Livello sbloccato: &#160; \n Avanzato</string>
 
 
 </resources>
