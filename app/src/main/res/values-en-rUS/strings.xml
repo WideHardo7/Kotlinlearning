@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kotlinlearning</string>
+    <string name="livello_base">Level: Beginner</string>
+    <string name="b.variabili">Variables</string>
+    <string name="b.strighe">Strings</string>
+    <string name="b.cicli">Conditions and Cycles</string>
+    <string name="livello_intermedio">Level:  Intermediate</string>
+    <string name="b.funzioni">Functions</string>
+    <string name="livello_avanzato">Level: Advanced</string>
+    <string name="b.classi">Class</string>
+    <string name="b.ereditarietà">Inheritance</string>
+    <string name="Obbiettivi">ACHIEVEMENTS</string>
+    <string name="sblocco_argomento">You unlocked the next subject</string>
+    <string name="non_sblocco_argomento">You have not unlocked the next subject</string>
+    <string name="punteggio">Score:&#160;</string>
+    <string name="b.riprova">Try Again</string>
+    <string name="glossario">Glossary</string>
+    <string name="domanda_conoscenze">Do you want to take a test to verify your skills?</string>
+    <string name="b.Salta">Skip</string>
+    <string name="b.Procedi">Yes</string>
+    <string name="andamento_conoscenze_buono">Good</string>
+    <string name="andamento_conoscenze_ottimo">Great</string>
+    <string name="andamento_conoscenze_discreto">Decent</string>
+    <string name="andamento_conoscenze_eccellente">Excellent</string>
+    <string name="livello_conoscenze_base">Level Unlocked: <br /> Beginner</string>
+    <string name="livello_conoscenze_intermedio">Level Unlocked: <br /> Intermediate</string>
+    <string name="livello_conoscenze_Avanzato">Level Unlocked: <br />Advanced</string>
+</resources>

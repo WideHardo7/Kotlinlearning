@@ -7,14 +7,14 @@
     <string name="b.cicli"> Condizioni e Cicli</string>
     <string name="livello_intermedio">Livello: Intermedio </string>
     <string name="b.funzioni"> Funzioni</string>
-    <string name="b.null_safety"> Null-Safety</string>
-    <string name="b.array"> Array e Collection</string>
+    <string name="b.null_safety" translatable="false"> Null-Safety</string>
+    <string name="b.array" translatable="false"> Array e Collection</string>
     <string name="livello_avanzato">Livello: Avanzato </string>
     <string name="b.classi"> Classi</string>
     <string name="b.ereditarietà"> Ereditarietà</string>
-    <string name="b.lambda"> Lambda Functions</string>
+    <string name="b.lambda" translatable="false"> Lambda Functions</string>
     // stringhe layout achievements
-    <string name="Achievements"> ACHIEVEMENTS</string>
+    <string name="Obbiettivi"> OBBIETTIVI</string>
 
     // stringhe layout completamento_quiz
     <string name="sblocco_argomento" >Hai sbloccato l\' argomento successivo!</string>
@@ -32,9 +32,9 @@
     <string name="andamento_conoscenze_ottimo">Ottimo</string>
     <string name="andamento_conoscenze_discreto">Discreto</string>
     <string name="andamento_conoscenze_eccellente">Eccellente</string>
-    <string name="livello_conoscenze_base">Livello sbloccato: &#160; \n Base</string>
-    <string name="livello_conoscenze_intermedio">Livello sbloccato: &#160; \n Intermedio</string>
-    <string name="livello_conoscenze_Avanzato">Livello sbloccato: &#160; \n Avanzato</string>
+    <string name="livello_conoscenze_base">Livello sbloccato: \n Base</string>
+    <string name="livello_conoscenze_intermedio">Livello sbloccato:  \n Intermedio</string>
+    <string name="livello_conoscenze_Avanzato">Livello sbloccato:  \n Avanzato</string>
 
 
 </resources>

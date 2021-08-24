@@ -25,7 +25,8 @@
             android:layout_height="100dp"
             android:background="@drawable/contorno"
             android:gravity="center"
-            android:text="RISULTATO : X" />
+            android:text="@string/andamento_conoscenze_buono"
+            android:textAllCaps="true"/>
 
         <TextView
             android:id="@+id/risultato_conoscenze"
@@ -33,7 +34,7 @@
             android:layout_height="100dp"
             android:background="@drawable/contorno"
             android:gravity="center"
-            android:text="PUNTEGGIO : X/18"
+            android:text="0/18"
             android:textAllCaps="true"/>
 
         <TextView
