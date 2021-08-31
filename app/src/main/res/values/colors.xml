@@ -15,4 +15,6 @@
     <color name="secondaryDarkColor">#3f1dcb</color>
     <color name="primaryTextColor">#000000</color>
     <color name="secondaryTextColor">#ffffff</color>
+    <color name="dark_gray">#AAAAAA</color>
+    <color name="orange">#ff6d00</color>
 </resources>

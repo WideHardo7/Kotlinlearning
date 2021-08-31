@@ -6,7 +6,7 @@ import android.os.Bundle
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.test_conoscenze_valutazione)
+        setContentView(R.layout.quiz_tastiera)
 
     }
 

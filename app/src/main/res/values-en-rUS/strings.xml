@@ -26,4 +26,5 @@
     <string name="livello_conoscenze_base">Level Unlocked: <br /> Beginner</string>
     <string name="livello_conoscenze_intermedio">Level Unlocked: <br /> Intermediate</string>
     <string name="livello_conoscenze_Avanzato">Level Unlocked: <br />Advanced</string>
+    <string name="inserimento_risposta">Insert here your answer...</string>
 </resources>

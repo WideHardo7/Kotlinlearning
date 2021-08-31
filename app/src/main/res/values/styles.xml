@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-   <style name="Bottone">
+   <style name="Bottone_risposta">
         <item name="android:textColor">@color/secondaryTextColor</item>
         <item name="android:backgroundTint">@color/secondaryColor</item>
    </style>
+    <style name="Bottone_conferma">
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:backgroundTint">@color/purple_700</item>
+    </style>
+    <style name="Bottone">
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:backgroundTint">@color/secondaryColor</item>
+    </style>
 </resources>

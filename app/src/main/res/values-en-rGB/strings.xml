@@ -26,4 +26,5 @@
     <string name="livello_conoscenze_intermedio">Level Unlocked: <br /> Intermediate</string>
     <string name="livello_conoscenze_Avanzato">Level Unlocked: <br />Advanced</string>
     <string name="domanda_conoscenze">Do you want to take a test to verify your skills?</string>
+    <string name="inserimento_risposta">Insert here your answer...</string>
 </resources>

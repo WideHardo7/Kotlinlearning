@@ -35,6 +35,9 @@
     <string name="livello_conoscenze_base">Livello sbloccato: \n Base</string>
     <string name="livello_conoscenze_intermedio">Livello sbloccato:  \n Intermedio</string>
     <string name="livello_conoscenze_Avanzato">Livello sbloccato:  \n Avanzato</string>
+    //stringa layout quiz_tastiera
+    <string name="inserimento_risposta">Inserisci qui la tua risposta...</string>
+    <string name="conferma_risposta">Conferma</string>
 
 
 </resources>
