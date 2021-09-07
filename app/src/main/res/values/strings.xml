@@ -17,8 +17,8 @@
     <string name="Obbiettivi"> OBBIETTIVI</string>
 
     // stringhe layout completamento_quiz
-    <string name="sblocco_argomento" >Hai sbloccato l\' argomento successivo!</string>
-    <string name="non_sblocco_argomento" >Non hai sbloccato l\' argomento successivo!</string>
+    <string name="sblocco_argomento">Hai sbloccato l\' argomento successivo!</string>
+    <string name="non_sblocco_argomento">Non hai sbloccato l\' argomento successivo!</string>
     <string name="punteggio">Punteggio:&#160;</string>
     <string name="b.riprova">Riprova</string>
     //stringhe layout glossario
@@ -38,6 +38,7 @@
     //stringa layout quiz_tastiera
     <string name="inserimento_risposta">Inserisci qui la tua risposta...</string>
     <string name="conferma_risposta">Conferma</string>
+
 
 
 </resources>

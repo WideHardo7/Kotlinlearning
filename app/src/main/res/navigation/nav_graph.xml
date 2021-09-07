@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.kotlinlearning.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/home" >
+        <action
+            android:id="@+id/action_homeFragment_to_argomentoFragment"
+            app:destination="@id/argomentoFragment"
+            app:enterAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/argomentoFragment"
+        android:name="com.example.kotlinlearning.ArgomentoFragment"
+        android:label="fragment_argomento"
+        tools:layout="@layout/argomento" >
+        <action
+            android:id="@+id/action_argomentoFragment_to_quizBottoneFragment"
+            app:destination="@id/quizBottoneFragment" />
+        <action
+            android:id="@+id/action_argomentoFragment_to_quizTastieraFragment"
+            app:destination="@id/quizTastieraFragment" />
+        <action
+            android:id="@+id/action_argomentoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizTastieraFragment"
+        android:name="com.example.kotlinlearning.QuizTastieraFragment"
+        android:label="gfd"
+        tools:layout="@layout/quiz_tastiera" >
+        <action
+            android:id="@+id/action_quizTastieraFragment_to_completamentoQuizFragment"
+            app:destination="@id/completamentoQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizBottoneFragment"
+        android:name="com.example.kotlinlearning.QuizBottoneFragment"
+        android:label="fragment_quiz_bottone"
+        tools:layout="@layout/quiz_bottoni" >
+        <action
+            android:id="@+id/action_quizBottoneFragment_to_completamentoQuizFragment"
+            app:destination="@id/completamentoQuizFragment" />
+        <action
+            android:id="@+id/action_quizBottoneFragment_to_argomentoFragment"
+            app:destination="@id/argomentoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/completamentoQuizFragment"
+        android:name="com.example.kotlinlearning.CompletamentoQuizFragment"
+        android:label="Risultati"
+        tools:layout="@layout/completamento_quiz" >
+        <action
+            android:id="@+id/action_completamentoQuizFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/glossaryFragment"
+        android:name="com.example.kotlinlearning.GlossaryFragment"
+        android:label="@string/glossario"
+        tools:layout="@layout/glossario" >
+        <action
+            android:id="@+id/action_glossaryFragment_to_teoriaFragment"
+            app:destination="@id/teoriaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/achievementFragment"
+        android:name="com.example.kotlinlearning.AchievementFragment"
+        android:label="@string/Obbiettivi"
+        tools:layout="@layout/achievements" />
+    <fragment
+        android:id="@+id/teoriaFragment"
+        android:name="com.example.kotlinlearning.TeoriaFragment"
+        android:label="fragment_teoria"
+        tools:layout="@layout/teoria_no_quiz" />
+</navigation>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".HomeFragment"
+ >
+
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="729dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="410dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="410dp"
+                android:layout_height="248dp"
+                android:adjustViewBounds="false"
+                android:background="@drawable/download"
+                tools:srcCompat="@drawable/download" />
+
+
+            <TextView
+                android:id="@+id/livello_base"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:background="@drawable/contorno"
+                android:gravity="center"
+                android:text="@string/livello_base"
+                android:textAllCaps="true"
+                android:textColor="@color/cardview_dark_background"
+                android:textStyle="bold"
+                android:translationX="0dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="410dp"
+                android:layout_height="380dp">
+
+                <Button
+                    android:id="@+id/bottone_variabili"
+                    style="@style/Bottone"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="66dp"
+                    android:text="@string/b.variabili"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/bottone_stringhe"
+                    style="@style/Bottone"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="66dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginRight="36dp"
+                    android:text="@string/b.strighe"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/bottone_cicli"
+                    style="@style/Bottone"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginTop="210dp"
+                    android:layout_marginEnd="130dp"
+                    android:layout_marginRight="130dp"
+                    android:text="@string/b.cicli"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/m.pb.variabili"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="85dp"
+                    android:clickable="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottone_variabili" />
+
+                <ProgressBar
+                    android:id="@+id/m.pb.stringhe"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="85dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginRight="36dp"
+                    android:clickable="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottone_stringhe" />
+
+                <ProgressBar
+                    android:id="@+id/m.pb.cicli"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="85dp"
+                    android:clickable="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottone_cicli" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/livello_intermedio"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:background="@drawable/contorno"
+                android:gravity="center"
+                android:text="@string/livello_intermedio"
+                android:textAllCaps="true"
+                android:textColor="@color/cardview_dark_background"
+                android:textStyle="bold"
+                android:translationX="0dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="410dp"
+                android:layout_height="380dp">
+
+                <Button
+                    android:id="@+id/bottone_funzioni"
+                    style="@style/Bottone"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="66dp"
+                    android:text="@string/b.funzioni"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/bottone_null_safety"
+                    style="@style/Bottone"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="66dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginRight="36dp"
+                    android:text="@string/b.null_safety"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/bottone_array"
+                    style="@style/Bottone"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginTop="210dp"
+                    android:layout_marginEnd="130dp"
+                    android:layout_marginRight="130dp"
+                    android:text="@string/b.array"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/m.pb.funzioni"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="85dp"
+                    android:clickable="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottone_funzioni" />
+
+                <ProgressBar
+                    android:id="@+id/m.pb.null"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="85dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginRight="36dp"
+                    android:clickable="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottone_null_safety" />
+
+                <ProgressBar
+                    android:id="@+id/m.pb.array"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="85dp"
+                    android:clickable="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottone_array" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/livello_avanzato"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:background="@drawable/contorno"
+                android:gravity="center"
+                android:text="@string/livello_avanzato"
+                android:textAllCaps="true"
+                android:textColor="@color/cardview_dark_background"
+                android:textStyle="bold"
+                android:translationX="0dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="410dp"
+                android:layout_height="380dp">
+
+                <Button
+                    android:id="@+id/bottone_classi"
+                    style="@style/Bottone"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="66dp"
+                    android:text="@string/b.classi"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/bottone_ereditarietà"
+                    style="@style/Bottone"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="66dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginRight="36dp"
+                    android:text="@string/b.ereditarietà"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/bottone_lambda"
+                    style="@style/Bottone"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginLeft="130dp"
+                    android:layout_marginTop="210dp"
+                    android:layout_marginEnd="130dp"
+                    android:layout_marginRight="130dp"
+                    android:text="@string/b.lambda"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/m.pb.classi"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="85dp"
+                    android:clickable="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottone_classi" />
+
+                <ProgressBar
+                    android:id="@+id/m.pb.ereditarietà"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="85dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginRight="36dp"
+                    android:clickable="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottone_ereditarietà" />
+
+                <ProgressBar
+                    android:id="@+id/m.pb.lambda"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="85dp"
+                    android:clickable="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bottone_lambda" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
