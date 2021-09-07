@@ -53,7 +53,6 @@
                     android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="36dp"
-                    android:layout_marginLeft="36dp"
                     android:layout_marginTop="66dp"
                     android:text="@string/b.variabili"
                     app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +86,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
-                    android:id="@+id/m.pb.variabili"
+                    android:id="@+id/h_pb_variabili"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -99,7 +98,7 @@
                     app:layout_constraintTop_toTopOf="@+id/bottone_variabili" />
 
                 <ProgressBar
-                    android:id="@+id/m.pb.stringhe"
+                    android:id="@+id/h_pb_stringhe"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -111,7 +110,7 @@
                     app:layout_constraintTop_toTopOf="@+id/bottone_stringhe" />
 
                 <ProgressBar
-                    android:id="@+id/m.pb.cicli"
+                    android:id="@+id/h_pb_cicli"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -179,7 +178,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
-                    android:id="@+id/m.pb.funzioni"
+                    android:id="@+id/h_pb_funzioni"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -191,7 +190,7 @@
                     app:layout_constraintTop_toTopOf="@+id/bottone_funzioni" />
 
                 <ProgressBar
-                    android:id="@+id/m.pb.null"
+                    android:id="@+id/h_pb_null"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -203,7 +202,7 @@
                     app:layout_constraintTop_toTopOf="@+id/bottone_null_safety" />
 
                 <ProgressBar
-                    android:id="@+id/m.pb.array"
+                    android:id="@+id/h_pb_array"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -271,7 +270,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
-                    android:id="@+id/m.pb.classi"
+                    android:id="@+id/h_pb_classi"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -283,7 +282,7 @@
                     app:layout_constraintTop_toTopOf="@+id/bottone_classi" />
 
                 <ProgressBar
-                    android:id="@+id/m.pb.ereditarietà"
+                    android:id="@+id/h_pb_ereditarietà"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"
@@ -295,7 +294,7 @@
                     app:layout_constraintTop_toTopOf="@+id/bottone_ereditarietà" />
 
                 <ProgressBar
-                    android:id="@+id/m.pb.lambda"
+                    android:id="@+id/h_pb_lambda"
                     style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                     android:layout_width="150dp"
                     android:layout_height="25dp"

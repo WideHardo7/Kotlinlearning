@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/testo_domanda_inserimento" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/b_conferma"
         style="@style/Bottone_conferma"
 
         android:layout_width="230dp"

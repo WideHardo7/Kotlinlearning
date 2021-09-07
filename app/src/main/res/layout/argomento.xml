@@ -7,7 +7,7 @@
     tools:context=".ArgomentoFragment">
 
     <TextView
-        android:id="@+id/quiz.nome.argomento"
+        android:id="@+id/quiz_nome_argomento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
@@ -26,7 +26,7 @@
         android:layout_height="520dp"
         android:layout_marginTop="25dp"
         android:background="@android:drawable/edit_text"
-        app:layout_constraintTop_toBottomOf="@+id/quiz.nome.argomento"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_nome_argomento"
         tools:layout_editor_absoluteX="30dp">
 
         <TextView
@@ -38,7 +38,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/b.quiz"
+        android:id="@+id/b_quiz"
         android:layout_width="250dp"
         android:layout_height="70dp"
         android:layout_marginStart="80dp"

@@ -37,7 +37,7 @@
         tools:srcCompat="@drawable/download" />
 
     <Button
-        android:id="@+id/b.Salta"
+        android:id="@+id/b_Salta"
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:layout_marginStart="80dp"
@@ -48,12 +48,12 @@
         style="@style/Bottone"
         android:text="@string/b.Salta"
         app:backgroundTint="#673AB7"
-        app:layout_constraintEnd_toStartOf="@+id/b.Procedi"
+        app:layout_constraintEnd_toStartOf="@+id/b_Procedi"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/b.Procedi"
+        android:id="@+id/b_Procedi"
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:layout_marginTop="34dp"
@@ -63,6 +63,6 @@
         android:text="@string/b.Procedi"
         app:backgroundTint="#673AB7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/b.Salta"
+        app:layout_constraintStart_toEndOf="@+id/b_Salta"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

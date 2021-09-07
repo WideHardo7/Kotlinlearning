@@ -31,7 +31,7 @@
                 android:textSize="34sp" />
 
             <Button
-                android:id="@+id/g.b.variabili"
+                android:id="@+id/g_b_variabili"
                 android:layout_width="match_parent"
                 android:layout_marginBottom="-5dp"
                 android:layout_height="54dp"
@@ -43,7 +43,7 @@
             <Button
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="-5dp"
-                android:id="@+id/g.b.stringhe"
+                android:id="@+id/g_b_stringhe"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
@@ -52,7 +52,7 @@
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/g.b.cicli"
+                android:id="@+id/g_b_cicli"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
@@ -62,7 +62,7 @@
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/g.b.funzioni"
+                android:id="@+id/g_b_funzioni"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
@@ -72,7 +72,7 @@
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/g.b.null"
+                android:id="@+id/g_b_null"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
@@ -82,7 +82,7 @@
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/g.b.array"
+                android:id="@+id/g_b_array"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
@@ -92,7 +92,7 @@
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/g.b.classi"
+                android:id="@+id/g_b_classi"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
@@ -102,7 +102,7 @@
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/g.b.ereditarietà"
+                android:id="@+id/g_b_ereditarietà"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
@@ -112,7 +112,7 @@
                 app:backgroundTint="#00FFFFFF" />
 
             <Button
-                android:id="@+id/g.b.lambda"
+                android:id="@+id/g_b_lambda"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"

@@ -68,7 +68,7 @@
 
     <Button
 
-        android:id="@+id/b.home"
+        android:id="@+id/b_home"
         android:layout_width="150dp"
         android:layout_height="65dp"
         android:layout_marginStart="158dp"
@@ -84,7 +84,7 @@
 
     <Button
         style="@style/Bottone"
-        android:id="@+id/b.try_again"
+        android:id="@+id/b_try_again"
         android:layout_width="150dp"
         android:layout_height="65dp"
         android:layout_marginStart="130dp"
@@ -95,7 +95,7 @@
         android:text="@string/b.riprova"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/b.home" />
+        app:layout_constraintTop_toBottomOf="@+id/b_home" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
