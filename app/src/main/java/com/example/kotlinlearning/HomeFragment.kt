@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import com.example.kotlinlearning.databinding.HomeBinding
 
 
 /**
@@ -14,6 +16,7 @@ import android.view.ViewGroup
  * create an instance of this fragment.
  */
 class HomeFragment : Fragment() {
+    private lateinit var binding: HomeBinding
 
 
 
@@ -22,9 +25,16 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view=inflater.inflate(R.layout.home, container, false)
+        //val view=inflater.inflate(R.layout.home, container, false)
+        binding=DataBindingUtil.inflate(inflater,
+            R.layout.home,container,false)
+        binding.bottoneVariabili.setOnClickListener{  view : View ->
+            view.findNavController().navigate(R.id.action_homeFragment_to_argomentoFragment) }
 
-        return view
+
+
+
+        return binding.root
     }
 
 

@@ -13,7 +13,8 @@
         <action
             android:id="@+id/action_homeFragment_to_argomentoFragment"
             app:destination="@id/argomentoFragment"
-            app:enterAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/argomentoFragment"
@@ -28,7 +29,8 @@
             app:destination="@id/quizTastieraFragment" />
         <action
             android:id="@+id/action_argomentoFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/quizTastieraFragment"
