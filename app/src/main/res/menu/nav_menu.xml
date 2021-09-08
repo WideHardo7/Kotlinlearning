@@ -7,9 +7,12 @@
         android:id="@+id/drawer_glossario"
         android:title="@string/glossario"
         android:icon="@drawable/ic_baseline_menu_book_24"/>
+
+
     <item
         android:id="@+id/drawer_achievements"
         android:title="@string/Obbiettivi"
         android:icon="@drawable/ic_baseline_stars_24" />
+
 
 </menu>

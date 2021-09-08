@@ -2,16 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:fitsSystemWindows="true"
     android:id="@+id/nav_header"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginTop="16dp"
+    android:fitsSystemWindows="true"
     android:layout_marginStart="16dp"
     android:background="@color/white">
 
     <ImageView
+
         android:id="@+id/imageView4"
         android:layout_marginTop="14dp"
         android:layout_marginStart="-16dp"
