@@ -2,11 +2,13 @@ package com.example.kotlinlearning
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.onNavDestinationSelected
 import com.example.kotlinlearning.databinding.ActivityMainBinding
 
 
@@ -27,6 +29,8 @@ class MainActivity : AppCompatActivity() {
 
         //Navigation drawer
         NavigationUI.setupWithNavController(binding.navView, navController)
+
+
 
 
     }

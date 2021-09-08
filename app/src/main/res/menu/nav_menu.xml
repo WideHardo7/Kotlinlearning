@@ -4,13 +4,13 @@
     tools:showIn="navigation_view">
 
     <item
-        android:id="@+id/drawer_glossario"
+        android:id="@+id/glossaryFragment"
         android:title="@string/glossario"
         android:icon="@drawable/ic_baseline_menu_book_24"/>
 
 
     <item
-        android:id="@+id/drawer_achievements"
+        android:id="@+id/achievementFragment"
         android:title="@string/Obbiettivi"
         android:icon="@drawable/ic_baseline_stars_24" />
 
