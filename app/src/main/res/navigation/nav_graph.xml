@@ -24,13 +24,6 @@
         <action
             android:id="@+id/action_argomentoFragment_to_quizBottoneFragment"
             app:destination="@id/quizBottoneFragment" />
-        <action
-            android:id="@+id/action_argomentoFragment_to_quizTastieraFragment"
-            app:destination="@id/quizTastieraFragment" />
-        <action
-            android:id="@+id/action_argomentoFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/quizTastieraFragment"
@@ -47,11 +40,8 @@
         android:label="fragment_quiz_bottone"
         tools:layout="@layout/quiz_bottoni" >
         <action
-            android:id="@+id/action_quizBottoneFragment_to_completamentoQuizFragment"
-            app:destination="@id/completamentoQuizFragment" />
-        <action
-            android:id="@+id/action_quizBottoneFragment_to_argomentoFragment"
-            app:destination="@id/argomentoFragment" />
+            android:id="@+id/action_quizBottoneFragment_to_quizTastieraFragment"
+            app:destination="@id/quizTastieraFragment" />
     </fragment>
     <fragment
         android:id="@+id/completamentoQuizFragment"
@@ -61,6 +51,9 @@
         <action
             android:id="@+id/action_completamentoQuizFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_completamentoQuizFragment_to_argomentoFragment"
+            app:destination="@id/argomentoFragment" />
     </fragment>
     <fragment
         android:id="@+id/glossaryFragment"
@@ -81,4 +74,34 @@
         android:name="com.example.kotlinlearning.TeoriaFragment"
         android:label="fragment_teoria"
         tools:layout="@layout/teoria_no_quiz" />
+    <fragment
+        android:id="@+id/testConoscenze"
+        android:name="com.example.kotlinlearning.TestConoscenzeFragment"
+        android:label="fragment_test_conoscenze"
+        tools:layout="@layout/test_conoscenze" >
+        <action
+            android:id="@+id/action_testConoscenze_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_testConoscenze_to_quizTestConoscenze"
+            app:destination="@id/quizTestConoscenze" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizTestConoscenze"
+        android:name="com.example.kotlinlearning.QuizTestConoscenzeFragment"
+        android:label="fragment_quiz_test_conoscenze"
+        tools:layout="@layout/quiz_test_conoscenze" >
+        <action
+            android:id="@+id/action_quizTestConoscenze_to_testConoscenzeValutazioneFragment"
+            app:destination="@id/testConoscenzeValutazioneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testConoscenzeValutazioneFragment"
+        android:name="com.example.kotlinlearning.TestConoscenzeValutazioneFragment"
+        android:label="fragment_test_conoscenze_valutazione"
+        tools:layout="@layout/test_conoscenze_valutazione" >
+        <action
+            android:id="@+id/action_testConoscenzeValutazioneFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
