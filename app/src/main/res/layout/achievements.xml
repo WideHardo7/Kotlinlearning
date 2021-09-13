@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="33dp"
     tools:context=".AchievementFragment"
     >
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:paddingBottom="33dp">
 
             <TextView
                 android:id="@+id/Achievements"
@@ -23,12 +24,12 @@
                 android:layout_height="73dp"
                 android:background="@android:drawable/divider_horizontal_textfield"
                 android:gravity="center_vertical"
+                android:paddingLeft="23dp"
                 android:text="@string/Obbiettivi"
                 android:textAllCaps="true"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent"
-                android:paddingLeft="23dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ob_variabili"
@@ -36,10 +37,10 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="73dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="23dp"
                 android:text="@string/b.variabili"
-                app:layout_constraintTop_toTopOf="parent"
                 android:textAllCaps="true"
-                android:paddingLeft="23dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ob_stringhe"
@@ -47,10 +48,10 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="146dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="23dp"
                 android:text="@string/b.strighe"
-                app:layout_constraintTop_toTopOf="parent"
                 android:textAllCaps="true"
-                android:paddingLeft="23dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ob_cicli"
@@ -58,10 +59,10 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="219dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="23dp"
                 android:text="@string/b.cicli"
-                app:layout_constraintTop_toTopOf="parent"
                 android:textAllCaps="true"
-                android:paddingLeft="23dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ob_funzioni"
@@ -69,10 +70,10 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="292dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="23dp"
                 android:text="@string/b.funzioni"
-                app:layout_constraintTop_toTopOf="parent"
                 android:textAllCaps="true"
-                android:paddingLeft="23dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ob_null"
@@ -80,10 +81,10 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="365dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="23dp"
                 android:text="@string/b.null_safety"
-                app:layout_constraintTop_toTopOf="parent"
                 android:textAllCaps="true"
-                android:paddingLeft="23dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ob_array"
@@ -91,10 +92,10 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="438dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="23dp"
                 android:text="@string/b.array"
-                app:layout_constraintTop_toTopOf="parent"
                 android:textAllCaps="true"
-                android:paddingLeft="23dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ob_classi"
@@ -102,10 +103,10 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="511dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="23dp"
                 android:text="@string/b.classi"
-                app:layout_constraintTop_toTopOf="parent"
                 android:textAllCaps="true"
-                android:paddingLeft="23dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ob_ereditarietà"
@@ -113,10 +114,10 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="584dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="23dp"
                 android:text="@string/b.ereditarietà"
                 android:textAllCaps="true"
-                app:layout_constraintTop_toTopOf="parent"
-                android:paddingLeft="23dp"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/ob_lambda"
@@ -124,11 +125,10 @@
                 android:layout_height="73dp"
                 android:layout_marginTop="657dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="23dp"
                 android:text="@string/b.lambda"
-                app:layout_constraintTop_toTopOf="parent"
                 android:textAllCaps="true"
-                android:paddingLeft="23dp"/>
-
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <ProgressBar
