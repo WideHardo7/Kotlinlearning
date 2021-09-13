@@ -38,8 +38,7 @@
     //stringa layout quiz_tastiera
     <string name="inserimento_risposta">Inserisci qui la tua risposta...</string>
     <string name="conferma_risposta">Conferma</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 
 </resources>
