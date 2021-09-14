@@ -1,5 +1,6 @@
 package com.example.kotlinlearning
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -8,7 +9,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import android.content.SharedPreferences
-import android.util.Log
+import android.view.LayoutInflater
+import androidx.navigation.fragment.NavHostFragment
 import com.example.kotlinlearning.databinding.ActivityMainBinding
 import com.example.kotlinlearning.databinding.TestConoscenzeBinding
 
@@ -17,11 +19,11 @@ class MainActivity : AppCompatActivity() {
 
     val preferences_name = "isFirstTime"
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+
         firstTime()
 
     }
@@ -40,13 +42,15 @@ class MainActivity : AppCompatActivity() {
 
         if (sharedTime.getBoolean("firstTime",true)){
 
-            val binding = DataBindingUtil.setContentView<TestConoscenzeBinding>(this, R.layout.test_conoscenze)
+            var intent = Intent(this, MainActivity2::class.java)
+
+            startActivity(intent)
 
             sharedTime.edit().putBoolean("firstTime",false).apply()
 
         } else {
 
-            binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+            val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
             val navController = this.findNavController(R.id.fragmentContainerView)
 
@@ -56,6 +60,7 @@ class MainActivity : AppCompatActivity() {
 
             //Navigation drawer
             NavigationUI.setupWithNavController(binding.navView, navController)
+
 
         }
     }

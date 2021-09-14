@@ -28,7 +28,7 @@ class ArgomentoFragment : Fragment() {
             R.layout.argomento,container,false)
 
         binding.bQuiz.setOnClickListener{  view : View ->
-            view.findNavController().navigate(R.id.action_argomentoFragment_to_quizTastieraFragment) }
+            view.findNavController().navigate(R.id.action_argomentoFragment_to_quizBottoneFragment) }
 
         return binding.root
         

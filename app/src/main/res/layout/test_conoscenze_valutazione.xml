@@ -1,65 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    tools:context=".TestConoscenzeValutazioneFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginRight="55dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-        <TextView
-            android:id="@+id/andamento_conoscenze"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@drawable/contorno"
-            android:gravity="center"
-            android:text="@string/andamento_conoscenze_buono"
-            android:textAllCaps="true"/>
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginRight="55dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/risultato_conoscenze"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@drawable/contorno"
-            android:gravity="center"
-            android:text="0/18"
-            android:textAllCaps="true"/>
+            <TextView
+                android:id="@+id/andamento_conoscenze"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/contorno"
+                android:gravity="center"
+                android:text="@string/andamento_conoscenze_buono"
+                android:textAllCaps="true"/>
 
-        <TextView
-            android:id="@+id/livello_conoscenze"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="@drawable/contorno"
-            android:gravity="center"
-            android:text="@string/livello_conoscenze_base"
-            android:textAllCaps="true"/>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/risultato_conoscenze"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/contorno"
+                android:gravity="center"
+                android:text="0/18"
+                android:textAllCaps="true"/>
 
-    <Button
-        android:id="@+id/bottone_home"
-        android:layout_width="200dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="106dp"
-        android:layout_marginLeft="106dp"
-        android:layout_marginTop="153dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginRight="106dp"
-        style="@style/Bottone"
-        android:text="HOME"
-        app:backgroundTint="#673AB7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/livello_conoscenze"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/contorno"
+                android:gravity="center"
+                android:text="@string/livello_conoscenze_base"
+                android:textAllCaps="true"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bottone_home"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="106dp"
+            android:layout_marginLeft="106dp"
+            android:layout_marginTop="153dp"
+            android:layout_marginEnd="106dp"
+            android:layout_marginRight="106dp"
+            style="@style/Bottone"
+            android:text="HOME"
+            app:backgroundTint="#673AB7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
