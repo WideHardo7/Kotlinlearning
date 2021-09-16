@@ -34,7 +34,7 @@
             style="@style/Bottone_risposta"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="81dp"
-            android:text="Button"
+            android:text="Button_risposta"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/testo_domanda_multipla" />

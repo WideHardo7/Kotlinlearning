@@ -10,11 +10,14 @@
         android:name="com.example.kotlinlearning.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/home" >
+
         <action
             android:id="@+id/action_homeFragment_to_argomentoFragment"
             app:destination="@id/argomentoFragment"
             app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right" />
+
+
     </fragment>
     <fragment
         android:id="@+id/argomentoFragment"
@@ -24,6 +27,9 @@
         <action
             android:id="@+id/action_argomentoFragment_to_quizBottoneFragment"
             app:destination="@id/quizBottoneFragment" />
+        <argument
+            android:name="name_argument"
+            android:defaultValue="Argomento" />
     </fragment>
     <fragment
         android:id="@+id/quizTastieraFragment"
@@ -49,11 +55,11 @@
         android:label="Risultati"
         tools:layout="@layout/completamento_quiz" >
         <action
-            android:id="@+id/action_completamentoQuizFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
             android:id="@+id/action_completamentoQuizFragment_to_argomentoFragment"
             app:destination="@id/argomentoFragment" />
+        <action
+            android:id="@+id/action_completamentoQuizFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/glossaryFragment"

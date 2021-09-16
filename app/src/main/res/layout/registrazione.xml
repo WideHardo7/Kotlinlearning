@@ -64,6 +64,7 @@
         android:layout_marginRight="147dp"
         android:layout_marginBottom="150dp"
         android:background="@drawable/contorno"
+        style="@style/Bottone"
         android:text="Conferma"
         app:backgroundTint="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"

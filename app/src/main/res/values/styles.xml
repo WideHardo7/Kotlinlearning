@@ -12,4 +12,8 @@
         <item name="android:textColor">@color/secondaryTextColor</item>
         <item name="android:backgroundTint">@color/secondaryColor</item>
     </style>
+    <style name="Bottone_bloccato">
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:backgroundTint">@color/block_button</item>
+    </style>
 </resources>

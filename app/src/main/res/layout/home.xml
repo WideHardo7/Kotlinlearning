@@ -61,19 +61,19 @@
 
                         <Button
                             android:id="@+id/bottone_stringhe"
-                            style="@style/Bottone"
+                            style="@style/Bottone_bloccato"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_marginTop="66dp"
                             android:layout_marginEnd="36dp"
-                            android:layout_marginRight="36dp"
+                            android:enabled="false"
                             android:text="@string/b.strighe"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
                             android:id="@+id/bottone_cicli"
-                            style="@style/Bottone"
+                            style="@style/Bottone_bloccato"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_marginStart="130dp"
@@ -81,6 +81,7 @@
                             android:layout_marginTop="210dp"
                             android:layout_marginEnd="130dp"
                             android:layout_marginRight="130dp"
+                            android:enabled="false"
                             android:text="@string/b.cicli"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -141,31 +142,33 @@
 
                         <Button
                             android:id="@+id/bottone_funzioni"
-                            style="@style/Bottone"
+                            style="@style/Bottone_bloccato"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_marginStart="36dp"
                             android:layout_marginLeft="36dp"
                             android:layout_marginTop="66dp"
+                            android:enabled="false"
                             android:text="@string/b.funzioni"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
                             android:id="@+id/bottone_null_safety"
-                            style="@style/Bottone"
+                            style="@style/Bottone_bloccato"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_marginTop="66dp"
                             android:layout_marginEnd="36dp"
                             android:layout_marginRight="36dp"
+                            android:enabled="false"
                             android:text="@string/b.null_safety"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
                             android:id="@+id/bottone_array"
-                            style="@style/Bottone"
+                            style="@style/Bottone_bloccato"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_marginStart="130dp"
@@ -173,6 +176,7 @@
                             android:layout_marginTop="210dp"
                             android:layout_marginEnd="130dp"
                             android:layout_marginRight="130dp"
+                            android:enabled="false"
                             android:text="@string/b.array"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -233,31 +237,33 @@
 
                         <Button
                             android:id="@+id/bottone_classi"
-                            style="@style/Bottone"
+                            style="@style/Bottone_bloccato"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_marginStart="36dp"
                             android:layout_marginLeft="36dp"
                             android:layout_marginTop="66dp"
+                            android:enabled="false"
                             android:text="@string/b.classi"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
                             android:id="@+id/bottone_ereditarietà"
-                            style="@style/Bottone"
+                            style="@style/Bottone_bloccato"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_marginTop="66dp"
                             android:layout_marginEnd="36dp"
                             android:layout_marginRight="36dp"
+                            android:enabled="false"
                             android:text="@string/b.ereditarietà"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
                             android:id="@+id/bottone_lambda"
-                            style="@style/Bottone"
+                            style="@style/Bottone_bloccato"
                             android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_marginStart="130dp"
@@ -265,6 +271,7 @@
                             android:layout_marginTop="210dp"
                             android:layout_marginEnd="130dp"
                             android:layout_marginRight="130dp"
+                            android:enabled="false"
                             android:text="@string/b.lambda"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

@@ -42,7 +42,7 @@
 
     <Button
         android:id="@+id/b_conferma"
-        style="@style/Bottone_conferma"
+        style="@style/Bottone_risposta"
 
         android:layout_width="230dp"
         android:layout_height="60dp"
