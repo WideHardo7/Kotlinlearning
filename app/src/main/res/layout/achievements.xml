@@ -1,336 +1,366 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AchievementFragment"
-    >
+    tools:context=".AchievementFragment">
 
-
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        >
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingBottom="33dp">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/Achievements"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:background="@android:drawable/divider_horizontal_textfield"
-                android:gravity="center_vertical"
-                android:paddingLeft="23dp"
-                android:text="@string/Obbiettivi"
-                android:textAllCaps="true"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="match_parent"
+                android:paddingBottom="33dp">
 
-            <TextView
-                android:id="@+id/ob_variabili"
-                android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:layout_marginTop="73dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="23dp"
-                android:text="@string/b.variabili"
-                android:textAllCaps="true"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/Achievements"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:background="@android:drawable/divider_horizontal_textfield"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="23dp"
+                    android:text="@string/Obbiettivi"
+                    android:textAllCaps="true"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/ob_stringhe"
-                android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:layout_marginTop="146dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="23dp"
-                android:text="@string/b.strighe"
-                android:textAllCaps="true"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/ob_variabili"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_marginTop="73dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="23dp"
+                    android:text="@string/b.variabili"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/ob_cicli"
-                android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:layout_marginTop="219dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="23dp"
-                android:text="@string/b.cicli"
-                android:textAllCaps="true"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/ob_stringhe"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_marginTop="146dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="23dp"
+                    android:text="@string/b.strighe"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/ob_funzioni"
-                android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:layout_marginTop="292dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="23dp"
-                android:text="@string/b.funzioni"
-                android:textAllCaps="true"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/ob_cicli"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_marginTop="219dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="23dp"
+                    android:text="@string/b.cicli"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/ob_null"
-                android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:layout_marginTop="365dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="23dp"
-                android:text="@string/b.null_safety"
-                android:textAllCaps="true"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/ob_funzioni"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_marginTop="292dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="23dp"
+                    android:text="@string/b.funzioni"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/ob_array"
-                android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:layout_marginTop="438dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="23dp"
-                android:text="@string/b.array"
-                android:textAllCaps="true"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/ob_null"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_marginTop="365dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="23dp"
+                    android:text="@string/b.null_safety"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/ob_classi"
-                android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:layout_marginTop="511dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="23dp"
-                android:text="@string/b.classi"
-                android:textAllCaps="true"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/ob_array"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_marginTop="438dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="23dp"
+                    android:text="@string/b.array"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/ob_ereditarietà"
-                android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:layout_marginTop="584dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="23dp"
-                android:text="@string/b.ereditarietà"
-                android:textAllCaps="true"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/ob_classi"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_marginTop="511dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="23dp"
+                    android:text="@string/b.classi"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/ob_lambda"
-                android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:layout_marginTop="657dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="23dp"
-                android:text="@string/b.lambda"
-                android:textAllCaps="true"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/ob_ereditarietà"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_marginTop="584dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="23dp"
+                    android:text="@string/b.ereditarietà"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/ob_lambda"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_marginTop="657dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="23dp"
+                    android:text="@string/b.lambda"
+                    android:textAllCaps="true"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-            <ProgressBar
-                android:id="@+id/ob_pb_variabili"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="51dp"
-                app:layout_constraintStart_toStartOf="@+id/ob_variabili"
-                app:layout_constraintTop_toBottomOf="@+id/Achievements" />
+                <ProgressBar
+                    android:id="@+id/ob_pb_variabili"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:progress="0"
+                    android:indeterminate="false"
+                    android:max="5"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="51dp"
+                    app:layout_constraintStart_toStartOf="@+id/ob_variabili"
+                    app:layout_constraintTop_toBottomOf="@+id/Achievements" />
 
-            <ProgressBar
-                android:id="@+id/ob_pb_stringhe"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="51dp"
-                app:layout_constraintStart_toStartOf="@+id/ob_stringhe"
-                app:layout_constraintTop_toBottomOf="@+id/ob_variabili" />
+                <ProgressBar
+                    android:id="@+id/ob_pb_stringhe"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:progress="0"
+                    android:max="5"
+                    android:indeterminate="false"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="51dp"
+                    app:layout_constraintStart_toStartOf="@+id/ob_stringhe"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_variabili" />
 
-            <ProgressBar
-                android:id="@+id/ob_pb_cicli"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="51dp"
-                app:layout_constraintStart_toStartOf="@+id/ob_cicli"
-                app:layout_constraintTop_toBottomOf="@+id/ob_stringhe" />
+                <ProgressBar
+                    android:id="@+id/ob_pb_cicli"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:progress="0"
+                    android:max="5"
+                    android:indeterminate="false"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="51dp"
+                    app:layout_constraintStart_toStartOf="@+id/ob_cicli"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_stringhe" />
 
-            <ProgressBar
-                android:id="@+id/ob_pb_funzioni"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="51dp"
-                app:layout_constraintStart_toStartOf="@+id/ob_funzioni"
-                app:layout_constraintTop_toBottomOf="@+id/ob_cicli" />
+                <ProgressBar
+                    android:id="@+id/ob_pb_funzioni"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:progress="0"
+                    android:indeterminate="false"
+                    android:max="5"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="51dp"
+                    app:layout_constraintStart_toStartOf="@+id/ob_funzioni"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_cicli" />
 
-            <ProgressBar
-                android:id="@+id/ob_pb_null"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="51dp"
-                app:layout_constraintStart_toStartOf="@+id/ob_null"
-                app:layout_constraintTop_toBottomOf="@+id/ob_funzioni" />
+                <ProgressBar
+                    android:id="@+id/ob_pb_null"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:progress="0"
+                    android:max="5"
+                    android:indeterminate="false"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="51dp"
+                    app:layout_constraintStart_toStartOf="@+id/ob_null"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_funzioni" />
 
-            <ProgressBar
-                android:id="@+id/ob_pb_array"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="51dp"
-                app:layout_constraintStart_toStartOf="@+id/ob_array"
-                app:layout_constraintTop_toBottomOf="@+id/ob_null" />
+                <ProgressBar
+                    android:id="@+id/ob_pb_array"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:progress="0"
+                    android:max="5"
+                    android:indeterminate="false"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="51dp"
+                    app:layout_constraintStart_toStartOf="@+id/ob_array"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_null" />
 
-            <ProgressBar
-                android:id="@+id/ob_pb_classi"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="51dp"
-                app:layout_constraintStart_toStartOf="@+id/ob_classi"
-                app:layout_constraintTop_toBottomOf="@+id/ob_array" />
+                <ProgressBar
+                    android:id="@+id/ob_pb_classi"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:progress="0"
+                    android:max="5"
+                    android:indeterminate="false"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="51dp"
+                    app:layout_constraintStart_toStartOf="@+id/ob_classi"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_array" />
 
-            <ProgressBar
-                android:id="@+id/ob_pb_ereditarietà"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="51dp"
+                <ProgressBar
+                    android:id="@+id/ob_pb_ereditarietà"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:progress="0"
+                    android:indeterminate="false"
+                    android:max="5"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="51dp"
 
-                app:layout_constraintStart_toStartOf="@+id/ob_ereditarietà"
-                app:layout_constraintTop_toBottomOf="@+id/ob_classi" />
+                    app:layout_constraintStart_toStartOf="@+id/ob_ereditarietà"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_classi" />
 
-            <ProgressBar
-                android:id="@+id/ob_pb_lambda"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="51dp"
-                app:layout_constraintStart_toStartOf="@+id/ob_lambda"
-                app:layout_constraintTop_toBottomOf="@+id/ob_ereditarietà" />
+                <ProgressBar
+                    android:id="@+id/ob_pb_lambda"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="150dp"
+                    android:progress="0"
+                    android:indeterminate="false"
+                    android:max="5"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="51dp"
+                    app:layout_constraintStart_toStartOf="@+id/ob_lambda"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_ereditarietà" />
 
-            <TextView
-                android:id="@+id/ob_txpb_variabili"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="47dp"
-                android:text="x/5"
-                app:layout_constraintStart_toEndOf="@+id/ob_pb_variabili"
-                app:layout_constraintTop_toBottomOf="@+id/Achievements" />
+                <TextView
+                    android:id="@+id/ob_txpb_variabili"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="47dp"
+                    android:text="x/5"
+                    app:layout_constraintStart_toEndOf="@+id/ob_pb_variabili"
+                    app:layout_constraintTop_toBottomOf="@+id/Achievements" />
 
-            <TextView
-                android:id="@+id/ob_txpb_stringhe"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="47dp"
-                android:text="x/5"
-                app:layout_constraintStart_toEndOf="@+id/ob_pb_stringhe"
-                app:layout_constraintTop_toBottomOf="@+id/ob_variabili" />
+                <TextView
+                    android:id="@+id/ob_txpb_stringhe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="47dp"
+                    android:text="x/5"
+                    app:layout_constraintStart_toEndOf="@+id/ob_pb_stringhe"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_variabili" />
 
-            <TextView
-                android:id="@+id/ob_txpb_cicli"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="47dp"
-                android:text="x/5"
-                app:layout_constraintStart_toEndOf="@+id/ob_pb_cicli"
-                app:layout_constraintTop_toBottomOf="@+id/ob_stringhe" />
+                <TextView
+                    android:id="@+id/ob_txpb_cicli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="47dp"
+                    android:text="x/5"
+                    app:layout_constraintStart_toEndOf="@+id/ob_pb_cicli"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_stringhe" />
 
-            <TextView
-                android:id="@+id/ob_txpb_funzioni"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="47dp"
-                android:text="x/5"
-                app:layout_constraintStart_toEndOf="@+id/ob_pb_funzioni"
-                app:layout_constraintTop_toBottomOf="@+id/ob_cicli" />
+                <TextView
+                    android:id="@+id/ob_txpb_funzioni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="47dp"
+                    android:text="x/5"
+                    app:layout_constraintStart_toEndOf="@+id/ob_pb_funzioni"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_cicli" />
 
-            <TextView
-                android:id="@+id/ob_txpb_null"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="47dp"
-                android:text="x/5"
-                app:layout_constraintStart_toEndOf="@+id/ob_pb_null"
-                app:layout_constraintTop_toBottomOf="@+id/ob_funzioni" />
+                <TextView
+                    android:id="@+id/ob_txpb_null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="47dp"
+                    android:text="x/5"
+                    app:layout_constraintStart_toEndOf="@+id/ob_pb_null"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_funzioni" />
 
-            <TextView
-                android:id="@+id/ob_txpb_array"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="47dp"
-                android:text="x/5"
-                app:layout_constraintStart_toEndOf="@+id/ob_pb_array"
-                app:layout_constraintTop_toBottomOf="@+id/ob_null" />
+                <TextView
+                    android:id="@+id/ob_txpb_array"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="47dp"
+                    android:text="x/5"
+                    app:layout_constraintStart_toEndOf="@+id/ob_pb_array"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_null" />
 
-            <TextView
-                android:id="@+id/ob_txpb_classi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="47dp"
-                android:text="x/5"
-                app:layout_constraintStart_toEndOf="@+id/ob_pb_classi"
-                app:layout_constraintTop_toBottomOf="@+id/ob_array" />
+                <TextView
+                    android:id="@+id/ob_txpb_classi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="47dp"
+                    android:text="x/5"
+                    app:layout_constraintStart_toEndOf="@+id/ob_pb_classi"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_array" />
 
-            <TextView
-                android:id="@+id/ob_txpb_ereditarietà"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="47dp"
-                android:text="x/5"
-                app:layout_constraintStart_toEndOf="@+id/ob_pb_ereditarietà"
-                app:layout_constraintTop_toBottomOf="@+id/ob_classi" />
+                <TextView
+                    android:id="@+id/ob_txpb_ereditarietà"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="47dp"
+                    android:text="x/5"
+                    app:layout_constraintStart_toEndOf="@+id/ob_pb_ereditarietà"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_classi" />
 
-            <TextView
-                android:id="@+id/ob_txpb_lambda"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="23dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="47dp"
-                android:text="x/5"
-                app:layout_constraintStart_toEndOf="@+id/ob_pb_lambda"
-                app:layout_constraintTop_toBottomOf="@+id/ob_ereditarietà" />
+                <TextView
+                    android:id="@+id/ob_txpb_lambda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="47dp"
+                    android:text="x/5"
+                    app:layout_constraintStart_toEndOf="@+id/ob_pb_lambda"
+                    app:layout_constraintTop_toBottomOf="@+id/ob_ereditarietà" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

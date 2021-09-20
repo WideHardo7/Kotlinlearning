@@ -10,6 +10,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
 import android.content.SharedPreferences
 import android.view.LayoutInflater
+import android.view.animation.AnimationUtils
 import androidx.navigation.fragment.NavHostFragment
 import com.example.kotlinlearning.databinding.ActivityMainBinding
 import com.example.kotlinlearning.databinding.TestConoscenzeBinding
@@ -49,6 +50,8 @@ class MainActivity : AppCompatActivity() {
             sharedTime.edit().putBoolean("firstTime",false).apply()
 
         } else {
+
+
 
             val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
