@@ -1,6 +1,5 @@
-package com.example.kotlinlearning
+package com.example.kotlinlearning.view.fragment
 
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -12,7 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.onNavDestinationSelected
+import com.example.kotlinlearning.R
 import com.example.kotlinlearning.databinding.HomeBinding
 
 

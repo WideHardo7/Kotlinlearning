@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.kotlinlearning.HomeFragment"
+        android:name="com.example.kotlinlearning.view.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/home" >
 
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/argomentoFragment"
-        android:name="com.example.kotlinlearning.ArgomentoFragment"
+        android:name="com.example.kotlinlearning.view.fragment.ArgomentoFragment"
         android:label="fragment_argomento"
         tools:layout="@layout/argomento" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/quizTastieraFragment"
-        android:name="com.example.kotlinlearning.QuizTastieraFragment"
+        android:name="com.example.kotlinlearning.view.fragment.QuizTastieraFragment"
         android:label="gfd"
         tools:layout="@layout/quiz_tastiera" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/quizBottoneFragment"
-        android:name="com.example.kotlinlearning.QuizBottoneFragment"
+        android:name="com.example.kotlinlearning.view.fragment.QuizBottoneFragment"
         android:label="fragment_quiz_bottone"
         tools:layout="@layout/quiz_bottoni" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/completamentoQuizFragment"
-        android:name="com.example.kotlinlearning.CompletamentoQuizFragment"
+        android:name="com.example.kotlinlearning.view.fragment.CompletamentoQuizFragment"
         android:label="Risultati"
         tools:layout="@layout/completamento_quiz" >
         <action
@@ -63,7 +63,7 @@
     </fragment>
     <fragment
         android:id="@+id/glossaryFragment"
-        android:name="com.example.kotlinlearning.GlossaryFragment"
+        android:name="com.example.kotlinlearning.view.fragment.GlossaryFragment"
         android:label="@string/glossario"
         tools:layout="@layout/glossario" >
         <action
@@ -72,12 +72,12 @@
     </fragment>
     <fragment
         android:id="@+id/achievementFragment"
-        android:name="com.example.kotlinlearning.AchievementFragment"
+        android:name="com.example.kotlinlearning.view.fragment.AchievementFragment"
         android:label="@string/Obbiettivi"
         tools:layout="@layout/achievements" />
     <fragment
         android:id="@+id/teoriaFragment"
-        android:name="com.example.kotlinlearning.TeoriaFragment"
+        android:name="com.example.kotlinlearning.view.fragment.TeoriaFragment"
         android:label="fragment_teoria"
         tools:layout="@layout/teoria_no_quiz" />
 

@@ -1,4 +1,4 @@
-package com.example.kotlinlearning
+package com.example.kotlinlearning.view.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,12 +8,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.navigateUp
-import android.content.SharedPreferences
-import android.view.LayoutInflater
-import android.view.animation.AnimationUtils
-import androidx.navigation.fragment.NavHostFragment
+import com.example.kotlinlearning.R
 import com.example.kotlinlearning.databinding.ActivityMainBinding
-import com.example.kotlinlearning.databinding.TestConoscenzeBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -53,7 +49,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-            val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+            val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
+                R.layout.activity_main
+            )
 
             val navController = this.findNavController(R.id.fragmentContainerView)
 

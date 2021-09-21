@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Kotlinlearning">
-        <activity android:name=".WelcomeScreen" android:theme="@style/WelcomeScreen">
+        <activity android:name=".view.activity.WelcomeScreen" android:theme="@style/WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity2"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".view.activity.MainActivity2"></activity>
+        <activity android:name=".view.activity.MainActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

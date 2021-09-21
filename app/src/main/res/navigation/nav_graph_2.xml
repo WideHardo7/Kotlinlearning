@@ -6,7 +6,7 @@
     app:startDestination="@id/testConoscenze">
     <fragment
         android:id="@+id/testConoscenze"
-        android:name="com.example.kotlinlearning.TestConoscenzeFragment"
+        android:name="com.example.kotlinlearning.view.fragment.TestConoscenzeFragment"
         android:label="fragment_test_conoscenze"
         tools:layout="@layout/test_conoscenze" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/quizTestConoscenze"
-        android:name="com.example.kotlinlearning.QuizTestConoscenzeFragment"
+        android:name="com.example.kotlinlearning.view.fragment.QuizTestConoscenzeFragment"
         android:label="fragment_quiz_test_conoscenze"
         tools:layout="@layout/quiz_test_conoscenze" >
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/testConoscenzeValutazioneFragment"
-        android:name="com.example.kotlinlearning.TestConoscenzeValutazioneFragment"
+        android:name="com.example.kotlinlearning.view.fragment.TestConoscenzeValutazioneFragment"
         android:label="fragment_test_conoscenze_valutazione"
         tools:layout="@layout/test_conoscenze_valutazione"/>
 

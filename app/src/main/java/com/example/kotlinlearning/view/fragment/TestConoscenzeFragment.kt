@@ -1,4 +1,4 @@
-package com.example.kotlinlearning
+package com.example.kotlinlearning.view.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.example.kotlinlearning.R
 import com.example.kotlinlearning.databinding.TestConoscenzeBinding
+import com.example.kotlinlearning.view.activity.MainActivity
 
 
 class TestConoscenzeFragment : Fragment() {
