@@ -13,7 +13,7 @@ import com.example.kotlinlearning.database.domande.DomandeMultipleDao
 import com.example.kotlinlearning.database.teoria.Teoria
 import com.example.kotlinlearning.database.teoria.TeoriaDao
 
-@Database(entities =[Argument::class, Teoria::class, DomandeInserimento::class, DomandeMultiple::class], version = 1,exportSchema = false)
+@Database(entities =[Argument::class, Teoria::class, DomandeInserimento::class, DomandeMultiple::class], version = 1,exportSchema = true)
 abstract class AppDatabase:RoomDatabase() {
 
     abstract fun argumentDao():ArgumentDao
@@ -28,6 +28,8 @@ abstract class AppDatabase:RoomDatabase() {
             INSTANCE ?: Room.databaseBuilder(  context.applicationContext,  AppDatabase::class.java, "color_database"
             )
                 .fallbackToDestructiveMigration()
+                //.allowMainThreadQueries()
+                .createFromAsset("database/teoria.db")
                 .build()
                 .also { INSTANCE = it }
         }

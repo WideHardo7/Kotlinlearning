@@ -6,6 +6,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="argomentoviewmodel"
+            type="com.example.kotlinlearning.viewmodel.ArgomentoViewModel" />
 
     </data>
 
@@ -21,7 +24,7 @@
             android:layout_marginStart="38dp"
             android:layout_marginLeft="38dp"
             android:layout_marginTop="50dp"
-            android:text="Nome Argomento"
+            android:text="Nome_Argomento"
             android:textAllCaps="true"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -41,7 +44,7 @@
                 android:id="@+id/teoria_quiz"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="TextView text"
+                android:text="@{}"
                 android:translationX="30dp" />
         </ScrollView>
 

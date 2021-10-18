@@ -30,6 +30,9 @@
         <argument
             android:name="name_argument"
             android:defaultValue="Argomento" />
+        <argument
+            android:name="listateoria"
+            app:argType="com.example.kotlinlearning.database.teoria.Teoria[]" />
     </fragment>
     <fragment
         android:id="@+id/quizTastieraFragment"

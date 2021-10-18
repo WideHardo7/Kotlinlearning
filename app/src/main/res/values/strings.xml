@@ -38,8 +38,28 @@
     //stringa layout quiz_tastiera
     <string name="inserimento_risposta">Inserisci qui la tua risposta...</string>
     <string name="conferma_risposta">Conferma</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    //prova in ArgomentoFragment
+    <string name="testo_teoria"><u><b><i>Tipi di Dati</i></b></u> \n
+\nI dati che utilizziamo nei nostri programmi hanno diversi tipo.\n
+\nTipi con valori interi come:\n
+
+        \n<u>Tipo</u>\u0020\u0020\u0020<u>Bits</u>\u0020\u0020\u0020<u>Range</u>\n
+Long\u0020\u0020\u002064\u0020\u0020\u0020Da -263 a 263-1\n
+        Int\u0020\u0020\u002032\u0020\u0020\u0020Da -231 a 231-1\n
+Short\u0020\u0020\u002016\u0020\u0020\u0020Da -32768 a 32767\n
+Byte\u0020\u0020\u00208\u0020\u0020\u0020Da -128 a 127\n
+
+\nTipi con valori con la virgola e altri come:\n
+
+\n<u>Tipo</u>\u0020\u0020\u0020<u>Bits</u>\u0020\u0020\u0020<u>Range</u>\n
+Double \u0020\u0020\u0020 64 \u0020\u0020\u0020 15 - 16 cifre decimali\n
+Float  \u0020\u0020\u0020 32 \u0020\u0020\u0020 6 - 7 cifre decimali\n
+Char  \u0020\u0020\u0020  16 \u0020\u0020\u0020 16-bit caratteri Unicode\n
+Boolean  \u0020\u0020\u00208  \u0020\u0020\u0020 True o false\n
+
+\n<u><b><i> Operatori</i></b></u> \n
+
+ </string>
 
 
 </resources>
