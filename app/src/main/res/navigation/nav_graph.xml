@@ -67,7 +67,7 @@
     <fragment
         android:id="@+id/glossaryFragment"
         android:name="com.example.kotlinlearning.view.fragment.GlossaryFragment"
-        android:label="@string/glossario"
+        android:label=""
         tools:layout="@layout/glossario" >
         <action
             android:id="@+id/action_glossaryFragment_to_teoriaFragment"
@@ -81,7 +81,7 @@
     <fragment
         android:id="@+id/teoriaFragment"
         android:name="com.example.kotlinlearning.view.fragment.TeoriaFragment"
-        android:label="fragment_teoria"
+        android:label=""
         tools:layout="@layout/teoria_no_quiz">
     <argument
         android:name="name_argument"
