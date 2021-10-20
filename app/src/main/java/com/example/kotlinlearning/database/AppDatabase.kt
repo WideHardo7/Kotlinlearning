@@ -32,6 +32,7 @@ abstract class AppDatabase:RoomDatabase() {
                 .createFromAsset("database/teoria.db")
                 .build()
                 .also { INSTANCE = it }
+
         }
         }
 

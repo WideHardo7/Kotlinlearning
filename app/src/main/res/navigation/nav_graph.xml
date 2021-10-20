@@ -82,6 +82,13 @@
         android:id="@+id/teoriaFragment"
         android:name="com.example.kotlinlearning.view.fragment.TeoriaFragment"
         android:label="fragment_teoria"
-        tools:layout="@layout/teoria_no_quiz" />
+        tools:layout="@layout/teoria_no_quiz">
+    <argument
+        android:name="name_argument"
+        android:defaultValue="Argomento" />
+        <argument
+            android:name="listateoria"
+            app:argType="com.example.kotlinlearning.database.teoria.Teoria[]" />
+    </fragment>
 
 </navigation>

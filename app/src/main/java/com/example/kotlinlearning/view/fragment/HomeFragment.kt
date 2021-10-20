@@ -17,6 +17,7 @@ import com.example.kotlinlearning.R
 import com.example.kotlinlearning.databinding.HomeBinding
 import com.example.kotlinlearning.viewmodel.ArgomentoViewModel
 import com.example.kotlinlearning.viewmodel.HomeViewModel
+import kotlinx.coroutines.flow.observeOn
 
 
 /**

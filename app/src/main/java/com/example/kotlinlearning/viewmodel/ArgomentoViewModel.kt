@@ -24,9 +24,8 @@ import kotlinx.coroutines.launch
         val teoriaDao= AppDatabase.getInstance(application).teoriaDao()
         repository= TeoriaRepository(teoriaDao)
         Teoria()
-
-
     }
+
     /*fun getTheoryfromArgument(argomento:String){
         viewModelScope.launch(Dispatchers.IO){
             singolTheory=repository.getTheoryfromArgument((argomento))
@@ -34,13 +33,12 @@ import kotlinx.coroutines.launch
         Log.i("ArgomentoViewModel","$singolTheory")
 
     }*/
-     suspend fun getTheory(){
 
+     suspend fun getTheory(){
          allTheory=repository.getTheory()
          Log.i("ArgomentoViewModel","$allTheory")
-
-
          }
+
      //ho necessita di inizializzare la variabile globale alltheory, ma getTheory() è una funzione suspend e quindi uso un viewmodelScope per usare la funzione
      fun Teoria(){
          viewModelScope.launch{

@@ -4,7 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.liveData
+import kotlinx.coroutines.flow.Flow
 import androidx.lifecycle.viewModelScope
 import com.example.kotlinlearning.database.AppDatabase
 import com.example.kotlinlearning.database.argomenti.Argument
@@ -34,15 +34,16 @@ class HomeViewModel( application: Application): AndroidViewModel(application) {
         //tuttiargomenti=repository.getAllArgument()
         //Log.i("HomeViewmodel","dentro init e dentro a tuttiargomenti:${tuttiargomenti}")
     }
+
     fun Argomenti(){
         viewModelScope.launch {
             getAllArgument()
         }
 
     }
+
     fun updateListofArgument(argomenti:List<Argument>){
         this.listargomenti=argomenti
-
     }
 
     /*fun getAllArgument()= allArgumentlist.value

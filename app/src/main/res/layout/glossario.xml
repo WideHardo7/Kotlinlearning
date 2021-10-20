@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.fragment.GlossaryFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.GlossaryFragment"
     >
 
     <ScrollView
@@ -35,6 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginBottom="-5dp"
                 android:layout_height="54dp"
+                android:contentDescription="@string/b.variabili"
                 android:background="@drawable/contorno3"
                 android:text="@string/b.variabili"
                 android:textColor="@color/cardview_dark_background"
@@ -46,6 +50,7 @@
                 android:id="@+id/g_b_stringhe"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
+                android:contentDescription="@string/b.strighe"
                 android:background="@drawable/contorno3"
                 android:text="@string/b.strighe"
                 android:textColor="@color/cardview_dark_background"
@@ -58,6 +63,7 @@
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
                 android:text="@string/b.cicli"
+                android:contentDescription="@string/b.cicli"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
@@ -67,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
+                android:contentDescription="@string/b.funzioni"
                 android:text="@string/b.funzioni"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
@@ -78,6 +85,7 @@
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
                 android:text="@string/b.null_safety"
+                android:contentDescription="@string/b.null_safety"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
 
@@ -86,6 +94,7 @@
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
+                android:contentDescription="@string/b.array"
                 android:background="@drawable/contorno3"
                 android:text="@string/b.array"
                 android:textColor="@color/cardview_dark_background"
@@ -96,6 +105,7 @@
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
+                android:contentDescription="@string/b.classi"
                 android:background="@drawable/contorno3"
                 android:text="@string/b.classi"
                 android:textColor="@color/cardview_dark_background"
@@ -105,6 +115,7 @@
                 android:id="@+id/g_b_ereditarietà"
                 android:layout_marginBottom="-5dp"
                 android:layout_width="match_parent"
+                android:contentDescription="@string/b.ereditarietà"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
                 android:text="@string/b.ereditarietà"
@@ -117,6 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:background="@drawable/contorno3"
+                android:contentDescription="@string/b.lambda"
                 android:text="@string/b.lambda"
                 android:textColor="@color/cardview_dark_background"
                 app:backgroundTint="#00FFFFFF" />
@@ -131,3 +143,4 @@
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
