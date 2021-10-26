@@ -17,7 +17,6 @@ import com.example.kotlinlearning.R
 import com.example.kotlinlearning.databinding.HomeBinding
 import com.example.kotlinlearning.viewmodel.ArgomentoViewModel
 import com.example.kotlinlearning.viewmodel.HomeViewModel
-import kotlinx.coroutines.flow.observeOn
 
 
 /**
@@ -64,7 +63,7 @@ class HomeFragment : Fragment() {
             }
         }
         Log.d("HomeFragment","inizio funzione Unlocked Buttone")
-        CheckView()
+        checkView()
         Log.d("HomeFragment","fine funzione Unlocked Buttone")
 
         //Asssociazione listener ai bottoni
@@ -92,19 +91,19 @@ class HomeFragment : Fragment() {
     private fun UnlockButton(argomento:String){
         Log.d("HomeFragment","entro funzione Unlocked Buttone")
         when(argomento){
-            "Stringhe" -> EnableButton(binding.bottoneStringhe)
-            "Condizioni e Cicli" -> EnableButton(binding.bottoneCicli)
-            "Funzioni" -> EnableButton(binding.bottoneFunzioni)
-            "Null-Safety" -> EnableButton(binding.bottoneNullSafety)
-            "Array e Collection" -> EnableButton(binding.bottoneArray)
-            "Classi" -> EnableButton(binding.bottoneClassi)
-            "Ereditarietà" -> EnableButton(binding.bottoneEreditariet)
-            "Lambda Functions" -> EnableButton(binding.bottoneLambda)
+            "Stringhe" -> enableButton(binding.bottoneStringhe)
+            "Condizioni e Cicli" -> enableButton(binding.bottoneCicli)
+            "Funzioni" -> enableButton(binding.bottoneFunzioni)
+            "Null-Safety" -> enableButton(binding.bottoneNullSafety)
+            "Array e Collection" -> enableButton(binding.bottoneArray)
+            "Classi" -> enableButton(binding.bottoneClassi)
+            "Ereditarietà" -> enableButton(binding.bottoneEreditariet)
+            "Lambda Functions" -> enableButton(binding.bottoneLambda)
 
         }
     }
     //Cambia il colore del bottone e abilita il click del bottone
-    private fun EnableButton(v: View){
+    private fun enableButton(v: View){
         Log.d("HomeFragment","entro funzione Enable Button")
         v.apply{
 
@@ -114,7 +113,7 @@ class HomeFragment : Fragment() {
         }
     }
     //controlla la lista di argomenti e  per ogni elemento che ha il valore .unlocked true o uguale ad 1, ne modifica la visualizzazione del bottone relativo a quell'argomento
-    private fun CheckView(){
+    private fun checkView(){
 
         for(element in homeviewmodel.listargomenti){
             //argomento.unlocked è un intero che funfe da boolean settando  con 1 true e 0 false
@@ -123,6 +122,5 @@ class HomeFragment : Fragment() {
         }
 
     }
-
 
 }

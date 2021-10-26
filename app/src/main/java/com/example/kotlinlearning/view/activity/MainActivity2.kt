@@ -10,7 +10,6 @@ import com.example.kotlinlearning.databinding.ActivityMain2Binding
 class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val binding = DataBindingUtil.setContentView<ActivityMain2Binding>(this,
             R.layout.activity_main2
         )
