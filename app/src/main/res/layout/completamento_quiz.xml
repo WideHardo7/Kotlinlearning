@@ -1,101 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".view.fragment.CompletamentoQuizFragment">
 
-    <ImageView
-        android:id="@+id/immagine_punteggio"
-        android:layout_width="243dp"
-        android:layout_height="243dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="61dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?android:attr/galleryItemBackground" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/punteggio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginLeft="158dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="158dp"
-        android:layout_marginRight="158dp"
-        android:gravity="center"
-        android:text="@string/punteggio"
-        android:textAllCaps="true"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/immagine_punteggio" />
-    <TextView
-        android:id="@+id/risultato"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:gravity="center"
-        android:textAllCaps="true"
-        android:textSize="24sp"
-        android:text="0/5"
-        app:layout_constraintBottom_toTopOf="@+id/sblocco_argomento"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/punteggio" />
+        <ImageView
+            android:id="@+id/immagine_punteggio"
+            android:layout_width="243dp"
+            android:layout_height="243dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginLeft="84dp"
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginRight="84dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="?android:attr/galleryItemBackground" />
 
-    <TextView
-        android:id="@+id/sblocco_argomento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:gravity="center"
-        android:text="@string/sblocco_argomento"
-        android:textAllCaps="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/punteggio" />
+        <TextView
+            android:id="@+id/punteggio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="158dp"
+            android:layout_marginLeft="158dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="158dp"
+            android:layout_marginRight="158dp"
+            android:gravity="center"
+            android:text="@string/punteggio"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/immagine_punteggio" />
+        <TextView
+            android:id="@+id/risultato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:text="0/5"
+            app:layout_constraintBottom_toTopOf="@+id/sblocco_argomento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/punteggio" />
 
-    <Button
+        <TextView
+            android:id="@+id/sblocco_argomento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="42dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:gravity="center"
+            android:text="@string/sblocco_argomento"
+            android:textAllCaps="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/punteggio" />
 
-        android:id="@+id/b_home"
-        android:layout_width="150dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="158dp"
-        android:layout_marginLeft="158dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginRight="159dp"
-        android:text="home"
-        style="@style/Bottone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sblocco_argomento" />
+        <Button
 
-    <Button
-        style="@style/Bottone"
-        android:id="@+id/b_try_again"
-        android:layout_width="150dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="130dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginRight="131dp"
-        android:text="@string/b.riprova"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/b_home" />
+            android:id="@+id/b_home"
+            android:layout_width="150dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="158dp"
+            android:layout_marginLeft="158dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="159dp"
+            android:layout_marginRight="159dp"
+            android:text="home"
+            style="@style/Bottone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sblocco_argomento" />
+
+        <Button
+            style="@style/Bottone"
+            android:id="@+id/b_try_again"
+            android:layout_width="150dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="131dp"
+            android:layout_marginRight="131dp"
+            android:text="@string/b.riprova"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/b_home" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.kotlinlearning.R
+import com.example.kotlinlearning.databinding.CompletamentoQuizBinding
 
 
 /**
@@ -15,13 +18,17 @@ import com.example.kotlinlearning.R
  */
 class CompletamentoQuizFragment : Fragment() {
 
+    lateinit var binding: CompletamentoQuizBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.completamento_quiz, container, false)
+        binding= DataBindingUtil.inflate(inflater,R.layout.completamento_quiz,container,false)
+        binding.bHome.setOnClickListener { view : View -> view.findNavController().navigate(R.id.action_completamentoQuizFragment_to_homeFragment) }
+        binding.bTryAgain.setOnClickListener { view : View -> view.findNavController().navigate(R.id.action_completamentoQuizFragment_to_argomentoFragment) }
+        return binding.root
     }
 
 

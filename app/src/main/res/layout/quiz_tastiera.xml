@@ -1,58 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".view.fragment.QuizTastieraFragment">
 
-    <TextView
-        android:id="@+id/testo_domanda_inserimento"
-        android:layout_width="270dp"
-        android:layout_height="230dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="70dp"
-        android:background="@drawable/contorno_domande"
-        android:gravity="center"
-        android:paddingHorizontal="15dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/risposta_da_tastiera"
-        android:layout_width="230dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="81dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/costum_question_answer_icon"
-        android:drawablePadding="5dp"
-        android:hint="@string/inserimento_risposta"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:singleLine="true"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testo_domanda_inserimento" />
+        <TextView
+            android:id="@+id/testo_domanda_inserimento"
+            android:layout_width="270dp"
+            android:layout_height="230dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/contorno_domande"
+            android:gravity="center"
+            android:paddingHorizontal="15dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/b_conferma"
-        style="@style/Bottone_risposta"
+        <EditText
+            android:id="@+id/risposta_da_tastiera"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="81dp"
+            android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/costum_question_answer_icon"
+            android:drawablePadding="5dp"
+            android:hint="@string/inserimento_risposta"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:singleLine="true"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/testo_domanda_inserimento" />
 
-        android:layout_width="230dp"
-        android:layout_height="60dp"
-        android:text="@string/conferma_risposta"
+        <Button
+            android:id="@+id/b_conferma"
+            style="@style/Bottone_risposta"
+
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:text="@string/conferma_risposta"
 
 
 
-        android:layout_marginTop="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/risposta_da_tastiera" />
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/risposta_da_tastiera" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
