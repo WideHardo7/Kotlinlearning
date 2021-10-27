@@ -21,7 +21,7 @@ import com.example.kotlinlearning.viewmodel.ArgomentoViewModel
 class TeoriaFragment : Fragment() {
 
     private lateinit var binding: TeoriaNoQuizBinding
-    val args:ArgomentoFragmentArgs by navArgs()
+    val args:TeoriaFragmentArgs by navArgs()
     lateinit var argumentviewmodel:ArgomentoViewModel
 
     override fun onCreateView(

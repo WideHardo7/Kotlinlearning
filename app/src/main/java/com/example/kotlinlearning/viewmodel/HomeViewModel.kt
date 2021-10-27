@@ -4,6 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.flow.Flow
 import androidx.lifecycle.viewModelScope
 import com.example.kotlinlearning.database.AppDatabase
@@ -15,13 +16,13 @@ class HomeViewModel( application: Application): AndroidViewModel(application) {
      private val repository:ArgumentRepository
      //val allArgument:LiveData<List<Argument>>
      var listargomenti= listOf<Argument>()
-    val listOfargument:LiveData<List<Argument>>
+    var listOfargument:LiveData<List<Argument>> = MutableLiveData<List<Argument>>()
 
      //var tuttiargomenti: List<Argument> = listOf<Argument>()
      init{
          val argomentoDao= AppDatabase.getInstance(application).argumentDao()
          repository=ArgumentRepository(argomentoDao)
-         listOfargument=repository.readallargument
+         listOfargument= repository.readallargument()
           /*allArgument = liveData<List<Argument>> {
              val argomenti= repository.getAllArgument()
              emit(argomenti)
@@ -30,9 +31,8 @@ class HomeViewModel( application: Application): AndroidViewModel(application) {
          //Argomenti()
 
      }
-    suspend fun getAllArgument(){
-        //tuttiargomenti=repository.getAllArgument()
-        //Log.i("HomeViewmodel","dentro init e dentro a tuttiargomenti:${tuttiargomenti}")
+     fun getAllArgument(): LiveData<List<Argument>>{
+        return listOfargument
     }
 
     fun Argomenti(){

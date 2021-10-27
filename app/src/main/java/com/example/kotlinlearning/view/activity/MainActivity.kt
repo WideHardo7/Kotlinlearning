@@ -2,6 +2,7 @@ package com.example.kotlinlearning.view.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         } else {
 
 
-
+Log.d("MainActivity", "Siamo dentro il mainActivity")
             val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
                 R.layout.activity_main
             )

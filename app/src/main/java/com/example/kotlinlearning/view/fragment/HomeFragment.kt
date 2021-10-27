@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.kotlinlearning.R
+import com.example.kotlinlearning.database.argomenti.Argument
 import com.example.kotlinlearning.databinding.HomeBinding
 import com.example.kotlinlearning.viewmodel.ArgomentoViewModel
 import com.example.kotlinlearning.viewmodel.HomeViewModel
@@ -40,14 +41,19 @@ class HomeFragment : Fragment() {
         binding=DataBindingUtil.inflate(inflater,
             R.layout.home,container,false)
 
+
         //inizializzo il viewmodel del fragment home
                 homeviewmodel= ViewModelProvider(this).get(HomeViewModel::class.java)
         Log.i("homefragment","dopo aver inizializzato il viewmodel home")
 
 //setto un observer per aggiornare la lista "listargomenti" una volta che la query è stata eseguita
-        homeviewmodel.listOfargument.observe(viewLifecycleOwner, Observer { argument ->
+        homeviewmodel.getAllArgument().observe( viewLifecycleOwner, Observer { argument ->
+            Log.i("HomeFragment","Il contenuto della lista argomenti è: ${argument.toString()}")
+            Log.d("HomeFragment","inizio funzione Unlocked Buttone")
+            CheckView(argument)
+            Log.d("HomeFragment","fine funzione Unlocked Buttone")
             homeviewmodel.updateListofArgument(argument)
-            Log.i("HomeFragment","Il contenuto della lista argomenti è:$argument")
+
         })
 
         //inizializzo il viewmodel relativo al fragment argomento,
@@ -59,13 +65,11 @@ class HomeFragment : Fragment() {
             override fun onClick(v: View?) {
                 val argomento=v?.contentDescription.toString()
                 //esegue un safe args che passa l'argomento selezionato dell'utente e una lista di tutti gli elementi contenuti nel database teoria
-                val action= HomeFragmentDirections.actionHomeFragmentToArgomentoFragment(argomento,argomentoviewmodel.allTheory.toTypedArray()/*homeviewmodel.takeArgument(argomento)*/)
+                val action= HomeFragmentDirections.actionHomeFragmentToArgomentoFragment(argomento,argomentoviewmodel.allTheory.toTypedArray())
                 view?.findNavController()?.navigate(action)
             }
         }
-        Log.d("HomeFragment","inizio funzione Unlocked Buttone")
-        CheckView()
-        Log.d("HomeFragment","fine funzione Unlocked Buttone")
+
 
         //Asssociazione listener ai bottoni
         binding.bottoneVariabili.setOnClickListener(listener)
@@ -114,9 +118,9 @@ class HomeFragment : Fragment() {
         }
     }
     //controlla la lista di argomenti e  per ogni elemento che ha il valore .unlocked true o uguale ad 1, ne modifica la visualizzazione del bottone relativo a quell'argomento
-    private fun CheckView(){
+    private fun CheckView(args:List<Argument>){
 
-        for(element in homeviewmodel.listargomenti){
+        for(element in args){
             //argomento.unlocked è un intero che funfe da boolean settando  con 1 true e 0 false
             if(element.unlocked==1)
                 UnlockButton(element.cod_argomento)

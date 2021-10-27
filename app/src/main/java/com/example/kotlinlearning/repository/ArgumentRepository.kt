@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class ArgumentRepository(private val argumentDao:ArgumentDao) {
-    val readallargument:LiveData<List<Argument>> = argumentDao.getAllArgument()
+    fun  readallargument():LiveData<List<Argument>> = argumentDao.getAllArgument()
 
     /*suspend fun getAllArgument():LiveData<List<Argument>>{
         val readAllArgument: LiveData<List<Argument>>
