@@ -8,6 +8,6 @@ import com.example.kotlinlearning.database.argomenti.Argument
 @Dao
 interface DomandeInserimentoDao {
 
-    @Query("SELECT* FROM domande_inserimento WHERE argomento = :argomento"  )
+    @Query("SELECT* FROM domande_inserimento WHERE cod_argomento = :argomento")
     fun getQuestionfromArgument(argomento: String): LiveData<List<DomandeInserimento>>
 }

@@ -5,6 +5,10 @@
     tools:context=".view.fragment.QuizBottoneFragment">
 
     <data>
+        <variable
+            name="domademultiple"
+            type="com.example.kotlinlearning.viewmodel.QuizBottoneViewModel" />
+
 
     </data>
 
@@ -21,7 +25,7 @@
             android:background="@drawable/contorno"
             android:gravity="center"
             android:paddingHorizontal="10dp"
-            android:text="quale banana è a forma di banana in un complesso bananale? :O"
+            android:text="@{domademultiple.domandaAttuale.testo_domanda}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +38,8 @@
             style="@style/Bottone_risposta"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="81dp"
-            android:text="Button_risposta"
+            android:text="@{domademultiple.risposte[0]}"
+            android:contentDescription="risposta1"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +53,8 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="81dp"
-            android:text="Button"
+            android:text="@{domademultiple.risposte[1]}"
+            android:contentDescription="risposta2"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +69,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="81dp"
             android:textAllCaps="false"
-            android:text="Button"
+            android:contentDescription="risposta3"
+            android:text="@{domademultiple.risposte[2]}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/b_risp2" />
@@ -75,8 +82,9 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="81dp"
-            android:text="Button"
+            android:text="@{domademultiple.risposte[3]}"
             android:textAllCaps="false"
+            android:contentDescription="risposta4"
             style="@style/Bottone_risposta"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

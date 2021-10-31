@@ -29,7 +29,7 @@ class ArgomentoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//Associo un layout a questo fragment
+//Associo un layout " argomento" a questo fragment
         binding= DataBindingUtil.inflate(inflater,
             R.layout.argomento,container,false)
 
@@ -37,20 +37,17 @@ class ArgomentoFragment : Fragment() {
 
 //inizializzo Argomentoviewmodel
         argumentviewmodel=ViewModelProvider(this).get(ArgomentoViewModel::class.java)
-        //argumentviewmodel.getTheoryfromArgument(args.nameArgument)
+
         //settare nome argomento
         ChangeNameArguments(args.nameArgument)
 
         //settare il testo della teoria dell'argomento passato
         AddText()
-        binding.argomentoviewmodel=argumentviewmodel
-        binding.lifecycleOwner=this
-
-
-
-
+        //setto il listener sul bottone quiz e gli passo come argomenti, la stringa relativa all'argomento
+        //selezionato e una lista contenente tutte le domande multiple(Si intende le domande a scelta multipla)
         binding.bQuiz.setOnClickListener{  view : View ->
-            view.findNavController().navigate(R.id.action_argomentoFragment_to_quizBottoneFragment) }
+            val action= ArgomentoFragmentDirections.actionArgomentoFragmentToQuizBottoneFragment(args.nameArgument, argumentviewmodel.allMultiQuestion.toTypedArray())
+            view.findNavController().navigate(action) }
 
         return binding.root
         
@@ -66,11 +63,7 @@ class ArgomentoFragment : Fragment() {
                 binding.teoriaQuiz.text=element.testo_teoria
 
         }
-         //val testo=argumentviewmodel.getTheoryfromArgument(args.nameArgument)
-        //binding.teoriaQuiz.text=testo
-
-
-    }
+   }
 
 
 }

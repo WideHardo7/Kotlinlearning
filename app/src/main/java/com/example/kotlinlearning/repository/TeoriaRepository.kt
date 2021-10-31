@@ -12,6 +12,8 @@ class TeoriaRepository(private val teoriaDao:TeoriaDao) {
 
 
 
+//una funzione suspend che esegue l'operazione getTheory() in un thread IO e poi ritorna nel main principale
+// una volta finita l'operazione, restituendo la lisat di oggetti teoria
 
     suspend fun getTheory():List<Teoria> {
         val teoria:List<Teoria>
@@ -19,7 +21,7 @@ class TeoriaRepository(private val teoriaDao:TeoriaDao) {
         withContext(Dispatchers.IO) {
             teoria = teoriaDao.getTheory()
         }
-        Log.i("TeoriaRepository","Dentro getTheory in repository")
+        Log.i("TeoriaRepository","Dentro getTheory in repository, appena finito di eseguire l'operione nel thread IO ")
 
 
             return teoria
@@ -27,14 +29,7 @@ class TeoriaRepository(private val teoriaDao:TeoriaDao) {
     }
 
 
-    suspend fun getTheoryfromArgument(argomento:String):Teoria{
-        val teoria:Teoria
-        withContext(Dispatchers.IO){
-            teoria= teoriaDao.getTheoryfromArgument(argomento)
-        }
 
-         return teoria
-    }
 
 
 

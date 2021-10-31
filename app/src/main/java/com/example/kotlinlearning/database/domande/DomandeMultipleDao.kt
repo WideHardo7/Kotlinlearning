@@ -6,6 +6,6 @@ import com.example.kotlinlearning.database.argomenti.Argument
 
 @Dao
 interface DomandeMultipleDao {
-    @Query("SELECT* FROM domande_multiple WHERE argomento = :argomento"  )
-    fun getQuestionfromArgument(argomento:String):LiveData<List<DomandeMultiple>>
+    @Query("SELECT* FROM domande_multiple "  )
+     suspend fun getQuestion() :List<DomandeMultiple>
 }

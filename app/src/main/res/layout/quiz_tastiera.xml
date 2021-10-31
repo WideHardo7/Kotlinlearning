@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".view.fragment.QuizTastieraFragment">
+    <data>
+        <variable
+            name="domandatastiera"
+            type="com.example.kotlinlearning.viewmodel.QuizTastieraViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +23,7 @@
             android:background="@drawable/contorno_domande"
             android:gravity="center"
             android:paddingHorizontal="15dp"
-            android:text="TextView"
+            android:text="@{domandatastiera.domandaAttuale.testo_domanda}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

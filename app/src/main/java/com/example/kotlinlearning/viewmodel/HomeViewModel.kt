@@ -46,10 +46,10 @@ class HomeViewModel( application: Application): AndroidViewModel(application) {
         this.listargomenti=argomenti
     }
 
-    /*fun getAllArgument()= allArgumentlist.value
+    /*
     //funzione che serve per estrarre un particolare argomento di tipo Argomento,passato come parametro alla funzione, dalla lista di tutti gli argomenti
     fun takeArgument(argomento:String):Argument{
-        lateinit var argomentocorrente:Argument
+         var argomentocorrente:Argument
         for(element in getAllArgument()) {
             if (element.cod_argomento == argomento)
                 argomentocorrente = element

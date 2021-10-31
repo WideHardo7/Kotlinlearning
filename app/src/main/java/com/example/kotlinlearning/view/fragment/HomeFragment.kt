@@ -46,7 +46,8 @@ class HomeFragment : Fragment() {
                 homeviewmodel= ViewModelProvider(this).get(HomeViewModel::class.java)
         Log.i("homefragment","dopo aver inizializzato il viewmodel home")
 
-//setto un observer per aggiornare la lista "listargomenti" una volta che la query è stata eseguita
+       //setto un observer per aggiornare la lista "listargomenti" una volta che la query è stata eseguita
+        // e  prende la lista aggiornata per esegue la funzione CheckView
         homeviewmodel.getAllArgument().observe( viewLifecycleOwner, Observer { argument ->
             Log.i("HomeFragment","Il contenuto della lista argomenti è: ${argument.toString()}")
             Log.d("HomeFragment","inizio funzione Unlocked Buttone")
@@ -56,15 +57,18 @@ class HomeFragment : Fragment() {
 
         })
 
-        //inizializzo il viewmodel relativo al fragment argomento,
+        //inizializzo il viewmodel relativo al fragment argomento,serve per
         val argomentoviewmodel=ViewModelProvider(this).get(ArgomentoViewModel::class.java)
 
 
         //creazione listener
         val listener=object :View.OnClickListener{
             override fun onClick(v: View?) {
+                //prendo il contentDescription di ogni bottone, che contiene il nome dell'argomento
+                // che andranno a trattare
                 val argomento=v?.contentDescription.toString()
-                //esegue un safe args che passa l'argomento selezionato dell'utente e una lista di tutti gli elementi contenuti nel database teoria
+                //esegue un safe args che passa l'argomento selezionato dell'utente e
+                // una lista di tutti gli elementi contenuti nel database teoria
                 val action= HomeFragmentDirections.actionHomeFragmentToArgomentoFragment(argomento,argomentoviewmodel.allTheory.toTypedArray())
                 view?.findNavController()?.navigate(action)
             }
@@ -117,7 +121,9 @@ class HomeFragment : Fragment() {
             setEnabled(true)
         }
     }
-    //controlla la lista di argomenti e  per ogni elemento che ha il valore .unlocked true o uguale ad 1, ne modifica la visualizzazione del bottone relativo a quell'argomento
+    //controlla la lista di argomenti e
+    // per ogni elemento che ha il valore .unlocked true o uguale ad 1,
+    // ne modifica la visualizzazione del bottone relativo a quell'argomento
     private fun CheckView(args:List<Argument>){
 
         for(element in args){

@@ -42,6 +42,15 @@
         <action
             android:id="@+id/action_quizTastieraFragment_to_completamentoQuizFragment"
             app:destination="@id/completamentoQuizFragment" />
+        <argument
+            android:name="nrisposte"
+            app:argType="integer" />
+        <argument
+            android:name="ndomande"
+            app:argType="integer" />
+        <argument
+            android:name="argument"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/quizBottoneFragment"
@@ -51,6 +60,12 @@
         <action
             android:id="@+id/action_quizBottoneFragment_to_quizTastieraFragment"
             app:destination="@id/quizTastieraFragment" />
+        <argument
+            android:name="cod_argomento"
+            app:argType="string" />
+        <argument
+            android:name="listadomandemulti"
+            app:argType="com.example.kotlinlearning.database.domande.DomandeMultiple[]" />
     </fragment>
     <fragment
         android:id="@+id/completamentoQuizFragment"

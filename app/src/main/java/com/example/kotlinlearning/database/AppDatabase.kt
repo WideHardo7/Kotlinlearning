@@ -29,7 +29,8 @@ abstract class AppDatabase:RoomDatabase() {
             )
                 .fallbackToDestructiveMigration()
                 //.allowMainThreadQueries()
-                .createFromAsset("database/teoria.db")
+                .createFromAsset("database/argument.db")
+
                 .build()
                 .also { INSTANCE = it }
 
