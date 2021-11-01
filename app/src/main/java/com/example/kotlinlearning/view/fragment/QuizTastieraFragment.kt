@@ -37,31 +37,31 @@ class QuizTastieraFragment : Fragment() {
         binding= DataBindingUtil.inflate(inflater,R.layout.quiz_tastiera,container,false)
         // inizializzo il viewmodel
         quiztastieraviewmodel= ViewModelProvider(this).get(QuizTastieraViewModel::class.java)
-        //setto l'argomento scelto dall'utente per eseguire una chiamata al database che ritorna domande relative
-        // a quell'argomento
-        quiztastieraviewmodel.setCurrentArgoment(args.argument)
-        //osserva il cambiamentodel livedata e inizializza un semplice mutablelist<DomandeInserimento>
-        quiztastieraviewmodel.domandelivedata.observe(viewLifecycleOwner, Observer { it ->
-            quiztastieraviewmodel.domande = it.toMutableList()
-            Log.d("QuizTastieraFragment", "domanda di inserimento: $it")
 
-
-        })
+        //predo le domande che mi servono, le mischio e le setto
+        quiztastieraviewmodel.selectQuestionfromArgument(args.argument,args.listadomandeinserimento.toList())
         quiztastieraviewmodel.mischiaDomande()
+
         binding.bConferma.setOnClickListener{ view : View ->
+            //controlla se la risposta è giusta e incrementa l'indice delle domande,
+            // come per segnare che un'altra domanda è stata eseguita
             quiztastieraviewmodel.correctAnswer("qualcosa")
             // controlla se il numero delle domande effettuate e minore del numero delle domande imposte,
             // se è vero allora verrà impostata una nuova domanda e verrà fatto il refresh dell'interfaccia grafica,
-            // se è falso, quindi il numero delle domande eseguite è uguale alle domande imposte allora navigo al fragment successivo
+            // se è falso, quindi il numero delle domande eseguite è uguale alle domande imposte, allora navigo al fragment successivo,
+            // passando il numero complessivo delle risposte esatte, di tutte le domande, l'argomento scelto
             if(quiztastieraviewmodel.checkquestionNumber()) {
 
                 quiztastieraviewmodel.setQuestion()
                 binding.invalidateAll()
+
+                Log.d("QuizTastieraFragment","eseguito il refresh del layout ")
             }
             else
                 //val action=
             view.findNavController().navigate(R.id.action_quizTastieraFragment_to_completamentoQuizFragment) }
-         binding.domandatastiera= quiztastieraviewmodel
+
+        binding.domandatastiera= quiztastieraviewmodel
         return binding.root
     }
 

@@ -75,7 +75,8 @@ class QuizBottoneFragment : Fragment() {
 
                     Log.d("QuizBottoneFragment","eseguito il refresh del layout ${nrefresh++} volte")
                 } else{
-                    val action= QuizBottoneFragmentDirections.actionQuizBottoneFragmentToQuizTastieraFragment(quizbottoneviewmodel.nrispcorrette,quizbottoneviewmodel.numerodom,args.codArgomento)
+                    //naviga al fragment successivo, passando un safe args con argomenti, il numero delle domande effettuate
+                    val action= QuizBottoneFragmentDirections.actionQuizBottoneFragmentToQuizTastieraFragment(quizbottoneviewmodel.nrispcorrette,args.codArgomento,quizbottoneviewmodel.allInputQuestion.toTypedArray())
                     view?.findNavController()?.navigate(action)
 
                 }

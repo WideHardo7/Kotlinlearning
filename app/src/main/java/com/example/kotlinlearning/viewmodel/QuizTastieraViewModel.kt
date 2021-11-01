@@ -1,6 +1,7 @@
 package com.example.kotlinlearning.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,47 +13,34 @@ import com.example.kotlinlearning.repository.DomandeInserimentoRepository
 
 class QuizTastieraViewModel(application: Application): AndroidViewModel(application), GestioneDomande {
 
-    val repository: DomandeInserimentoRepository
-    //variabile che contiene una stringa che identifica l'argomento scelto dall'utente
-    // e che viene utilizzato per chiamare una query getInsertQuestionfromArgument
-    private   var currentargument: MutableLiveData<String> = MutableLiveData<String>()
-    fun setCurrentArgoment(argument:String){
-        currentargument.value= argument
-    }
     //Lista di DomandeInserimento che  contiene le domande relative solo a quell'argomento
     var domande: MutableList<DomandeInserimento> = mutableListOf<DomandeInserimento>()
-    set(value){
-        field=value
-    }
+
     //Variabile che contiene la domanda che viene eseguita in questo momento
     lateinit var domandaAttuale: DomandeInserimento
 
-
     // contiene la posizione della domanda scelta e viene utilizzato per avanzare
     private var indiceDomande:Int=0
-    //si è deciso di avere 1 domanda di questo tipo,
-    // ma è possibile modificare il numero per incrementare  il numero di domande da visualizzare,
-    // una volto incrementato il numero di domande nel database
-    val numerodom=1
 
-
+    //numero di domande
+    override val ndomandeinput: Int
+        get() = super.ndomandeinput
 
     //variabile che contiene la risposta della domanda corrente
     var risposte: String = " "
+
     //conta le risposte giuste date dall'utente
     override var nrispcorrette: Int=0
 
-    init {
-        val domandeinserimentodao= AppDatabase.getInstance(application).domandeinserimentoDao()
-        repository= DomandeInserimentoRepository(domandeinserimentodao)
+    //prende tutte le domande e scegli solo quelle relative all'argomento selezionato
+    fun selectQuestionfromArgument(argomento: String,allQuestionm:List<DomandeInserimento>) {
+
+        for(element in allQuestionm){
+            if(element.cod_argomento==argomento)
+                domande.add(element)
+        }
+        Log.d("QuizTastieraViewModel","Le domande sono queste: $domande")
     }
-
-    //livedata che riceve la lista di domandeinserimento ottenute dalla query lanciata
-    val domandelivedata: LiveData<List<DomandeInserimento>> = Transformations.switchMap(currentargument) { argomento -> repository.getInsertQuestionfromArgument(argomento)}
-
-
-
-
 
 
     override fun mischiaDomande() {
@@ -66,9 +54,13 @@ class QuizTastieraViewModel(application: Application): AndroidViewModel(applicat
         risposte=domandaAttuale.risposta_giusta
     }
 
+    //controlla che la risposta inserita dall'utente, corrisponda con la risposta giusta della domanda correlata
+    // e incrementa l'indice delle domande eseguite
      fun correctAnswer(useranswer:String) {
-        if(risposte.equals(useranswer) || risposte.equals(useranswer.capitalize()))
+        if(risposte.equals(useranswer) || risposte.equals(useranswer.capitalize())){
             nrispcorrette++
+        }
+           indiceDomande++
     }
-     override fun checkquestionNumber():Boolean= indiceDomande< numerodom
+     override fun checkquestionNumber():Boolean= indiceDomande< ndomandeinput
 }

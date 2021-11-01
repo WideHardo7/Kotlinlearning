@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.kotlinlearning.view.fragment.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home"
         tools:layout="@layout/home" >
 
         <action
@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/argomentoFragment"
         android:name="com.example.kotlinlearning.view.fragment.ArgomentoFragment"
-        android:label="fragment_argomento"
+        android:label="Argomento"
         tools:layout="@layout/argomento" >
         <action
             android:id="@+id/action_argomentoFragment_to_quizBottoneFragment"
@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/quizTastieraFragment"
         android:name="com.example.kotlinlearning.view.fragment.QuizTastieraFragment"
-        android:label="gfd"
+        android:label="Inserisci la risposta corretta"
         tools:layout="@layout/quiz_tastiera" >
         <action
             android:id="@+id/action_quizTastieraFragment_to_completamentoQuizFragment"
@@ -46,16 +46,16 @@
             android:name="nrisposte"
             app:argType="integer" />
         <argument
-            android:name="ndomande"
-            app:argType="integer" />
-        <argument
             android:name="argument"
             app:argType="string" />
+        <argument
+            android:name="listadomandeinserimento"
+            app:argType="com.example.kotlinlearning.database.domande.DomandeInserimento[]" />
     </fragment>
     <fragment
         android:id="@+id/quizBottoneFragment"
         android:name="com.example.kotlinlearning.view.fragment.QuizBottoneFragment"
-        android:label="fragment_quiz_bottone"
+        android:label="Scegli la risposta corretta"
         tools:layout="@layout/quiz_bottoni" >
         <action
             android:id="@+id/action_quizBottoneFragment_to_quizTastieraFragment"
