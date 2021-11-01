@@ -10,17 +10,13 @@ import kotlinx.coroutines.withContext
 class ArgumentRepository(private val argumentDao:ArgumentDao) {
     fun  readallargument():LiveData<List<Argument>> = argumentDao.getAllArgument()
 
-    /*suspend fun getAllArgument():LiveData<List<Argument>>{
-        val readAllArgument: LiveData<List<Argument>>
-        withContext(Dispatchers.IO){
-            readAllArgument= argumentDao.getAllArgument()
-        }
-        return readAllArgument
+     fun getArgument(argomento:String):LiveData<Argument>{
+        return argumentDao.getArgument(argomento)
 
-    }*/
+    }
 
-    suspend fun updateArgument(argument:Argument){
-        argumentDao.update(argument)
+    suspend fun insertArgument(argument:Argument){
+        argumentDao.insert(argument)
     }
 
 }

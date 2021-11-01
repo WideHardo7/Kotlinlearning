@@ -11,7 +11,7 @@ import com.example.kotlinlearning.database.domande.DomandeInserimento
 import com.example.kotlinlearning.database.domande.DomandeMultiple
 import com.example.kotlinlearning.repository.DomandeInserimentoRepository
 
-class QuizTastieraViewModel(application: Application): AndroidViewModel(application), GestioneDomande {
+class QuizTastieraViewModel(application: Application): AndroidViewModel(application), GestioneDomande,NumeroDomande {
 
     //Lista di DomandeInserimento che  contiene le domande relative solo a quell'argomento
     var domande: MutableList<DomandeInserimento> = mutableListOf<DomandeInserimento>()

@@ -57,9 +57,12 @@ class QuizTastieraFragment : Fragment() {
 
                 Log.d("QuizTastieraFragment","eseguito il refresh del layout ")
             }
-            else
-                //val action=
-            view.findNavController().navigate(R.id.action_quizTastieraFragment_to_completamentoQuizFragment) }
+            else {
+                val totrispostecorrette = args.nrisposte + quiztastieraviewmodel.nrispcorrette
+                val action = QuizTastieraFragmentDirections.actionQuizTastieraFragmentToCompletamentoQuizFragment(totrispostecorrette,args.argument)
+                view.findNavController().navigate(action)
+            }
+        }
 
         binding.domandatastiera= quiztastieraviewmodel
         return binding.root

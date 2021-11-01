@@ -78,6 +78,12 @@
         <action
             android:id="@+id/action_completamentoQuizFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="numerorisposteesatte"
+            app:argType="integer" />
+        <argument
+            android:name="cod_argomento"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/glossaryFragment"

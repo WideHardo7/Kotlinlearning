@@ -75,7 +75,7 @@
             android:layout_height="65dp"
             android:layout_marginStart="158dp"
             android:layout_marginLeft="158dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="110dp"
             android:layout_marginEnd="159dp"
             android:layout_marginRight="159dp"
             android:text="home"
@@ -83,21 +83,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sblocco_argomento" />
-
-        <Button
-            style="@style/Bottone"
-            android:id="@+id/b_try_again"
-            android:layout_width="150dp"
-            android:layout_height="65dp"
-            android:layout_marginStart="130dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="131dp"
-            android:layout_marginRight="131dp"
-            android:text="@string/b.riprova"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/b_home" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

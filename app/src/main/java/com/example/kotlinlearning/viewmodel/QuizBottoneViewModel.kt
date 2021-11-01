@@ -10,7 +10,7 @@ import com.example.kotlinlearning.database.domande.DomandeMultiple
 import com.example.kotlinlearning.repository.DomandeInserimentoRepository
 import kotlinx.coroutines.launch
 
-class QuizBottoneViewModel(application: Application): AndroidViewModel(application), GestioneDomande{
+class QuizBottoneViewModel(application: Application): AndroidViewModel(application), GestioneDomande, NumeroDomande{
 
     //Variabile che contiene le domande relative all'argomento selezionato'
     var domande:MutableList<DomandeMultiple> = mutableListOf<DomandeMultiple>()

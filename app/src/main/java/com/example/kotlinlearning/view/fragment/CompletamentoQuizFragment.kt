@@ -27,7 +27,7 @@ class CompletamentoQuizFragment : Fragment() {
         // Inflate the layout for this fragment
         binding= DataBindingUtil.inflate(inflater,R.layout.completamento_quiz,container,false)
         binding.bHome.setOnClickListener { view : View -> view.findNavController().navigate(R.id.action_completamentoQuizFragment_to_homeFragment) }
-        binding.bTryAgain.setOnClickListener { view : View -> view.findNavController().navigate(R.id.action_completamentoQuizFragment_to_argomentoFragment) }
+
         return binding.root
     }
 
