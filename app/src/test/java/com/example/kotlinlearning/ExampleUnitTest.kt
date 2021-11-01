@@ -15,3 +15,10 @@ class ExampleUnitTest {
         assertEquals(4, 2 + 2)
     }
 }
+
+class Test {
+    @Test
+    fun test(){
+
+    }
+}

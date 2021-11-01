@@ -45,8 +45,7 @@ class QuizTastieraFragment : Fragment() {
         binding.bConferma.setOnClickListener{ view : View ->
             //controlla se la risposta è giusta e incrementa l'indice delle domande,
             // come per segnare che un'altra domanda è stata eseguita
-            quiztastieraviewmodel.correctAnswer(binding.rispostaDaTastiera.toString())
-            Log.d("banana","risposta: ${quiztastieraviewmodel.nrispcorrette} ")
+            quiztastieraviewmodel.correctAnswer(binding.rispostaDaTastiera.text.toString())
             // controlla se il numero delle domande effettuate e minore del numero delle domande imposte,
             // se è vero allora verrà impostata una nuova domanda e verrà fatto il refresh dell'interfaccia grafica,
             // se è falso, quindi il numero delle domande eseguite è uguale alle domande imposte, allora navigo al fragment successivo,
