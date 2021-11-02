@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="38dp"
             android:layout_marginLeft="38dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:text="Nome_Argomento"
             android:textAllCaps="true"
             android:textSize="18sp"
@@ -35,7 +35,7 @@
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
             android:layout_height="520dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:background="@android:drawable/edit_text"
             app:layout_constraintTop_toBottomOf="@+id/quiz_nome_argomento"
             tools:layout_editor_absoluteX="30dp">
