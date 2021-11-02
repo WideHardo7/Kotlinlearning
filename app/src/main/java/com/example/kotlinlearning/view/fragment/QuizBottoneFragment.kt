@@ -43,7 +43,8 @@ class QuizBottoneFragment : Fragment() {
         //inizializzo il viewmodel
         quizbottoneviewmodel=ViewModelProvider(this).get(QuizBottoneViewModel::class.java)
 
-        //predo le domande che mi servono, le mischio e le setto
+
+        //prendo le domande che mi servono, le mischio e le setto
         quizbottoneviewmodel.selectQuestionfromArgument(args.codArgomento, args.listadomandemulti.toList())
         quizbottoneviewmodel.mischiaDomande()
         Log.d("QuizBottoneFragment","Selezionate domande, mischiate e settate nel layout")

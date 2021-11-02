@@ -21,7 +21,7 @@ class TeoriaRepository(private val teoriaDao:TeoriaDao) {
         withContext(Dispatchers.IO) {
             teoria = teoriaDao.getTheory()
         }
-        Log.i("TeoriaRepository","Dentro getTheory in repository, appena finito di eseguire l'operione nel thread IO ")
+        Log.i("TeoriaRepository","Dentro getTheory in repository, appena finito di eseguire l'operione getTheory() nel thread IO ")
 
 
             return teoria

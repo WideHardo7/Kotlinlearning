@@ -8,11 +8,18 @@ import kotlinx.coroutines.flow.Flow
 interface ArgumentDao {
 
     @Insert(onConflict =  OnConflictStrategy.REPLACE )
-    suspend fun insert(argomento:Argument)
+    suspend fun insertArgument(argomento:Argument)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertMoreArgument(vararg argomenti: Argument)
+
 
     @Query("SELECT * FROM argument ORDER BY indice ASC")
       fun getAllArgument(): LiveData<List<Argument>>
 
+    @Query("SELECT * FROM argument ORDER BY indice ASC")
+     suspend fun getAllArgumentwithCouroutine(): List<Argument>
+
     @Query("SELECT * FROM argument WHERE cod_argomento = :argomento")
-     fun getArgument(argomento:String):LiveData<Argument>
+      fun getArgument(argomento:String):LiveData<Argument>
 }

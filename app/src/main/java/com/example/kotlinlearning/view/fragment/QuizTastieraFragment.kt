@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -26,6 +27,7 @@ class QuizTastieraFragment : Fragment() {
     lateinit var binding: QuizTastieraBinding
     val args:QuizTastieraFragmentArgs by navArgs()
     lateinit var  quiztastieraviewmodel: QuizTastieraViewModel
+    var answeruser:String= ""
 
 
     override fun onCreateView(
@@ -38,30 +40,46 @@ class QuizTastieraFragment : Fragment() {
         // inizializzo il viewmodel
         quiztastieraviewmodel= ViewModelProvider(this).get(QuizTastieraViewModel::class.java)
 
+
         //predo le domande che mi servono, le mischio e le setto
         quiztastieraviewmodel.selectQuestionfromArgument(args.argument,args.listadomandeinserimento.toList())
         quiztastieraviewmodel.mischiaDomande()
 
+
+
         binding.bConferma.setOnClickListener{ view : View ->
-            //controlla se la risposta è giusta e incrementa l'indice delle domande,
-            // come per segnare che un'altra domanda è stata eseguita
-            quiztastieraviewmodel.correctAnswer(binding.rispostaDaTastiera.toString())
-            Log.d("banana","risposta: ${quiztastieraviewmodel.nrispcorrette} ")
-            // controlla se il numero delle domande effettuate e minore del numero delle domande imposte,
-            // se è vero allora verrà impostata una nuova domanda e verrà fatto il refresh dell'interfaccia grafica,
-            // se è falso, quindi il numero delle domande eseguite è uguale alle domande imposte, allora navigo al fragment successivo,
-            // passando il numero complessivo delle risposte esatte, di tutte le domande, l'argomento scelto
-            if(quiztastieraviewmodel.checkquestionNumber()) {
+            answeruser=binding.rispostaDaTastiera.text.toString()
 
-                quiztastieraviewmodel.setQuestion()
-                binding.invalidateAll()
+            if (!answeruser.isEmpty()) {
+                //controlla se la risposta è giusta e incrementa l'indice delle domande,
+                // come per segnare che un'altra domanda è stata eseguita
+                quiztastieraviewmodel.correctAnswer(answeruser)
+                Log.d(
+                    "QuizTastieraFragment",
+                    " la risposta data è corretta? : ${quiztastieraviewmodel.nrispcorrette}"
+                )
+                // controlla se il numero delle domande effettuate e minore del numero delle domande imposte,
+                // se è vero allora verrà impostata una nuova domanda e verrà fatto il refresh dell'interfaccia grafica,
+                // se è falso, quindi il numero delle domande eseguite è uguale alle domande imposte, allora navigo al fragment successivo,
+                // passando il numero complessivo delle risposte esatte, di tutte le domande, l'argomento scelto
+                if (quiztastieraviewmodel.checkquestionNumber()) {
 
-                Log.d("QuizTastieraFragment","eseguito il refresh del layout ")
+                    quiztastieraviewmodel.setQuestion()
+                    binding.invalidateAll()
+
+                    Log.d("QuizTastieraFragment", "eseguito il refresh del layout ")
+                } else {
+                    var totrispostecorrette = args.nrisposte + quiztastieraviewmodel.nrispcorrette
+                    val action =
+                        QuizTastieraFragmentDirections.actionQuizTastieraFragmentToCompletamentoQuizFragment(
+                            totrispostecorrette,
+                            args.argument
+                        )
+                    view.findNavController().navigate(action)
+                }
             }
-            else {
-                val totrispostecorrette = args.nrisposte + quiztastieraviewmodel.nrispcorrette
-                val action = QuizTastieraFragmentDirections.actionQuizTastieraFragmentToCompletamentoQuizFragment(totrispostecorrette,args.argument)
-                view.findNavController().navigate(action)
+            else{
+                Toast.makeText(requireContext(),"Inserisci la risposta prima di confermare",Toast.LENGTH_LONG).show()
             }
         }
 

@@ -66,7 +66,7 @@ class QuizBottoneViewModel(application: Application): AndroidViewModel(applicati
     // e incrementa l'indice delle domande eseguite correttamente e l'indice delle domande effettuate
     fun correctAnswer(indexanswer: Int) {
 
-        if (domandaAttuale.risposta_giusta.equals(risposte[indiceDomande])) {
+        if (domandaAttuale.risposta_giusta==risposte[indexanswer]) {
             nrispcorrette++
         }
         indiceDomande++

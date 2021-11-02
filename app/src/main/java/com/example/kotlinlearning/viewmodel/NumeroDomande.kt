@@ -12,6 +12,6 @@ interface NumeroDomande {
     val ndomandeinput
         get()=1
 
-    val domandetot:Int
+    val ndomandetot:Int
         get()=ndomandemulti+ndomandeinput
 }

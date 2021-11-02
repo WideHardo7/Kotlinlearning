@@ -23,12 +23,7 @@ class HomeViewModel( application: Application): AndroidViewModel(application) {
          val argomentoDao= AppDatabase.getInstance(application).argumentDao()
          repository=ArgumentRepository(argomentoDao)
          listOfargument= repository.readallargument()
-          /*allArgument = liveData<List<Argument>> {
-             val argomenti= repository.getAllArgument()
-             emit(argomenti)
-         }*/
-         //Log.i("HomeViewmodel","dentro init e dentro a allArgument:${allArgument.getValue()}")
-         //Argomenti()
+
 
      }
      fun getAllArgument(): LiveData<List<Argument>>{
