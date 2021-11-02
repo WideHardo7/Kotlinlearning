@@ -53,7 +53,7 @@ class HomeFragment : Fragment() {
             Log.d("HomeFragment","inizio funzione Unlocked Buttone")
             CheckView(argument)
             Log.d("HomeFragment","fine funzione Unlocked Buttone")
-            homeviewmodel.updateListofArgument(argument)
+            //homeviewmodel.updateListofArgument(argument)
 
         })
 

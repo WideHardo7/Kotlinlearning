@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel( application: Application): AndroidViewModel(application) {
      private val repository:ArgumentRepository
-     //val allArgument:LiveData<List<Argument>>
+
      var listargomenti= listOf<Argument>()
     var listOfargument:LiveData<List<Argument>> = MutableLiveData<List<Argument>>()
 
@@ -41,16 +41,6 @@ class HomeViewModel( application: Application): AndroidViewModel(application) {
         this.listargomenti=argomenti
     }
 
-    /*
-    //funzione che serve per estrarre un particolare argomento di tipo Argomento,passato come parametro alla funzione, dalla lista di tutti gli argomenti
-    fun takeArgument(argomento:String):Argument{
-         var argomentocorrente:Argument
-        for(element in getAllArgument()) {
-            if (element.cod_argomento == argomento)
-                argomentocorrente = element
-        }
-        return argomentocorrente
 
-        }*/
 
     }
