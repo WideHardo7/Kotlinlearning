@@ -14,6 +14,7 @@ import androidx.test.espresso.contrib.DrawerActions
 import androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu
 import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions
 import com.example.kotlinlearning.view.fragment.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -48,6 +49,15 @@ class MainButtonsTest {
     fun testBottoneVar() {
         onView(withId(R.id.bottone_variabili)).perform(click())
         onView(withId(R.id.quiz_nome_argomento)).check(matches(isDisplayed()))
+        onView(withId(R.id.b_quiz)).perform(click())
+        for(i in 0..3){
+            onView(withId(R.id.b_risp1)).perform(click())
+        }
+        onView(withId(R.id.risposta_da_tastiera)).perform(typeText("var"))
+        onView(withId(R.id.b_conferma)).perform(click())
+        onView(withId(R.id.immagine_punteggio)).check(matches(isDisplayed()))
+        onView(withId(R.id.b_home)).perform(click())
+        onView(withId(R.id.bottone_variabili)).check(matches(isDisplayed()))
     }
     @Test
     fun testBottoneFun(){

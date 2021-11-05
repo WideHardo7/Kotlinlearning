@@ -12,7 +12,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 
-class QuizTastieraViewModelTest {
+class UnitTest {
 
 
     private lateinit var quizTastieraViewModel: QuizTastieraViewModel
@@ -31,5 +31,9 @@ class QuizTastieraViewModelTest {
         var output= quizTastieraViewModel.nrispcorrette
         assertEquals(expected,output)
     }
+
+}
+
+class UnitTest2 {
 
 }
