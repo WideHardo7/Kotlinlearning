@@ -1,5 +1,6 @@
 package com.example.kotlinlearning.view.fragment
 
+import android.os.Binder
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -37,6 +38,8 @@ class ArgomentoFragment : Fragment() {
 
 //inizializzo Argomentoviewmodel
         argumentviewmodel=ViewModelProvider(this).get(ArgomentoViewModel::class.java)
+        Log.i("ArgomentoFragment","Dentro ArgomentoFragment, dopo aver inizializzato il viewmodel home, numero processo:${Binder.getCallingPid()}")
+
 
         //settare nome argomento
         ChangeNameArguments(args.nameArgument)

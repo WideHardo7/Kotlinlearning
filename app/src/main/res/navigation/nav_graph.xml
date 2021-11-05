@@ -84,6 +84,9 @@
         <argument
             android:name="cod_argomento"
             app:argType="string" />
+        <argument
+            android:name="listargomenti"
+            app:argType="com.example.kotlinlearning.database.argomenti.Argument[]" />
     </fragment>
     <fragment
         android:id="@+id/glossaryFragment"

@@ -1,5 +1,6 @@
 package com.example.kotlinlearning.view.fragment
 
+import android.os.Binder
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -39,6 +40,7 @@ class QuizTastieraFragment : Fragment() {
         binding= DataBindingUtil.inflate(inflater,R.layout.quiz_tastiera,container,false)
         // inizializzo il viewmodel
         quiztastieraviewmodel= ViewModelProvider(this).get(QuizTastieraViewModel::class.java)
+        Log.i("QuizTastieraFragment","Dentro QuizTastieraFragment, dopo aver inizializzato il viewmodel home, numero processo:${Binder.getCallingPid()}")
 
 
         //predo le domande che mi servono, le mischio e le setto
@@ -73,7 +75,7 @@ class QuizTastieraFragment : Fragment() {
                     val action =
                         QuizTastieraFragmentDirections.actionQuizTastieraFragmentToCompletamentoQuizFragment(
                             totrispostecorrette,
-                            args.argument
+                            args.argument,quiztastieraviewmodel.listadiargomenti.toTypedArray()
                         )
                     view.findNavController().navigate(action)
                 }

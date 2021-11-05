@@ -18,23 +18,34 @@ import kotlinx.coroutines.launch
  public class ArgomentoViewModel( application: Application):AndroidViewModel(application) {
 
 
-    private val repository:TeoriaRepository
+     private val repository:TeoriaRepository
+
+     //lista di oggetti teoria che uso per inizializzare la textview del fragment successivo (ArgomentoFragment)
      var allTheory= listOf<Teoria>()
+
      private val repository1: DomandeMultipleRepository
+
+     //Lista di oggetti domandeMultiple che passo al fragment successivo (QuizDomandeMultiple)
      var allMultiQuestion= listOf<DomandeMultiple>()
 
 
     init{
+
         //prendo un istanza del database riguardante la tabella Teoria e ci inizializzo la relativa repository
         val teoriaDao= AppDatabase.getInstance(application).teoriaDao()
+
         repository= TeoriaRepository(teoriaDao)
+
         //prendo un istanza del database riguardante la tabella DomandeMultiple e ci inizializzo la relativa repository
         //ho necessità di inizializzare qui la lista di domande per avere il tempo necessario di eseguire e
         // completare la query per poi visualizzarla a video nel fragment successivo
         val domandemultidao= AppDatabase.getInstance(application).domandemultipleDao()
+
         repository1= DomandeMultipleRepository(domandemultidao)
+
         //Inizializzo la variabile allTheory
         Teoria()
+
         //Inizializzo la variabile allMultiQuestion
         domandeMulti()
     }

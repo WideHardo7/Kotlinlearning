@@ -7,5 +7,8 @@ import com.example.kotlinlearning.database.argomenti.Argument
 @Dao
 interface DomandeMultipleDao {
     @Query("SELECT* FROM domande_multiple "  )
-     suspend fun getQuestion() :List<DomandeMultiple>
+     suspend fun getAllQuestion() :List<DomandeMultiple>
+
+     @Query("SELECT* FROM domande_multiple "  )
+    fun getAllQuestionLiveData() :LiveData<List<DomandeMultiple>>
 }

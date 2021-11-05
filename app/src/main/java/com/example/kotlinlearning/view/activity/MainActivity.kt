@@ -1,6 +1,7 @@
 package com.example.kotlinlearning.view.activity
 
 import android.content.Intent
+import android.os.Binder.getCallingPid
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -42,14 +43,17 @@ class MainActivity : AppCompatActivity() {
 
             var intent = Intent(this, MainActivity2::class.java)
 
+            sharedTime.edit().putBoolean("firstTime",false).apply()
+
             startActivity(intent)
 
-            sharedTime.edit().putBoolean("firstTime",false).apply()
+
 
         } else {
 
 
-Log.d("MainActivity", "Siamo dentro il mainActivity")
+
+Log.d("MainActivity", "Siamo dentro il mainActivity, ${getCallingPid()}")
             val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,
                 R.layout.activity_main
             )

@@ -15,28 +15,38 @@ import kotlinx.coroutines.launch
 class CompletamentoQuizViewModel(application: Application): AndroidViewModel(application), NumeroDomande {
 
     val repository: ArgumentRepository
+    var controllochiamatealdatabase:Boolean= true
 
     //numero di domande totali proposte all'utente
     override val ndomandetot: Int
         get() = super.ndomandetot
     //lista di tutti gli oggetti argument presenti nel database
-    var listadiargomenti: List<Argument> = listOf<Argument>()
+    /*var listadiargomenti: MutableList<Argument> = mutableListOf<Argument>()
+        set(values) {
+        field=values
+    }*/
+    //var listOfargument:LiveData<List<Argument>> = MutableLiveData<List<Argument>>()
+
 
 
 
     init {
         val argumentdao = AppDatabase.getInstance(application).argumentDao()
         repository = ArgumentRepository(argumentdao)
-        viewModelScope.launch {
+        /*viewModelScope.launch {
             getTuttiArgomenti()
-        }
+        }*/
+        //listOfargument=repository.readallargument()
 
     }
+    /*fun getAllArgument(): LiveData<List<Argument>>{
+        return listOfargument
+    }*/
 
-   suspend fun getTuttiArgomenti() {
+   /*suspend fun getTuttiArgomenti() {
        listadiargomenti=repository.getAllArgumentwithCoroutine()
        Log.d("CompletamentViewModel","La lista di oggetti argument è stata estratta con successo, eccola :$listadiargomenti")
-    }
+    }*/
 
     //query che aggiorna l'oggetto Argument relativo nel database
     fun insertArgument(argomento: Argument) {
@@ -62,6 +72,7 @@ class CompletamentoQuizViewModel(application: Application): AndroidViewModel(app
         )
      //Funzione che aggiorna il database se si verificano determinate condizioni
     fun insertNewValue(nrisp: Int, argomento: Argument, argomenti: List<Argument>) {
+         controllochiamatealdatabase=false
 
         //oggetto che viene inizializzo con gli stessi valori dell'argomento corrente passato,come id e cod_argomento
         // per poterlo sostituire; ma poi viene eventualmente modificato in score, per inserire il nuovo  punteggio

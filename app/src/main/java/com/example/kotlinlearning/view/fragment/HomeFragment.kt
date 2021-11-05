@@ -1,5 +1,6 @@
 package com.example.kotlinlearning.view.fragment
 
+import android.os.Binder.getCallingPid
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -44,15 +45,15 @@ class HomeFragment : Fragment() {
 
         //inizializzo il viewmodel del fragment home
                 homeviewmodel= ViewModelProvider(this).get(HomeViewModel::class.java)
-        Log.i("homefragment","dopo aver inizializzato il viewmodel home")
+        Log.i("HomeFragment","Dentro HomeFragment, dopo aver inizializzato il viewmodel home, numero processo:${getCallingPid()}")
 
        //setto un observer per aggiornare la lista "listargomenti" una volta che la query è stata eseguita
         // e  prende la lista aggiornata per esegue la funzione CheckView
         homeviewmodel.getAllArgument().observe( viewLifecycleOwner, Observer { argument ->
             Log.i("HomeFragment","Il contenuto della lista argomenti è: ${argument.toString()}")
-            Log.d("HomeFragment","inizio funzione Unlocked Buttone")
+
             CheckView(argument)
-            Log.d("HomeFragment","fine funzione Unlocked Buttone")
+            Log.i("HomeFragment","Completato il settaggio del layout grafico")
             //homeviewmodel.updateListofArgument(argument)
 
         })
@@ -98,7 +99,7 @@ class HomeFragment : Fragment() {
 
     //in base all'argomento passato, modifica il relativo bottone
     private fun UnlockButton(argomento:String){
-        Log.d("HomeFragment","entro funzione Unlocked Buttone")
+
         when(argomento){
             "Stringhe" -> EnableButton(binding.bottoneStringhe)
             "Condizioni e Cicli" -> EnableButton(binding.bottoneCicli)
@@ -113,7 +114,7 @@ class HomeFragment : Fragment() {
     }
     //Cambia il colore del bottone e abilita il click del bottone
     private fun EnableButton(v: View){
-        Log.d("HomeFragment","entro funzione Enable Button")
+        Log.i("HomeFragment","Ho sbloccato il bottone $v")
         v.apply{
 
             //setBackgroundColor(getContext().getResources().getColor(R.color.secondaryColor))

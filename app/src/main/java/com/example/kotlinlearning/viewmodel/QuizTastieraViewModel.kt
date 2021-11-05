@@ -2,14 +2,14 @@ package com.example.kotlinlearning.viewmodel
 
 import android.app.Application
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
+import androidx.lifecycle.*
 import com.example.kotlinlearning.database.AppDatabase
+import com.example.kotlinlearning.database.argomenti.Argument
 import com.example.kotlinlearning.database.domande.DomandeInserimento
 import com.example.kotlinlearning.database.domande.DomandeMultiple
+import com.example.kotlinlearning.repository.ArgumentRepository
 import com.example.kotlinlearning.repository.DomandeInserimentoRepository
+import kotlinx.coroutines.launch
 
 class QuizTastieraViewModel(application: Application): AndroidViewModel(application), GestioneDomande,NumeroDomande {
 
@@ -20,7 +20,7 @@ class QuizTastieraViewModel(application: Application): AndroidViewModel(applicat
     lateinit var domandaAttuale: DomandeInserimento
 
     // contiene la posizione della domanda scelta e viene utilizzato per avanzare
-    private var indiceDomande:Int=0
+    private var indiceDomande: Int = 0
 
     //numero di domande
     override val ndomandeinput: Int
@@ -30,37 +30,59 @@ class QuizTastieraViewModel(application: Application): AndroidViewModel(applicat
     var risposte: String = " "
 
     //conta le risposte giuste date dall'utente
-    override var nrispcorrette: Int=0
+    override var nrispcorrette: Int = 0
 
-    //prende tutte le domande e scegli solo quelle relative all'argomento selezionato
-    fun selectQuestionfromArgument(argomento: String,allQuestionm:List<DomandeInserimento>) {
+    val repository: ArgumentRepository
 
-        for(element in allQuestionm){
-            if(element.cod_argomento==argomento)
-                domande.add(element)
+    //Lista di oggetti argument che passo al Fragment CompletamentoQuiz
+    var listadiargomenti: List<Argument> = mutableListOf<Argument>()
+
+    init {
+        val argumentsDao = AppDatabase.getInstance(application).argumentDao()
+        repository = ArgumentRepository(argumentsDao)
+        viewModelScope.launch {
+            getTuttiArgomenti()
         }
-        Log.d("QuizTastieraViewModel","Le domande sono queste: $domande")
     }
 
-
-    override fun mischiaDomande() {
-        domande.shuffle()
-        indiceDomande=0
-        setQuestion()
+    suspend fun getTuttiArgomenti() {
+        listadiargomenti = repository.getAllArgumentwithCoroutine()
+        Log.d(
+            "CompletamentViewModel",
+            "La lista di oggetti argument è stata estratta con successo, eccola :$listadiargomenti"
+        )
     }
 
-    override fun setQuestion() {
-        domandaAttuale= domande[indiceDomande]
-        risposte=domandaAttuale.risposta_giusta
-    }
+        //prende tutte le domande e scegli solo quelle relative all'argomento selezionato
+        fun selectQuestionfromArgument(argomento: String, allQuestionm: List<DomandeInserimento>) {
 
-    //controlla che la risposta inserita dall'utente, corrisponda con la risposta giusta della domanda correlata
-    // e incrementa l'indice delle domande eseguite
-     fun correctAnswer(useranswer:String) {
-        if(risposte.equals(useranswer) || risposte.equals(useranswer.capitalize())){
-            nrispcorrette++
+            for (element in allQuestionm) {
+                if (element.cod_argomento == argomento)
+                    domande.add(element)
+            }
+            Log.d("QuizTastieraViewModel", "Le domande sono queste: $domande")
         }
-           indiceDomande++
-    }
-     override fun checkquestionNumber():Boolean= indiceDomande< ndomandeinput
+
+
+        override fun mischiaDomande() {
+            domande.shuffle()
+            indiceDomande = 0
+            setQuestion()
+        }
+
+        override fun setQuestion() {
+            domandaAttuale = domande[indiceDomande]
+            risposte = domandaAttuale.risposta_giusta
+        }
+
+        //controlla che la risposta inserita dall'utente, corrisponda con la risposta giusta della domanda correlata
+        // e incrementa l'indice delle domande eseguite
+        fun correctAnswer(useranswer: String) {
+            if (risposte.equals(useranswer) || risposte.equals(useranswer.capitalize())) {
+                nrispcorrette++
+            }
+            indiceDomande++
+        }
+
+        override fun checkquestionNumber(): Boolean = indiceDomande < ndomandeinput
 }

@@ -1,5 +1,6 @@
 package com.example.kotlinlearning.view.fragment
 
+import android.os.Binder
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -42,6 +43,8 @@ class QuizBottoneFragment : Fragment() {
 
         //inizializzo il viewmodel
         quizbottoneviewmodel=ViewModelProvider(this).get(QuizBottoneViewModel::class.java)
+
+        Log.i("QuizBottoneFragment","Dentro QuizBottoneFragment, dopo aver inizializzato il viewmodel home, numero processo:${Binder.getCallingPid()}")
 
 
         //prendo le domande che mi servono, le mischio e le setto

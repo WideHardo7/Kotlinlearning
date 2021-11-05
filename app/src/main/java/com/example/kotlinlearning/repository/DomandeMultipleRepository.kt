@@ -1,9 +1,10 @@
 package com.example.kotlinlearning.repository
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import com.example.kotlinlearning.database.argomenti.Argument
 import com.example.kotlinlearning.database.domande.DomandeMultiple
 import com.example.kotlinlearning.database.domande.DomandeMultipleDao
-import com.example.kotlinlearning.database.teoria.Teoria
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 //viene utilizzata in QuizBottoneViewmodel
@@ -13,7 +14,7 @@ class DomandeMultipleRepository(private val domandemultipleDao: DomandeMultipleD
          val domandeMultiple:List<DomandeMultiple>
 
          withContext(Dispatchers.IO) {
-             domandeMultiple = domandemultipleDao.getQuestion()
+             domandeMultiple = domandemultipleDao.getAllQuestion()
          }
          Log.i("DomandeMultiRepository","Dentro  metodo getMultipleQuestion in repository, appena finito di eseguire l'operione nel thread IO ")
 
@@ -21,4 +22,5 @@ class DomandeMultipleRepository(private val domandemultipleDao: DomandeMultipleD
          return domandeMultiple
 
     }
+    fun  readAllMultipleQuestion(): LiveData<List<DomandeMultiple>> = domandemultipleDao.getAllQuestionLiveData()
 }

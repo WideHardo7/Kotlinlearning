@@ -36,9 +36,21 @@ class CompletamentoQuizFragment : Fragment() {
 
         completamentoQuizViewModel= ViewModelProvider(this).get(CompletamentoQuizViewModel::class.java)
 
+        /*completamentoQuizViewModel.getAllArgument().observe(viewLifecycleOwner, Observer { listadiargomenti ->
+            Log.d("CompletamentFragment","La lista di oggetti argument è stata estratta con successo, eccola :$listadiargomenti")
+
+                completamentoQuizViewModel.listadiargomenti=listadiargomenti.toMutableList()
+
+
+
+        })*/
+
         completamentoQuizViewModel.getArgumentbyNameArgument(args1.codArgomento).observe(viewLifecycleOwner, Observer { it->
+
             Log.i("CompletamentQuizFrgment","L'argomento passato è: $it")
-            completamentoQuizViewModel.insertNewValue(args1.numerorisposteesatte,it,completamentoQuizViewModel.listadiargomenti)
+            //effettuo l'operzione se e solo se la funzione insertNewValue non é stata ancora eseguita
+            if(completamentoQuizViewModel.controllochiamatealdatabase)
+            completamentoQuizViewModel.insertNewValue(args1.numerorisposteesatte,it,args1.listargomenti.toList())
 
             })
         setLayout()
