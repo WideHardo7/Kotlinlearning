@@ -38,6 +38,7 @@ class QuizTastieraFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding= DataBindingUtil.inflate(inflater,R.layout.quiz_tastiera,container,false)
+
         // inizializzo il viewmodel
         quiztastieraviewmodel= ViewModelProvider(this).get(QuizTastieraViewModel::class.java)
         Log.i("QuizTastieraFragment","Dentro QuizTastieraFragment, dopo aver inizializzato il viewmodel home, numero processo:${Binder.getCallingPid()}")
