@@ -87,11 +87,13 @@ class QuizBottoneFragment : Fragment() {
             }
         }
 
-        binding.domademultiple = quizbottoneviewmodel
+        //Associo ai bottoni il listener sopra creato
         binding.bRisp1.setOnClickListener(listener)
         binding.bRisp2.setOnClickListener(listener)
         binding.bRisp3.setOnClickListener(listener)
         binding.bRisp4.setOnClickListener(listener)
+        //associo la variabile di layout al viewmodel relativo a questo fragment
+        binding.domademultiple = quizbottoneviewmodel
         val callback= requireActivity().onBackPressedDispatcher.addCallback(this){}
         callback.remove()
         return binding.root

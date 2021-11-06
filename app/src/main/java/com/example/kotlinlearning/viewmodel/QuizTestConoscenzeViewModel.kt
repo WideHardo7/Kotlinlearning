@@ -1,6 +1,7 @@
 package com.example.kotlinlearning.viewmodel
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,11 +10,24 @@ import com.example.kotlinlearning.database.argomenti.Argument
 import com.example.kotlinlearning.database.domande.DomandeMultiple
 import com.example.kotlinlearning.repository.DomandeMultipleRepository
 
-class QuizTestConoscenzeViewModel(application: Application): AndroidViewModel(application), GestioneDomande {
-    override var nrispcorrette: Int=0
-    val repository:DomandeMultipleRepository
-    var listadidomandemultiple: LiveData<List<DomandeMultiple>> = MutableLiveData<List<DomandeMultiple>>()
+class QuizTestConoscenzeViewModel(application: Application): AndroidViewModel(application), GestioneDomande,NumeroDomande {
+
+    //val repository:DomandeMultipleRepository
+
+
+
+    //lista di domande selezionate per eseguire il test delle conoscenze
     var domande:MutableList<DomandeMultiple> = mutableListOf<DomandeMultiple>()
+    set(value) {
+        field=value
+    }
+
+    //Numero di risposte corrette
+    override var nrispcorrette: Int=0
+
+    //numero totale delle domande del test conoscenze
+    override val numerodomandetestconoscenze: Int
+        get() = super.numerodomandetestconoscenze
 
     //Variabile che contiene la domanda che viene eseguita in questo momento
     lateinit var domandaAttuale:DomandeMultiple
@@ -22,48 +36,46 @@ class QuizTestConoscenzeViewModel(application: Application): AndroidViewModel(ap
     var  risposte: MutableList<String> = mutableListOf<String>()
 
     // contiene la posizione della domanda scelta e viene utilizzato per avanzare
-    private var indiceDomande:Int=0
+     var indiceDomande:Int=0
 
-    val namearguments:List<String> = listOf("Variabili","Stringhe","Condizioni e Cicli","Funzioni","Null-Safety","Array e Collection","Classi","Ereditarietà","Lambda Functions")
 
     init{
-        val domandemultipleDao= AppDatabase.getInstance(application).domandemultipleDao()
-        repository= DomandeMultipleRepository(domandemultipleDao)
-        listadidomandemultiple=repository.readAllMultipleQuestion()
+
     }
 
-    fun getAllMulltipleQuestion(): LiveData<List<DomandeMultiple>>{
-        return listadidomandemultiple
-    }
 
-    fun selectQuestionfromArgument(dom:MutableList<DomandeMultiple>){
-        dom.shuffle()
-        for(e in namearguments){
-            var n:  Int=0
-            for(element in dom){
-                if(element.cod_argomento== e && n < 2) {
-                    domande.add(element)
-                    n++
-                }
-                }
-
-
-            }
-        }
-
-
-
-
-
+    //mischia le domande e setta inidice a zero, in modo che verra sceltà
+    // la domanda che si trova ora in posizione [0]
     override fun mischiaDomande() {
-        TODO("Not yet implemented")
+        domande.shuffle()
+        indiceDomande=0
+        setQuestion()
     }
 
+    //inizializza la domanda corrente e le sue relative risposte
     override fun setQuestion() {
-        TODO("Not yet implemented")
+        domandaAttuale= domande[indiceDomande]
+        risposte.apply {
+            clear()
+            add(domandaAttuale.risposta_1)
+            add(domandaAttuale.risposta_2)
+            add(domandaAttuale.risposta_3)
+            add(domandaAttuale.risposta_giusta)
+            shuffle()
+        }
+        Log.d("QuizTestConoscViewmodel","Queste sono le risposte della domanda :${domandaAttuale.testo_domanda}, $risposte")
+
+    }
+    //controlla che la risposta premuta dall'utente, corrisponda con la risposta giusta della domanda correlata
+    // e incrementa l'indice delle domande eseguite correttamente e l'indice delle domande effettuate
+    fun correctAnswer(indexanswer: Int) {
+
+        if (domandaAttuale.risposta_giusta==risposte[indexanswer]) {
+            nrispcorrette++
+        }
+        indiceDomande++
     }
 
-    override fun checkquestionNumber(): Boolean {
-        TODO("Not yet implemented")
-    }
+    //Controlla se le domande eseguite eccedono o no il numero di domande prestabilite.
+    override fun checkquestionNumber():Boolean= indiceDomande< domande.size
 }

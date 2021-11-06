@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_quizTestConoscenze_to_testConoscenzeValutazioneFragment"
             app:destination="@id/testConoscenzeValutazioneFragment" />
+        <argument
+            android:name="listadomandetest"
+            app:argType="com.example.kotlinlearning.database.domande.DomandeMultiple[]" />
     </fragment>
     <fragment
         android:id="@+id/testConoscenzeValutazioneFragment"

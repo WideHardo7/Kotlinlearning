@@ -5,6 +5,9 @@
     tools:context=".view.fragment.TestConoscenzeValutazioneFragment">
 
     <data>
+        <variable
+            name="domandetest"
+            type="com.example.kotlinlearning.viewmodel.QuizTestConoscenzeViewModel" />
 
     </data>
 
@@ -21,6 +24,8 @@
             android:layout_marginBottom="30dp"
             android:progressTint="@color/secondaryColor"
             android:scaleY="2"
+            android:max="@{domandetest.numerodomandetestconoscenze}"
+            android:progress="@{domandetest.indiceDomande+1}"
             app:layout_constraintBottom_toTopOf="@+id/testo_domanda_conoscenze"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -33,7 +38,7 @@
             android:background="@drawable/contorno"
             android:gravity="center"
             android:paddingHorizontal="10dp"
-            android:text="quale banana è a forma di banana in un complesso bananale? :O"
+            android:text="@{domandetest.domandaAttuale.testo_domanda}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -46,7 +51,9 @@
             style="@style/Bottone_risposta"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="81dp"
-            android:text="Button"
+            android:text="@{domandetest.risposte[0]}"
+            android:contentDescription="risposta1"
+            android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/testo_domanda_conoscenze" />
@@ -59,7 +66,9 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="81dp"
-            android:text="Button"
+            android:text="@{domandetest.risposte[1]}"
+            android:contentDescription="risposta2"
+            android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tc_risp1" />
@@ -72,7 +81,9 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="81dp"
-            android:text="Button"
+            android:text="@{domandetest.risposte[2]}"
+            android:contentDescription="risposta3"
+            android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tc_risp2" />
@@ -84,7 +95,9 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="81dp"
-            android:text="Button"
+            android:text="@{domandetest.risposte[3]}"
+            android:contentDescription="risposta4"
+            android:textAllCaps="false"
             style="@style/Bottone_risposta"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
