@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import com.example.kotlinlearning.R
 import com.example.kotlinlearning.databinding.GlossarioBinding
 import com.example.kotlinlearning.viewmodel.ArgomentoViewModel
+import com.example.kotlinlearning.viewmodel.HomeViewModel
 
 
 /**
@@ -31,13 +32,13 @@ class GlossaryFragment : Fragment() {
             R.layout.glossario,container,false)
 
 
-    val argomentoviewmodel= ViewModelProvider(this).get(ArgomentoViewModel::class.java)
+    val homeviewmodel= ViewModelProvider(this).get(HomeViewModel::class.java)
 
     val listener=object :View.OnClickListener{
         override fun onClick(v: View?) {
             val argomento=v?.contentDescription.toString()
             //esegue un safe args che passa l'argomento selezionato dell'utente e una lista di tutti gli elementi contenuti nel database teoria
-            val action= GlossaryFragmentDirections.actionGlossaryFragmentToTeoriaFragment(argomento,argomentoviewmodel.allTheory.toTypedArray()/*homeviewmodel.takeArgument(argomento)*/)
+            val action= GlossaryFragmentDirections.actionGlossaryFragmentToTeoriaFragment(argomento,homeviewmodel.allTheory.toTypedArray()/*homeviewmodel.takeArgument(argomento)*/)
             view?.findNavController()?.navigate(action)
         }
     }

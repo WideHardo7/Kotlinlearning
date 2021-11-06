@@ -14,6 +14,9 @@ class QuizBottoneViewModel(application: Application): AndroidViewModel(applicati
 
     //Variabile che contiene le domande relative all'argomento selezionato'
     var domande:MutableList<DomandeMultiple> = mutableListOf<DomandeMultiple>()
+    set(value) {
+        field=value
+    }
 
      val repository:DomandeInserimentoRepository
      //lista che contiene le domande input od a inserimento, vengono eseguite in questo fragment e poi passate
@@ -54,14 +57,14 @@ class QuizBottoneViewModel(application: Application): AndroidViewModel(applicati
     }
 
     //prende tutte le domande e scegli solo quelle relative all'argomento selezionato
-     fun selectQuestionfromArgument(argomento: String,allQuestionm:List<DomandeMultiple>) {
+     /*fun selectQuestionfromArgument(argomento: String,allQuestionm:List<DomandeMultiple>) {
 
         for(element in allQuestionm){
             if(element.cod_argomento==argomento)
                 domande.add(element)
         }
         Log.d("QuizBottoneViewModel","Le domande sono queste: $domande")
-    }
+    }*/
     //controlla che la risposta premuta dall'utente, corrisponda con la risposta giusta della domanda correlata
     // e incrementa l'indice delle domande eseguite correttamente e l'indice delle domande effettuate
     fun correctAnswer(indexanswer: Int) {

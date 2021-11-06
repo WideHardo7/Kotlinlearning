@@ -9,12 +9,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.testing.TestNavHostController
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso
-import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.Espresso.*
 import androidx.test.espresso.contrib.DrawerActions
-import androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu
 import androidx.test.espresso.ViewAssertion
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions
 import com.example.kotlinlearning.view.fragment.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -34,6 +32,7 @@ import org.junit.runner.RunWith
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
+import androidx.test.espresso.action.ViewActions.closeSoftKeyboard as viewActionsCloseSoftKeyboard
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -53,17 +52,17 @@ class MainButtonsTest {
         for(i in 0..3){
             onView(withId(R.id.b_risp1)).perform(click())
         }
-        onView(withId(R.id.risposta_da_tastiera)).perform(typeText("var"))
+        onView(withId(R.id.risposta_da_tastiera)).perform(typeText("var"), viewActionsCloseSoftKeyboard())
         onView(withId(R.id.b_conferma)).perform(click())
         onView(withId(R.id.immagine_punteggio)).check(matches(isDisplayed()))
         onView(withId(R.id.b_home)).perform(click())
         onView(withId(R.id.bottone_variabili)).check(matches(isDisplayed()))
     }
-    @Test
+   /*@Test
     fun testBottoneFun(){
-        onView(withId(R.id.bottone_funzioni)).check(matches(isNotEnabled()))
+        onView(withId(R.id.bottone_funzioni)).check(matches(isEnabled()))
 
-    }
+    }*/
 }
 
 class DrawerTest{

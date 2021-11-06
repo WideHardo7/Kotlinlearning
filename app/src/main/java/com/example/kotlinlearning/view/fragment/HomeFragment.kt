@@ -58,8 +58,7 @@ class HomeFragment : Fragment() {
 
         })
 
-        //inizializzo il viewmodel relativo al fragment argomento,serve per
-        val argomentoviewmodel=ViewModelProvider(this).get(ArgomentoViewModel::class.java)
+
 
 
         //creazione listener
@@ -70,7 +69,7 @@ class HomeFragment : Fragment() {
                 val argomento=v?.contentDescription.toString()
                 //esegue un safe args che passa l'argomento selezionato dell'utente e
                 // una lista di tutti gli elementi contenuti nel database teoria
-                val action= HomeFragmentDirections.actionHomeFragmentToArgomentoFragment(argomento,argomentoviewmodel.allTheory.toTypedArray())
+                val action= HomeFragmentDirections.actionHomeFragmentToArgomentoFragment(argomento,homeviewmodel.allTheory.toTypedArray())
                 view?.findNavController()?.navigate(action)
             }
         }
@@ -99,6 +98,7 @@ class HomeFragment : Fragment() {
 
     //in base all'argomento passato, modifica il relativo bottone
     private fun UnlockButton(argomento:String){
+        Log.i("HomeFragment","Ho sbloccato il bottone: $argomento")
 
         when(argomento){
             "Stringhe" -> EnableButton(binding.bottoneStringhe)
@@ -114,7 +114,7 @@ class HomeFragment : Fragment() {
     }
     //Cambia il colore del bottone e abilita il click del bottone
     private fun EnableButton(v: View){
-        Log.i("HomeFragment","Ho sbloccato il bottone $v")
+
         v.apply{
 
             //setBackgroundColor(getContext().getResources().getColor(R.color.secondaryColor))

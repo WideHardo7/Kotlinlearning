@@ -1,5 +1,6 @@
 package com.example.kotlinlearning.view.fragment
 
+import android.os.Binder
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -35,6 +36,8 @@ class CompletamentoQuizFragment : Fragment() {
         binding= DataBindingUtil.inflate(inflater,R.layout.completamento_quiz,container,false)
 
         completamentoQuizViewModel= ViewModelProvider(this).get(CompletamentoQuizViewModel::class.java)
+        Log.i("CompletamentQuizFrgment","Dentro CompletamentoQuizFragment, dopo aver inizializzato il viewmodel home, numero processo:${Binder.getCallingPid()}")
+
 
         /*completamentoQuizViewModel.getAllArgument().observe(viewLifecycleOwner, Observer { listadiargomenti ->
             Log.d("CompletamentFragment","La lista di oggetti argument è stata estratta con successo, eccola :$listadiargomenti")

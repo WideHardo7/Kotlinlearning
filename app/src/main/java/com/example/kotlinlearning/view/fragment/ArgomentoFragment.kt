@@ -49,7 +49,7 @@ class ArgomentoFragment : Fragment() {
         //setto il listener sul bottone quiz e gli passo  un safe args con argomenti, la stringa relativa all'argomento
         //selezionato e una lista contenente tutte le domande multiple(Si intende le domande a scelta multipla)
         binding.bQuiz.setOnClickListener{  view : View ->
-            val action= ArgomentoFragmentDirections.actionArgomentoFragmentToQuizBottoneFragment(args.nameArgument, argumentviewmodel.allMultiQuestion.toTypedArray())
+            val action= ArgomentoFragmentDirections.actionArgomentoFragmentToQuizBottoneFragment(args.nameArgument, argumentviewmodel.selectQuestionfromArgument(args.nameArgument,argumentviewmodel.allMultiQuestion).toTypedArray())
             view.findNavController().navigate(action) }
 
         return binding.root

@@ -48,7 +48,7 @@ class QuizBottoneFragment : Fragment() {
 
 
         //prendo le domande che mi servono, le mischio e le setto
-        quizbottoneviewmodel.selectQuestionfromArgument(args.codArgomento, args.listadomandemulti.toList())
+        quizbottoneviewmodel.domande= args.listadomandemulti.toMutableList()
         quizbottoneviewmodel.mischiaDomande()
         Log.d("QuizBottoneFragment","Selezionate domande, mischiate e settate nel layout")
 
