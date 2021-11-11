@@ -7,16 +7,18 @@ import androidx.lifecycle.viewModelScope
 import com.example.kotlinlearning.database.AppDatabase
 import com.example.kotlinlearning.database.domande.DomandeMultiple
 import com.example.kotlinlearning.repository.DomandeMultipleRepository
+import com.example.kotlinlearning.util.NumeroDomande
 import kotlinx.coroutines.launch
 
-class TestConoscenzeViewModel(application: Application): AndroidViewModel(application), NumeroDomande {
+class TestConoscenzeViewModel(application: Application): AndroidViewModel(application),
+    NumeroDomande {
     private val repository: DomandeMultipleRepository
 
     //Lista di oggetti domandeMultiple che passo al fragment successivo (QuizDomandeMultiple)
     var allMultiQuestion= mutableListOf<DomandeMultiple>()
 
     //Lista di stringhe contenete il nome di tutti gli argomenti trattati nell'app
-    val namearguments:List<String> = listOf("Variabili","Stringhe","Condizioni e Cicli","Funzioni","Null-Safety","Array e Collection","Classi","Ereditarietà","Lambda Functions")
+    private val namearguments:List<String> = listOf("Variabili","Stringhe","Condizioni e Cicli","Funzioni","Null-Safety","Array e Collection","Classi","Ereditarietà","Lambda Functions")
 
 
     init{
@@ -46,9 +48,9 @@ class TestConoscenzeViewModel(application: Application): AndroidViewModel(applic
         }
     }
 
-    //funzione che per ogni oggetto della lista name, contenete
+    //funzione che per ogni oggetto della lista namearguments, contenete
     // i nomi di tutti gli argomenti trattati nell'app, prende due domande dalla lista di domande passate
-    //e li inserisce dentro la lista domande, se la variabile n è uguale a numerodomandexargomenti,
+    //e li inserisce dentro la mutablelist domande, se la variabile n è uguale a numerodomandexargomenti,
     // allora significa che ho già preso le domande che mi servivano e non è più necessario iterare gli elementi di dom,
     // perciò per evitare iterazioni inutili si è utilizzato continue
     fun selectQuestionfromArgument():MutableList<DomandeMultiple>{

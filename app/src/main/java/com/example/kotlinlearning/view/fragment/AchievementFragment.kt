@@ -1,6 +1,7 @@
 package com.example.kotlinlearning.view.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,11 +16,6 @@ import com.example.kotlinlearning.databinding.AchievementsBinding
 import com.example.kotlinlearning.viewmodel.AchievementViewModel
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AchievementFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 
 
 
@@ -33,7 +29,9 @@ class AchievementFragment : Fragment() {
     ): View? {
         binding= DataBindingUtil.inflate(inflater, R.layout.achievements,container,false)
         achievementviewmodel=ViewModelProvider(this).get(AchievementViewModel::class.java)
+        Log.i("AchievementFragment","Dentro AchievementFragment, dopo aver inizializzato il viewmodel ")
 
+        //Per ogni argomento della lisat viene cambiata la relativa progress bar e textview
         achievementviewmodel.getAllArgument().observe( viewLifecycleOwner, Observer { argument ->
             for (e in argument){
                 changeRelativeView(e.cod_argomento,e.score)

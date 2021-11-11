@@ -4,15 +4,16 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.kotlinlearning.database.AppDatabase
 import com.example.kotlinlearning.database.argomenti.Argument
 import com.example.kotlinlearning.repository.ArgumentRepository
+import com.example.kotlinlearning.util.NumeroDomande
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class CompletamentoQuizViewModel(application: Application): AndroidViewModel(application), NumeroDomande {
+class CompletamentoQuizViewModel(application: Application): AndroidViewModel(application),
+    NumeroDomande {
 
     val repository: ArgumentRepository
     var controllochiamatealdatabase:Boolean= true
@@ -20,33 +21,12 @@ class CompletamentoQuizViewModel(application: Application): AndroidViewModel(app
     //numero di domande totali proposte all'utente
     override val ndomandetot: Int
         get() = super.ndomandetot
-    //lista di tutti gli oggetti argument presenti nel database
-    /*var listadiargomenti: MutableList<Argument> = mutableListOf<Argument>()
-        set(values) {
-        field=values
-    }*/
-    //var listOfargument:LiveData<List<Argument>> = MutableLiveData<List<Argument>>()
-
-
-
 
     init {
         val argumentdao = AppDatabase.getInstance(application).argumentDao()
         repository = ArgumentRepository(argumentdao)
-        /*viewModelScope.launch {
-            getTuttiArgomenti()
-        }*/
-        //listOfargument=repository.readallargument()
 
     }
-    /*fun getAllArgument(): LiveData<List<Argument>>{
-        return listOfargument
-    }*/
-
-   /*suspend fun getTuttiArgomenti() {
-       listadiargomenti=repository.getAllArgumentwithCoroutine()
-       Log.d("CompletamentViewModel","La lista di oggetti argument è stata estratta con successo, eccola :$listadiargomenti")
-    }*/
 
     //query che aggiorna l'oggetto Argument relativo nel database
     fun insertArgument(argomento: Argument) {
@@ -73,6 +53,8 @@ class CompletamentoQuizViewModel(application: Application): AndroidViewModel(app
 
      //Funzione che aggiorna il database se si verificano determinate condizioni
     fun insertNewValue(nrisp: Int, argomento: Argument, argomenti: List<Argument>) {
+         //variabile che serve per regolare l'accesso dell'observer a questa funzione,
+         // deve essere chiamata una sola volta
          controllochiamatealdatabase=false
 
         //oggetto che viene inizializzo con gli stessi valori dell'argomento corrente passato,come id e cod_argomento

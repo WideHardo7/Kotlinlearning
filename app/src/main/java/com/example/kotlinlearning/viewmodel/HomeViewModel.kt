@@ -21,14 +21,14 @@ class HomeViewModel( application: Application): AndroidViewModel(application) {
      //lista di oggetti teoria che uso per inizializzare la textview del fragment successivo (ArgomentoFragment)
     var allTheory= listOf<Teoria>()
 
-
-    var listargomenti= listOf<Argument>()
+    // livedata che conterrà una lista di argument e che osservarà i cambiamenti nel database
     var listOfargument:LiveData<List<Argument>> = MutableLiveData<List<Argument>>()
 
-     //var tuttiargomenti: List<Argument> = listOf<Argument>()
+
      init{
          val argomentoDao= AppDatabase.getInstance(application).argumentDao()
          repository=ArgumentRepository(argomentoDao)
+         //inizializzo il livedata con i valori contenuti nel database
          listOfargument= repository.readallargument()
 
          //prendo un istanza del database riguardante la tabella Teoria e ci inizializzo la relativa repository
@@ -59,16 +59,9 @@ class HomeViewModel( application: Application): AndroidViewModel(application) {
         return listOfargument
     }
 
-    fun Argomenti(){
-        viewModelScope.launch {
-            getAllArgument()
-        }
 
-    }
 
-    fun updateListofArgument(argomenti:List<Argument>){
-        this.listargomenti=argomenti
-    }
+
 
 
 

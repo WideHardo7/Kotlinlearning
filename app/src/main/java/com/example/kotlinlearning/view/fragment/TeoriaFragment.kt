@@ -13,16 +13,11 @@ import com.example.kotlinlearning.databinding.TeoriaNoQuizBinding
 import com.example.kotlinlearning.viewmodel.ArgomentoViewModel
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TeoriaFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class TeoriaFragment : Fragment() {
 
     private lateinit var binding: TeoriaNoQuizBinding
-    val args:TeoriaFragmentArgs by navArgs()
-    lateinit var argumentviewmodel:ArgomentoViewModel
+    private val args:TeoriaFragmentArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,8 +26,7 @@ class TeoriaFragment : Fragment() {
         // Inflate the layout for this fragment
         binding= DataBindingUtil.inflate(inflater, R.layout.teoria_no_quiz,container,false)
 
-        //inizializzo Argomentoviewmodel
-        argumentviewmodel= ViewModelProvider(this).get(ArgomentoViewModel::class.java)
+
 
         //settare nome argomento
         ChangeNameArguments(args.nameArgument)

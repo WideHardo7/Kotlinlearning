@@ -17,15 +17,10 @@ import com.example.kotlinlearning.databinding.CompletamentoQuizBinding
 import com.example.kotlinlearning.viewmodel.CompletamentoQuizViewModel
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CompletamentoQuizFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CompletamentoQuizFragment : Fragment() {
 
     lateinit var completamentoQuizViewModel: CompletamentoQuizViewModel
-    val args1: CompletamentoQuizFragmentArgs by navArgs()
+    private val args1: CompletamentoQuizFragmentArgs by navArgs()
     lateinit var binding: CompletamentoQuizBinding
 
     override fun onCreateView(
@@ -34,20 +29,14 @@ class CompletamentoQuizFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding= DataBindingUtil.inflate(inflater,R.layout.completamento_quiz,container,false)
-
+        //inizializzo il viewmodel relativo a questo fragment
         completamentoQuizViewModel= ViewModelProvider(this).get(CompletamentoQuizViewModel::class.java)
-        Log.i("CompletamentQuizFrgment","Dentro CompletamentoQuizFragment, dopo aver inizializzato il viewmodel home, numero processo:${Binder.getCallingPid()}")
+        Log.i("CompletamentQuizFrgment","Dentro CompletamentoQuizFragment, dopo aver inizializzato il viewmodel")
 
 
-        /*completamentoQuizViewModel.getAllArgument().observe(viewLifecycleOwner, Observer { listadiargomenti ->
-            Log.d("CompletamentFragment","La lista di oggetti argument è stata estratta con successo, eccola :$listadiargomenti")
-
-                completamentoQuizViewModel.listadiargomenti=listadiargomenti.toMutableList()
-
-
-
-        })*/
-
+        //prende un istanza di un oggetto argument, in base al nome dell'argomento passato come parametro,
+        //dato che è un livedata osserva ogni modifica che avviene, per questo viene inserito una condizione if,
+        //che impedisce di lanciare la funzione più di una volta
         completamentoQuizViewModel.getArgumentbyNameArgument(args1.codArgomento).observe(viewLifecycleOwner, Observer { it->
 
             Log.i("CompletamentQuizFrgment","L'argomento passato è: $it")

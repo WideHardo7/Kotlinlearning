@@ -1,4 +1,4 @@
-package com.example.kotlinlearning.viewmodel
+package com.example.kotlinlearning.util
 //interfaccia che viene usata per settare il numero di domande usate nell'app
 interface NumeroDomande {
     //si è deciso di avere 4 domande di questo tipo,

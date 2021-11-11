@@ -1,4 +1,4 @@
-package com.example.kotlinlearning.viewmodel
+package com.example.kotlinlearning.util
 //Interfaccia che viene utilizzata per gestire il comportamento delle domande
 // , che differiscono leggermente tra una tipologia e l'altra, o per gli oggetti che trattano o
 // per la loro meccanica, viene utilizzata inQuizBottoneViewModel e QuizTastieraViewModel

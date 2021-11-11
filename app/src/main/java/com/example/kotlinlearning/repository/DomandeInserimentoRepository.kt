@@ -9,7 +9,7 @@ import com.example.kotlinlearning.database.domande.DomandeMultipleDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-//Viene utilizzata in QuizTastieraViewmodel
+//Viene utilizzata in QuizBottoneViewmodel
 class DomandeInserimentoRepository(private val domandeinsertDao: DomandeInserimentoDao) {
 
      suspend fun getInputQuestion(): List<DomandeInserimento>{

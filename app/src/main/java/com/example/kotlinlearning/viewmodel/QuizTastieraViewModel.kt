@@ -6,12 +6,13 @@ import androidx.lifecycle.*
 import com.example.kotlinlearning.database.AppDatabase
 import com.example.kotlinlearning.database.argomenti.Argument
 import com.example.kotlinlearning.database.domande.DomandeInserimento
-import com.example.kotlinlearning.database.domande.DomandeMultiple
 import com.example.kotlinlearning.repository.ArgumentRepository
-import com.example.kotlinlearning.repository.DomandeInserimentoRepository
+import com.example.kotlinlearning.util.GestioneDomande
+import com.example.kotlinlearning.util.NumeroDomande
 import kotlinx.coroutines.launch
 
-class QuizTastieraViewModel(application: Application): AndroidViewModel(application), GestioneDomande,NumeroDomande {
+class QuizTastieraViewModel(application: Application): AndroidViewModel(application),
+    GestioneDomande, NumeroDomande {
 
     //Lista di DomandeInserimento che  contiene le domande relative solo a quell'argomento
     var domande: MutableList<DomandeInserimento> = mutableListOf<DomandeInserimento>()
@@ -47,7 +48,7 @@ class QuizTastieraViewModel(application: Application): AndroidViewModel(applicat
 
     suspend fun getTuttiArgomenti() {
         listadiargomenti = repository.getAllArgumentwithCoroutine()
-        Log.d(
+        Log.i(
             "CompletamentViewModel",
             "La lista di oggetti argument è stata estratta con successo, eccola :$listadiargomenti"
         )
@@ -63,13 +64,14 @@ class QuizTastieraViewModel(application: Application): AndroidViewModel(applicat
             Log.d("QuizTastieraViewModel", "Le domande sono queste: $domande")
         }
 
-
+    //mischia le domande e setta inidice a zero, in modo che verra sceltà
+    // la domanda che si trova ora in posizione [0]
         override fun mischiaDomande() {
             domande.shuffle()
             indiceDomande = 0
             setQuestion()
         }
-
+    //inizializza la domanda corrente e la sua relative risposta
         override fun setQuestion() {
             domandaAttuale = domande[indiceDomande]
             risposte = domandaAttuale.risposta_giusta

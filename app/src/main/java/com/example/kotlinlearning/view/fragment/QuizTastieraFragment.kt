@@ -18,15 +18,11 @@ import com.example.kotlinlearning.databinding.QuizTastieraBinding
 import com.example.kotlinlearning.viewmodel.QuizTastieraViewModel
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [QuizTastieraFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class QuizTastieraFragment : Fragment() {
 
     lateinit var binding: QuizTastieraBinding
-    val args:QuizTastieraFragmentArgs by navArgs()
+    private val args:QuizTastieraFragmentArgs by navArgs()
     lateinit var  quiztastieraviewmodel: QuizTastieraViewModel
     var answeruser:String= ""
 
@@ -41,7 +37,7 @@ class QuizTastieraFragment : Fragment() {
 
         // inizializzo il viewmodel
         quiztastieraviewmodel= ViewModelProvider(this).get(QuizTastieraViewModel::class.java)
-        Log.i("QuizTastieraFragment","Dentro QuizTastieraFragment, dopo aver inizializzato il viewmodel home, numero processo:${Binder.getCallingPid()}")
+        Log.i("QuizTastieraFragment","Dentro QuizTastieraFragment, dopo aver inizializzato il viewmodel")
 
 
         //predo le domande che mi servono, le mischio e le setto
@@ -72,6 +68,7 @@ class QuizTastieraFragment : Fragment() {
 
                     Log.d("QuizTastieraFragment", "eseguito il refresh del layout ")
                 } else {
+                    //viene passato con un safe args le risposte giuste complessive e la lista di tutti gli argomenti presenti nel database
                     var totrispostecorrette = args.nrisposte + quiztastieraviewmodel.nrispcorrette
                     val action =
                         QuizTastieraFragmentDirections.actionQuizTastieraFragmentToCompletamentoQuizFragment(

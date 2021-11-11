@@ -7,13 +7,17 @@ import androidx.lifecycle.viewModelScope
 import com.example.kotlinlearning.database.AppDatabase
 import com.example.kotlinlearning.database.argomenti.Argument
 import com.example.kotlinlearning.repository.ArgumentRepository
+import com.example.kotlinlearning.util.NumeroDomande
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class TestConoscenzeValutazioneViewModel(application: Application): AndroidViewModel(application),NumeroDomande {
+class TestConoscenzeValutazioneViewModel(application: Application): AndroidViewModel(application),
+    NumeroDomande {
 
     val repository:ArgumentRepository
-    
+    //e' una lista di tutti gli argomenti trattati nell'app dove
+    //la proprietà unlocked è settata in tutti a true, questo è possibile perchè questa operazione verrà eseguita all'inizio ed una singola volta
+    // , perciò il database non è stato ancora modificato
     val listadiArgomentiIniziali= listOf<Argument>(Argument("Variabili",1,0,1),
         Argument("Stringhe",2,0,1),
         Argument("Condizioni e Cicli",3,0,1),
@@ -62,7 +66,8 @@ init{
         }
         return result
     }
-
+    //in base al numero passato, prendo altrettanti elementi, che sono gli argomenti da dover sbloccare
+    //e aggiornare, passandoli tutti come una lista
     private fun scegliArgomentidaAggiornare(numeroelementi: Int): Array<out Argument> {
         var n=0
         var argomenti:MutableList<Argument> = mutableListOf<Argument>()

@@ -26,7 +26,7 @@ import kotlinx.coroutines.launch
 
         //prendo un istanza del database riguardante la tabella DomandeMultiple e ci inizializzo la relativa repository
         //ho necessità di inizializzare qui la lista di domande per avere il tempo necessario di eseguire e
-        // completare la query per poi visualizzarla a video nel fragment successivo
+        // completare la query per poi visualizzarla nel layout nel fragment successivo
         val domandemultidao= AppDatabase.getInstance(application).domandemultipleDao()
 
         repository= DomandeMultipleRepository(domandemultidao)

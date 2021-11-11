@@ -22,11 +22,7 @@ import com.example.kotlinlearning.viewmodel.HomeViewModel
 import kotlinx.coroutines.flow.observeOn
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class HomeFragment : Fragment() {
 
     private lateinit var binding: HomeBinding
@@ -45,7 +41,7 @@ class HomeFragment : Fragment() {
 
         //inizializzo il viewmodel del fragment home
                 homeviewmodel= ViewModelProvider(this).get(HomeViewModel::class.java)
-        Log.i("HomeFragment","Dentro HomeFragment, dopo aver inizializzato il viewmodel home, numero processo:${getCallingPid()}")
+        Log.i("HomeFragment","Dentro HomeFragment, dopo aver inizializzato il viewmodel ")
 
        //setto un observer per aggiornare la lista "listargomenti" una volta che la query è stata eseguita
         // e  prende la lista aggiornata per esegue la funzione CheckView
@@ -54,7 +50,7 @@ class HomeFragment : Fragment() {
 
             CheckView(argument)
             Log.i("HomeFragment","Completato il settaggio del layout grafico")
-            //homeviewmodel.updateListofArgument(argument)
+
 
         })
 
@@ -128,7 +124,7 @@ class HomeFragment : Fragment() {
     private fun CheckView(args:List<Argument>){
 
         for(element in args){
-            //argomento.unlocked è un intero che funfe da boolean settando  con 1 true e 0 false
+            //argomento.unlocked è un intero che funge da boolean settando  con 1 true e 0 false
             if(element.unlocked==1)
                 UnlockButton(element.cod_argomento)
         }

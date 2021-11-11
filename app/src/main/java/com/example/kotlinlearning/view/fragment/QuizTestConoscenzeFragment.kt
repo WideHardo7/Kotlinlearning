@@ -20,7 +20,7 @@ class QuizTestConoscenzeFragment : Fragment() {
 
     lateinit var quizTestConoscenzeViewModel: QuizTestConoscenzeViewModel
     private lateinit var binding: QuizTestConoscenzeBinding
-    val args: QuizTestConoscenzeFragmentArgs by navArgs()
+    private val args: QuizTestConoscenzeFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +30,7 @@ class QuizTestConoscenzeFragment : Fragment() {
         binding= DataBindingUtil.inflate(inflater, R.layout.quiz_test_conoscenze,container,false)
 
         quizTestConoscenzeViewModel= ViewModelProvider(this).get(QuizTestConoscenzeViewModel::class.java)
-
+        Log.i("QuizTestConoscFragment","Dentro QuizTestConoscenzeFragment, dopo aver inizializzato il viewmodel ")
         //prendo le domande che mi servono, le mischio e le setto
         quizTestConoscenzeViewModel.domande=args.listadomandetest.toMutableList()
         quizTestConoscenzeViewModel.mischiaDomande()
@@ -64,7 +64,7 @@ class QuizTestConoscenzeFragment : Fragment() {
                     binding.tcPunteggio.text= "${quizTestConoscenzeViewModel.indiceDomande.toString()}/${quizTestConoscenzeViewModel.domande.size}"
                     binding.invalidateAll()
 
-                    Log.d("QuizTestConoscFragment","eseguito il refresh del layout  volte")
+                    Log.d("QuizTestConoscFragment","eseguito il refresh del layout  ")
                 } else{
                     //naviga al fragment successivo, passando un safe args con argomenti, il numero delle domande effettuate
                     val action= QuizTestConoscenzeFragmentDirections.actionQuizTestConoscenzeToTestConoscenzeValutazioneFragment(quizTestConoscenzeViewModel.nrispcorrette)

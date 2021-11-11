@@ -14,11 +14,7 @@ import com.example.kotlinlearning.viewmodel.ArgomentoViewModel
 import com.example.kotlinlearning.viewmodel.HomeViewModel
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [GlossaryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class GlossaryFragment : Fragment() {
 
     private lateinit var binding:GlossarioBinding
@@ -38,7 +34,7 @@ class GlossaryFragment : Fragment() {
         override fun onClick(v: View?) {
             val argomento=v?.contentDescription.toString()
             //esegue un safe args che passa l'argomento selezionato dell'utente e una lista di tutti gli elementi contenuti nel database teoria
-            val action= GlossaryFragmentDirections.actionGlossaryFragmentToTeoriaFragment(argomento,homeviewmodel.allTheory.toTypedArray()/*homeviewmodel.takeArgument(argomento)*/)
+            val action= GlossaryFragmentDirections.actionGlossaryFragmentToTeoriaFragment(argomento,homeviewmodel.allTheory.toTypedArray())
             view?.findNavController()?.navigate(action)
         }
     }

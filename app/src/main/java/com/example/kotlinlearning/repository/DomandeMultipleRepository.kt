@@ -7,7 +7,7 @@ import com.example.kotlinlearning.database.domande.DomandeMultiple
 import com.example.kotlinlearning.database.domande.DomandeMultipleDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-//viene utilizzata in QuizBottoneViewmodel
+//viene utilizzata in ArgomentoViewModel e in TestConoscenzeViewmodel
 class DomandeMultipleRepository(private val domandemultipleDao: DomandeMultipleDao) {
 
      suspend fun getMultipleQuestion():List<DomandeMultiple>{
@@ -22,5 +22,5 @@ class DomandeMultipleRepository(private val domandemultipleDao: DomandeMultipleD
          return domandeMultiple
 
     }
-    fun  readAllMultipleQuestion(): LiveData<List<DomandeMultiple>> = domandemultipleDao.getAllQuestionLiveData()
+
 }

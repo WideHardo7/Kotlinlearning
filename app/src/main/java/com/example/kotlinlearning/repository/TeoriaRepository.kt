@@ -7,13 +7,13 @@ import com.example.kotlinlearning.database.teoria.Teoria
 import com.example.kotlinlearning.database.teoria.TeoriaDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-
+//viene utilizzata in HomeViewModel
 class TeoriaRepository(private val teoriaDao:TeoriaDao) {
 
 
 
 //una funzione suspend che esegue l'operazione getTheory() in un thread IO e poi ritorna nel main principale
-// una volta finita l'operazione, restituendo la lisat di oggetti teoria
+// una volta finita l'operazione, restituendo la lista di oggetti teoria
 
     suspend fun getTheory():List<Teoria> {
         val teoria:List<Teoria>

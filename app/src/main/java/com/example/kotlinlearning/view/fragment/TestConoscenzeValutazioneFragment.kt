@@ -19,7 +19,7 @@ class TestConoscenzeValutazioneFragment : Fragment() {
 
     private lateinit var binding: TestConoscenzeValutazioneBinding
     lateinit var  testConoscenzeValutazioneViewModel: TestConoscenzeValutazioneViewModel
-    val args: TestConoscenzeValutazioneFragmentArgs by navArgs()
+    private val args: TestConoscenzeValutazioneFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +36,7 @@ class TestConoscenzeValutazioneFragment : Fragment() {
         binding.bottoneHome.setOnClickListener{  view : View -> startActivity(intent) }
         return binding.root
     }
-
+    //setta il layout in base al punteggio ottenuto dall'utente
     private fun setLayout() {
 
         binding.risultatoConoscenze.text="${args.numerorispostecorrette}/${testConoscenzeValutazioneViewModel.numdomtestconosc}"

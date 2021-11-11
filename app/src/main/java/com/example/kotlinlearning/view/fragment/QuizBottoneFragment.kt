@@ -19,16 +19,13 @@ import com.example.kotlinlearning.databinding.QuizBottoniBinding
 import com.example.kotlinlearning.viewmodel.QuizBottoneViewModel
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [QuizBottoneFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class QuizBottoneFragment : Fragment() {
 
     lateinit var binding: QuizBottoniBinding
     val args:QuizBottoneFragmentArgs by navArgs()
     lateinit var quizbottoneviewmodel:QuizBottoneViewModel
+    //numero di volte che viene fatto il refresh
     var nrefresh=1
 
     override fun onCreateView(
@@ -44,7 +41,7 @@ class QuizBottoneFragment : Fragment() {
         //inizializzo il viewmodel
         quizbottoneviewmodel=ViewModelProvider(this).get(QuizBottoneViewModel::class.java)
 
-        Log.i("QuizBottoneFragment","Dentro QuizBottoneFragment, dopo aver inizializzato il viewmodel home, numero processo:${Binder.getCallingPid()}")
+        Log.i("QuizBottoneFragment","Dentro QuizBottoneFragment, dopo aver inizializzato il viewmodel ")
 
 
         //prendo le domande che mi servono, le mischio e le setto
@@ -79,7 +76,7 @@ class QuizBottoneFragment : Fragment() {
 
                     Log.d("QuizBottoneFragment","eseguito il refresh del layout ${nrefresh++} volte")
                 } else{
-                    //naviga al fragment successivo, passando un safe args con argomenti, il numero delle domande effettuate
+                    //naviga al fragment successivo, passando un safe args con argomenti, il numero delle risposte corrette, l'argomento selezionato e un array di domandeInserimento
                     val action= QuizBottoneFragmentDirections.actionQuizBottoneFragmentToQuizTastieraFragment(quizbottoneviewmodel.nrispcorrette,args.codArgomento,quizbottoneviewmodel.allInputQuestion.toTypedArray())
                     view?.findNavController()?.navigate(action)
 
@@ -94,8 +91,7 @@ class QuizBottoneFragment : Fragment() {
         binding.bRisp4.setOnClickListener(listener)
         //associo la variabile di layout al viewmodel relativo a questo fragment
         binding.domademultiple = quizbottoneviewmodel
-        val callback= requireActivity().onBackPressedDispatcher.addCallback(this){}
-        callback.remove()
+
         return binding.root
 
     }

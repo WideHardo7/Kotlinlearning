@@ -8,9 +8,12 @@ import com.example.kotlinlearning.database.AppDatabase
 import com.example.kotlinlearning.database.domande.DomandeInserimento
 import com.example.kotlinlearning.database.domande.DomandeMultiple
 import com.example.kotlinlearning.repository.DomandeInserimentoRepository
+import com.example.kotlinlearning.util.GestioneDomande
+import com.example.kotlinlearning.util.NumeroDomande
 import kotlinx.coroutines.launch
 
-class QuizBottoneViewModel(application: Application): AndroidViewModel(application), GestioneDomande, NumeroDomande{
+class QuizBottoneViewModel(application: Application): AndroidViewModel(application),
+    GestioneDomande, NumeroDomande {
 
     //Variabile che contiene le domande relative all'argomento selezionato'
     var domande:MutableList<DomandeMultiple> = mutableListOf<DomandeMultiple>()
@@ -26,10 +29,13 @@ class QuizBottoneViewModel(application: Application): AndroidViewModel(applicati
 
     //Variabile che contiene la domanda che viene eseguita in questo momento
     lateinit var domandaAttuale:DomandeMultiple
+
     //variabile che contiene le risposte multiple della domanda corrente
      var  risposte: MutableList<String> = mutableListOf<String>()
+
     // contiene la posizione della domanda scelta e viene utilizzato per avanzare
     private var indiceDomande:Int=0
+
     //numero domande
     override val ndomandemulti: Int
         get() = super.ndomandemulti
@@ -56,15 +62,6 @@ class QuizBottoneViewModel(application: Application): AndroidViewModel(applicati
         }
     }
 
-    //prende tutte le domande e scegli solo quelle relative all'argomento selezionato
-     /*fun selectQuestionfromArgument(argomento: String,allQuestionm:List<DomandeMultiple>) {
-
-        for(element in allQuestionm){
-            if(element.cod_argomento==argomento)
-                domande.add(element)
-        }
-        Log.d("QuizBottoneViewModel","Le domande sono queste: $domande")
-    }*/
     //controlla che la risposta premuta dall'utente, corrisponda con la risposta giusta della domanda correlata
     // e incrementa l'indice delle domande eseguite correttamente e l'indice delle domande effettuate
     fun correctAnswer(indexanswer: Int) {

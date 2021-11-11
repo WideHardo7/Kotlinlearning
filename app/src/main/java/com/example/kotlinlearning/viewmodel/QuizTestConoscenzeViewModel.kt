@@ -4,10 +4,13 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import com.example.kotlinlearning.database.domande.DomandeMultiple
+import com.example.kotlinlearning.util.GestioneDomande
+import com.example.kotlinlearning.util.NumeroDomande
 
-class QuizTestConoscenzeViewModel(application: Application): AndroidViewModel(application), GestioneDomande,NumeroDomande {
+class QuizTestConoscenzeViewModel(application: Application): AndroidViewModel(application),
+    GestioneDomande, NumeroDomande {
 
-    //val repository:DomandeMultipleRepository
+
 
 
 
@@ -32,12 +35,6 @@ class QuizTestConoscenzeViewModel(application: Application): AndroidViewModel(ap
 
     // contiene la posizione della domanda scelta e viene utilizzato per avanzare
      var indiceDomande:Int=0
-
-
-    init{
-
-    }
-
 
     //mischia le domande e setta inidice a zero, in modo che verra sceltà
     // la domanda che si trova ora in posizione [0]

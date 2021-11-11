@@ -6,7 +6,7 @@ import com.example.kotlinlearning.database.argomenti.Argument
 import com.example.kotlinlearning.database.argomenti.ArgumentDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-
+//viene utilizzata in HomeViewModel,AchievementViewModel, TestConoscenzeValutazioneViewModel QuizTastieraViewModel e CompletamentoQuizViewModel
 class ArgumentRepository(private val argumentDao:ArgumentDao) {
     fun  readallargument():LiveData<List<Argument>> = argumentDao.getAllArgument()
 
