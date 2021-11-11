@@ -61,7 +61,7 @@ class AchievementFragment : Fragment() {
         }
 
     }
-    fun updateProgressBar(v1:ProgressBar,v2:TextView,score:Int){
+    private fun updateProgressBar(v1:ProgressBar,v2:TextView,score:Int){
         v1.setMax(achievementviewmodel.ndomandetot)
             v1.setProgress(score)
 

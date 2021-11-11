@@ -20,6 +20,6 @@ interface NumeroDomande {
     get()=2
 
     //numero totale delle domande test effettuate, dove nove sono gli argomenti complessivi trattati
-    val numerodomandetestconoscenze:Int
+    val numdomtestconosc:Int
     get()= numerodomandexargomenti*9
 }

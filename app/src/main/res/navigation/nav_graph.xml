@@ -41,7 +41,9 @@
         tools:layout="@layout/quiz_tastiera" >
         <action
             android:id="@+id/action_quizTastieraFragment_to_completamentoQuizFragment"
-            app:destination="@id/completamentoQuizFragment" />
+            app:destination="@id/completamentoQuizFragment"
+            app:popUpTo="@+id/quizTastieraFragment"
+            app:popUpToInclusive="true"/>
         <argument
             android:name="nrisposte"
             app:argType="integer" />
@@ -59,7 +61,9 @@
         tools:layout="@layout/quiz_bottoni" >
         <action
             android:id="@+id/action_quizBottoneFragment_to_quizTastieraFragment"
-            app:destination="@id/quizTastieraFragment" />
+            app:destination="@id/quizTastieraFragment"
+            app:popUpTo="@+id/quizBottoneFragment"
+            app:popUpToInclusive="true"/>
         <argument
             android:name="cod_argomento"
             app:argType="string" />
@@ -72,12 +76,12 @@
         android:name="com.example.kotlinlearning.view.fragment.CompletamentoQuizFragment"
         android:label="Risultati"
         tools:layout="@layout/completamento_quiz" >
-        <action
-            android:id="@+id/action_completamentoQuizFragment_to_argomentoFragment"
-            app:destination="@id/argomentoFragment" />
+
         <action
             android:id="@+id/action_completamentoQuizFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpTo="@+id/homeFragment"
+            app:popUpToInclusive="true"/>
         <argument
             android:name="numerorisposteesatte"
             app:argType="integer" />

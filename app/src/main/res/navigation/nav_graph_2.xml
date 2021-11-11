@@ -29,6 +29,10 @@
         android:id="@+id/testConoscenzeValutazioneFragment"
         android:name="com.example.kotlinlearning.view.fragment.TestConoscenzeValutazioneFragment"
         android:label="fragment_test_conoscenze_valutazione"
-        tools:layout="@layout/test_conoscenze_valutazione"/>
+        tools:layout="@layout/test_conoscenze_valutazione">
+        <argument
+            android:name="numerorispostecorrette"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

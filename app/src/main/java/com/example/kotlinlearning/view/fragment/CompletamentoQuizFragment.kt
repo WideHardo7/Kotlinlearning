@@ -66,7 +66,7 @@ class CompletamentoQuizFragment : Fragment() {
         return binding.root
     }
     //Funzione che setta gli elementi del layout in base al risultato dell'utente
-    fun setLayout(){
+    private fun setLayout(){
         binding.risultato.text="${args1.numerorisposteesatte}/${completamentoQuizViewModel.ndomandetot}"
         //se ha superato o non superato il test setto una determinata immagine e testo
         if(completamentoQuizViewModel.isPassed(args1.numerorisposteesatte)){

@@ -28,8 +28,8 @@ class ArgumentRepository(private val argumentDao:ArgumentDao) {
         argumentDao.insertArgument(argument)
     }
 
-    suspend fun insertMoreArgument( argomenti:Argument){
-        argumentDao.insertMoreArgument(argomenti)
+    suspend fun insertMoreArgument(  vararg argomenti:Argument){
+        argumentDao.insertMoreArgument(*argomenti)
     }
 
 }

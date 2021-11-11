@@ -3,12 +3,7 @@ package com.example.kotlinlearning.viewmodel
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.example.kotlinlearning.database.AppDatabase
-import com.example.kotlinlearning.database.argomenti.Argument
 import com.example.kotlinlearning.database.domande.DomandeMultiple
-import com.example.kotlinlearning.repository.DomandeMultipleRepository
 
 class QuizTestConoscenzeViewModel(application: Application): AndroidViewModel(application), GestioneDomande,NumeroDomande {
 
@@ -26,8 +21,8 @@ class QuizTestConoscenzeViewModel(application: Application): AndroidViewModel(ap
     override var nrispcorrette: Int=0
 
     //numero totale delle domande del test conoscenze
-    override val numerodomandetestconoscenze: Int
-        get() = super.numerodomandetestconoscenze
+    override val numdomtestconosc: Int
+        get() = super.numdomtestconosc
 
     //Variabile che contiene la domanda che viene eseguita in questo momento
     lateinit var domandaAttuale:DomandeMultiple

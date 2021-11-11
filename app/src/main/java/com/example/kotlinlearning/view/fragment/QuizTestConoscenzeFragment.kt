@@ -35,7 +35,7 @@ class QuizTestConoscenzeFragment : Fragment() {
         quizTestConoscenzeViewModel.domande=args.listadomandetest.toMutableList()
         quizTestConoscenzeViewModel.mischiaDomande()
 
-        Log.d("QuizTestConoscFragment","Selezionate domande, mischiate e settate nel layout")
+        Log.i("QuizTestConoscFragment","Selezionate domande, mischiate e settate nel layout")
 
         //creo il listener
         val listener=object :View.OnClickListener {
@@ -60,13 +60,15 @@ class QuizTestConoscenzeFragment : Fragment() {
                 if(quizTestConoscenzeViewModel.checkquestionNumber()){
 
                     quizTestConoscenzeViewModel.setQuestion()
+                    //Cambio la textview vicino alla progress bar con il numero delle domanda completate
+                    binding.tcPunteggio.text= "${quizTestConoscenzeViewModel.indiceDomande.toString()}/${quizTestConoscenzeViewModel.domande.size}"
                     binding.invalidateAll()
 
                     Log.d("QuizTestConoscFragment","eseguito il refresh del layout  volte")
                 } else{
                     //naviga al fragment successivo, passando un safe args con argomenti, il numero delle domande effettuate
-                    //val action= QuizBottoneFragmentDirections.actionQuizBottoneFragmentToQuizTastieraFragment(quizbottoneviewmodel.nrispcorrette,args.codArgomento,quizbottoneviewmodel.allInputQuestion.toTypedArray())
-                    view?.findNavController()?.navigate(R.id.action_quizTestConoscenze_to_testConoscenzeValutazioneFragment)
+                    val action= QuizTestConoscenzeFragmentDirections.actionQuizTestConoscenzeToTestConoscenzeValutazioneFragment(quizTestConoscenzeViewModel.nrispcorrette)
+                    view?.findNavController()?.navigate(action)
 
                 }
             }
@@ -78,6 +80,9 @@ class QuizTestConoscenzeFragment : Fragment() {
         binding.tcRisp4.setOnClickListener(listener)
         // Associo la variabile di layout al relativo viewmodel
         binding.domandetest= quizTestConoscenzeViewModel
+
+
+
 
         return binding.root
     }

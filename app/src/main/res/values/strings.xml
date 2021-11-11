@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Kotlinlearning</string>
-    //stringhe usate in layout activity_main.xml, glossario e achievements
+    //stringhe usate in layout home, glossario e achievements
     <string name="livello_base">Livello: Base </string>
     <string name="b.variabili"> Variabili</string>
     <string name="b.strighe"> Stringhe</string>
@@ -29,12 +29,13 @@
     <string name="b.Procedi">Procedi</string>
     //stringhe usate in test_conoscenze_valutazione
     <string name="andamento_conoscenze_buono">Buono</string>
-    <string name="andamento_conoscenze_ottimo">Ottimo</string>
+    <string name="andamento_conoscenze_ottimo">Distinto</string>
     <string name="andamento_conoscenze_discreto">Discreto</string>
     <string name="andamento_conoscenze_eccellente">Eccellente</string>
     <string name="livello_conoscenze_base">Livello sbloccato: \n Base</string>
     <string name="livello_conoscenze_intermedio">Livello sbloccato:  \n Intermedio</string>
     <string name="livello_conoscenze_Avanzato">Livello sbloccato:  \n Avanzato</string>
+    <string name="livello_conoscenze_Eccellente">Livello sbloccato:  \n Tutti!</string>
     //stringa layout quiz_tastiera
     <string name="inserimento_risposta">Inserisci qui la tua risposta...</string>
     <string name="conferma_risposta">Conferma</string>

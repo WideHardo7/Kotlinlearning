@@ -70,6 +70,7 @@ class CompletamentoQuizViewModel(application: Application): AndroidViewModel(app
             nrisp,
             ndomandetot + 1
         )
+
      //Funzione che aggiorna il database se si verificano determinate condizioni
     fun insertNewValue(nrisp: Int, argomento: Argument, argomenti: List<Argument>) {
          controllochiamatealdatabase=false

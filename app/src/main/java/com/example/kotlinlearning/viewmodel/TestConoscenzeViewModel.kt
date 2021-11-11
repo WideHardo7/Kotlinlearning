@@ -49,7 +49,8 @@ class TestConoscenzeViewModel(application: Application): AndroidViewModel(applic
     //funzione che per ogni oggetto della lista name, contenete
     // i nomi di tutti gli argomenti trattati nell'app, prende due domande dalla lista di domande passate
     //e li inserisce dentro la lista domande, se la variabile n è uguale a numerodomandexargomenti,
-    // allora significa che ho già preso le domande che mi servivano e non è più necessario iterare gli elementi di dom
+    // allora significa che ho già preso le domande che mi servivano e non è più necessario iterare gli elementi di dom,
+    // perciò per evitare iterazioni inutili si è utilizzato continue
     fun selectQuestionfromArgument():MutableList<DomandeMultiple>{
         allMultiQuestion.shuffle()
         var domande:MutableList<DomandeMultiple> = mutableListOf<DomandeMultiple>()
@@ -67,7 +68,7 @@ class TestConoscenzeViewModel(application: Application): AndroidViewModel(applic
 
 
         }
-        Log.i("TestConoscenzeViewmodel", "Le domande selezionate per il test sono: $domande")
+        Log.i("TestConoscenzeViewmodel", "Le domande selezionate per il test sono ${domande.size} e sono le seguenti: $domande")
         return  domande
     }
 }
