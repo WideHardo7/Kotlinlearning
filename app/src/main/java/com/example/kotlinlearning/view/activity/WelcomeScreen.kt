@@ -16,5 +16,6 @@ class WelcomeScreen : AppCompatActivity() {
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         },1000)
+        finish()
     }
 }

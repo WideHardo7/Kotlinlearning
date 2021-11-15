@@ -33,7 +33,8 @@ class TestConoscenzeValutazioneFragment : Fragment() {
         setLayout()
 
         var intent = Intent(activity, MainActivity::class.java)
-        binding.bottoneHome.setOnClickListener{  view : View -> startActivity(intent) }
+        binding.bottoneHome.setOnClickListener{  view : View -> startActivity(intent)
+        activity?.finish()}
         return binding.root
     }
     //setta il layout in base al punteggio ottenuto dall'utente

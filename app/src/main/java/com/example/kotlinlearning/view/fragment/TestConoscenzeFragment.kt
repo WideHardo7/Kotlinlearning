@@ -40,7 +40,10 @@ class TestConoscenzeFragment : Fragment() {
 
         //se l'utente decide di saltarlo viene fatto un intent alla mainActivity
         var intent = Intent(activity, MainActivity::class.java)
-        binding.bSalta.setOnClickListener{  view : View -> startActivity(intent) }
+        binding.bSalta.setOnClickListener{  view : View ->
+
+            startActivity(intent)
+        activity?.finish()}
 
         return binding.root
     }
