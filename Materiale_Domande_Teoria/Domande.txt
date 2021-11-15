@@ -1,0 +1,526 @@
+La risposta corretta è sempre la 4
+
+____Variabili____
+1
+Quanti bits ha a disposizione un tipo Int e un tipo Double?
+
+1. 8 e 32
+2. 64 e 32
+3. 32 e 16
+4. 32 e 64
+
+2
+Quale è il risultato corretto di questa operazione?
+                      
+             println(2.plus(4.5))
+
+
+1. 6
+2. Nessuna. Non è possibile applicare metodi a tipi primitivi.
+3. 9
+4. 6.5
+
+3
+Queste inizializzazioni di variabili, sono ENTRAMBE corrette?
+
+               var width: Int = 12
+               var length = 2.5  
+
+1. No, sono entrambe sbagliate
+2. Solo la prima è corretta
+3. Solo la seconda è corretta
+4. Si, sono entrambe corrette  
+
+4
+Questo casting è stato eseguito in modo corretto?
+Se no quale è quello giusto?
+
+                val i: Int = 6  
+                val b: Byte = i  
+                println(b)
+
+1. No, val b:Byte= Byte(i)
+2. Si
+3. No, val b:Byte= (Byte)i
+4. No, val b:Byte= i.toByte()
+
+5
+Inserisce il termine mancante per completare il running senza errori
+
+                val i: Double = 6.0 
+                ___ b  = 2
+                b =i.toInt() 
+                println(b)
+
+
+risposta: var o Var
+______________________________________________________________________________
+
+____Stringhe____
+1
+Quale è il carattere di escape per andare a capo?
+
+1. \t
+2. \r
+3. \f
+4. \n
+
+2
+Quale è il simbolo di una template espression?
+
+1. £
+2. &
+3. #
+4. $
+
+3
+Con cosa posso concatenare due o più stringhe?
+
+1. +
+2. plus
+3. StringBuilder
+4. Tutte le presenti
+
+4
+Quando uso degli operatori di concatenazione ottengo sempre una nuova stringa contenete la composizione delle stringhe?
+
+1. Si
+2. Solo con l'operatore plus()
+3. Non avviene mai
+4. Solo con l'operatore StringBuilder()
+
+5
+Che cosa restituisce a schermo questa espressione?
+
+                val a= "I"
+                val b:String= "have"
+                val c= a +" "+ b
+                val builder= StringBuilder()
+                    builder.append(c)
+                           .append("")
+                           .append(" an apple")
+                print(builder)
+
+risposta: I have an apple
+
+_______________________________________________________________________________
+___Condizioni e Cicli____
+
+1
+Individua l'esempio che adotta una definizione di range corretta con
+val c:Char= 'c'
+
+1.if(c in "a".."h")
+2.if(c in b .. f)
+3.if(c in z..a)
+4.if(c in 'a'..'z')
+
+2
+Queste due porzioni di codice sono delle "expression" o "statement":
+
+        ~1+1    ~x = 20 
+
+1. Due expression
+2. Statement e Expression
+3. Due statement
+4. Expression e Statament
+
+3
+Che cosa ritorna questa porzione di codice
+
+    val numeri = intArrayOf(1,2,3,4,5,6,7,8)
+    for (i in numeri) {  
+        if(i==6){
+           i=9
+         }
+    print(i)
+        
+    }
+
+1. 12345678
+2. 123459
+3. 1234578
+4. Errore
+
+4
+Cosa stampa a video questa espressione:
+
+      for (i in 6 downTo 1 step 2) print(i)
+
+1. 531
+2. 246
+3. 135
+4. 642
+
+
+
+5
+Che cosa stampa a video questa porzione di codice:
+
+         var count=0
+         for(element in "I like the sun only in summer"){
+            if(element == ' ')
+               count++
+            }
+         when(count){
+              0 -> print("Nessuno")
+              in 1..5 ->print("Alcuni")
+              else ->print("Molti")
+         }
+Risposta: Molti
+_______________________________________________________________________________
+
+____Array____
+
+1
+Cosa ritorna questo pezzo di codice:
+    
+        val bob= Person("Bob", 31)
+        val people= listOf(Person("Adam", 20), bob, bob)
+        val people2= listOf(bob, Person("Adam", 20), Person("Bob", 31) )
+        println(people== people2)
+        bob.age=32
+        println(people== people2)  
+
+1. true e true
+2. true e false
+3. false e true
+4. false e false    
+
+2
+Quale di queste è una collezione ordinata di elementi che possono ripetersi?
+
+1.Array
+2. Map
+3.Set
+4. List
+
+3 Che cosa fa la funzione array.contains()?
+
+1. Ritorna l'indice dell'elemento passato
+2. Ritorna l'oggetto in questione se è presente
+3.Nessuna di queste
+4. Verifica se è contenuto nell'array
+
+4
+Che cosa restituisce questo pezzo di codice?
+ 
+        val numbers = intArrayOf(1,2,3)  
+        val numbers2 = intArrayOf(4,5,6) 
+        val combined = numbers2 + numbers
+        println(Arrays.toString(combined))
+
+1.[5,7,9]
+2. Nessuna di queste
+3. [cinque, sette, nove]
+4. [4, 5, 6, 1, 2, 3]
+
+5
+Cosa restituisce?
+        val numbersMap = mapOf("key1" to 1, "key2" to 2, "key3" to 3, "key4" to 1)    
+        val anotherMap = mapOf("key2" to 2, "key1" to 1, "key4" to 1, "key3" to 3)
+        println(${numbersMap == anotherMap})
+
+risposta: true
+_____________________________________________________________________________
+
+____Null-Safety____
+
+
+1 
+Questa porzione di codice è corretta? Se no come va modificata per renderla corretta?
+  
+     val parole: String = null
+
+1. E' corretta
+2. Una variabile non può essere mai null
+3. Con l'aggiunta di !! dopo String
+4. Con l'aggiunta di ? dopo String
+
+2
+Se una variabile (a) è nullable, è possibile dereferenziarla direttamente?
+
+1. No
+2. Si, con questo controllo if(a!=null){}
+3. Si, in questo modo a?.dec()
+4.Sono tutte corrette
+
+3
+A che cosa serve l'operatore Elvis?
+
+1.Per deferenziare direttamente una variabile nullable
+2.Forzare l'interpretazione della variabile come non nulla
+3.Verificare se la variabile è nullable
+4.Determinare un valore alternativo se la variabile è nulla
+ 
+
+4
+Quale operatore genera un eccezione se la variabile è nulla?
+
+1.?
+2. ?:
+3. ?.
+4. !!
+
+5
+Cosa stampa a video questo pezzo di codice?
+
+        var b:String? 
+        val c:String? =("abc")
+        b= if(c!!.isEmpty()) "def" else c + "d"
+        var i= b?.length?: -1
+        if(i==-1) println("Vuoto")
+        else println(b)
+
+risposta: abcd
+
+_________________________________________________________________________________________
+
+
+____Funzioni____
+
+1
+Se una funzione non ritorna alcun valore particolare, il suo tipo di ritorno è...
+
+1. Void
+2. Short
+3. Char
+4. Unit
+
+2
+Quale dei seguenti parametri è di default?
+
+   fun finestra(val altezza:Int, val larghezza:Double, var spessore:Float, var colore:String="celeste")
+
+1. altezza
+2. larghezza
+3. spessore
+4. colore
+
+3
+A che cosa serve il parametro vararg in una funzione?
+
+1. Permette di scrivere una versione ricorsiva più efficente
+2. Serve per sovrascrivereuna funzione
+3. Nessuna delle precedenti 
+4. Per accettare un numero variabile di parametri di un certo tipo 
+ 
+4
+Quale è il formato per scrivere un extension functions?
+
+1. fun funtionName.ClassName(params) {}
+2. fun ClassName funtionName(params) {}
+3. fun funtionName ClassName(params) {}
+4. fun ClassName.functionName( params ) {} 
+
+5
+Che cosa restituisce questo codice?
+
+   fun main() {
+    val p2= 5
+    var r:Int= 0
+    print(r.countandMore(parola1=6, p2))
+    }
+   fun Int.countandMore(parola1:Int, parola2:Int, op:String="+" ):Int{
+    var result:Int= 0 
+    when(op){
+        "*"  ->result= parola1 * parola2
+        "-" -> result= parola1- parola2
+         "/" -> result =parola1 / parola2
+        "+" ->  result= parola1 + parola2
+        else -> result =-1
+       }
+    return result
+}  
+risposat : 11
+
+____Lambda Functions____
+
+1
+Che cosa è una lambda functions?
+
+1. E' una funzione scritta in modo compatto
+2. E' una funzione aggiunta ad una classe già esistente
+3. Una funzione che prende altre funzioni come parametro
+4. E' una espressione che crea una funzione senza nome
+
+2
+Quale è la sintassi completa di una lambda function?
+
+1. val waterFilter = {level: Int -> level/2}
+2. val waterFilter{level -> level/2}:(Int)-> Int
+3. val waterFilter = { Int:level -> level/2}
+4.val waterFilter:(Int)-> Int = {level -> level/2}
+
+3
+Con quale operatore posso passare una funzione con nome come parametro ad un higher-order functions ?
+
+1. :
+2. _
+3. $
+4. ::
+
+4
+Posso chiamare la funzione "encodeMsg" in questo modo?
+  
+  fun encodeMsg(msg: String, encode: (String) -> String): String {
+            return encode(msg)
+        }
+
+   encodeMsg("acronym") { input -> input.toUpperCase() }
+
+
+1. No, la lambda function va dentro le parentesi tonde
+2. Si con l'utilizzo dell'operatore :: prima di input
+3. No, non è una chiamata di funzione
+4. Si, è corretta
+
+5
+Che cosa ritorna questo pezzo di codice?
+
+    fun main() {
+    val somma:(Int, Int) -> Int = {a:Int, b:Int -> a+b}
+    val result= calcolo(10,10,somma)
+    print(result)
+   }
+
+    fun calcolo(op:Int, op1:Int, operazione: (Int, Int) -> Int): Int{
+         return operazione(op,op1)
+    }
+
+risposta: 20
+
+____Classi____
+
+1
+Come devo definire il costruttore della classe C per far si che l'opeazione vada a termine senza errori?
+
+       val cc = C(42)  
+       println(cc.y)
+
+1. class C
+2, class C(y:Int)
+3. class C(var x:Int)
+4. class C(val y:Int)
+
+2
+Che cosa posso usare per eseguire il codice di inizializzazione di una classe?
+
+1. init
+2. constructor
+3. this
+4. Tutte corrette
+
+3
+Quale keyword mi permette di inizializzare una proprietà non-nullable in un secondo momento?
+
+   
+
+1. final
+2. open
+3. this
+4. lateinit
+
+4
+E' possibile definire un get personalizzato per una determinata variabile x"? Se si, come?
+
+    class A(val x: Int){
+        val x:Int
+        ...
+     val p= A(2)
+
+1. Non è possibile
+2. Con p.x
+3. Usando p.x.value
+4. Si, mettendo get()=.. sotto la definizione di x
+
+5
+Che cosa stampa a video questa porzione di codice?
+
+    class Quadrato( h:Int,  w:Int){
+    var altezza: Int
+    var larghezza: Int=0
+    set(value){field=value/2}
+    val area:Int
+    get()=altezza*larghezza
+    init{
+        altezza=h
+        larghezza=w
+    }
+   }
+   fun main(){
+     var f= Quadrato(90,8)
+     f.larghezza=6
+     print(f.area)
+   }
+
+risposta : 270
+_______________________________________________________________________________________
+____Interfaccie_____
+ 
+1.
+Quale di queste nozioni sulle interfaccie è vera?
+
+1.Una classe può implementare più di un interfaccia
+2. Posso includere proprietà astratte e non astratte, ma con definizione di metodi get e set
+3. Se esistono più implementazioni di un metodo occorre fare override
+4. Tutte le presenti
+
+2
+Come faccio a definire che una classe puo essere ereditata, ossia il subclassing?
+
+1. Con la keyword final
+2. Con la keyword override
+3. Con la keyword super<T>
+4. Con la keyword open
+
+3
+Questo pezzo di codice è errato, cosa va inserito per correggerlo?
+
+  abstract class Food {  
+            abstract val name : String  
+            val canBeEaten = true
+            fun consume() = println("I'm eating ${name}")}
+
+        class Pizza() : Food() {  
+              .... val name = "Pizza"}
+1. open
+2. final
+3.abstract
+4. override
+
+4
+Una data class ha già dei metodi autoimplementati, quale tra questi non lo è?
+
+1. toString
+2. equals
+3. hashCode
+4. isBoolean
+
+5
+Cosa restituisce a shermo questo pezzo di codice?
+
+     abstract class A {                      
+            open fun trueOrfalse(value:Boolean): Boolean= !value           
+       }                                  
+
+     interface B {
+           open fun trueOrfalse(value:Boolean): Boolean= value
+     }
+ 
+     data class D (var check:Boolean) :B, A(){
+           override fun trueOrfalse(check:Boolean):Boolean = super<A>.trueOrfalse(check)
+      }
+
+     fun main(){
+        val d= D(true)
+        print(d.trueOrfalse(d.check))
+      }
+
+risposta:false
+
+
+
+
+
+

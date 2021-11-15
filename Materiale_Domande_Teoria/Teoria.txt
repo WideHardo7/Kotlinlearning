@@ -1,0 +1,1280 @@
+____Tipi di Dati____
+
+I dati che utilizziamo nei nostri programmi hanno diversi tipo.
+
+Tipi con valori interi come:
+
+Tipo                Bits         Range
+~Long               64           Da -263 a 263-1\n
+~Int                32           Da -231 a 231-1\n
+~Short              16           Da -32768 a 32767\n
+~Byte                8           Da -128 a 127\n
+
+Tipi con valori con la virgola e altri come:
+
+Tipo                Bits         Range
+~Double             64           15 - 16 cifre decimali
+~Float              32           6 - 7 cifre decimali
+~Char               16           16-bit caratteri Unicode
+~Boolean             8           True o false
+
+____Operatori____
+
+Esistono diversi tipi di operatori:
+
+~Operatori matematici                        +  -  *  /  %
+~Operatori di incremento e decremento        ++  --
+~Operatori di confronto                      <  <= >  >=
+~Operatori di assegnamento                   =
+~Operatori di uguaglianza                    == !=
+
+Nel caso di operatori matematici i risultati di queste operazioni, non ritornano un semplice numero di tipo primitivo, ma un oggetto di quel tipo, per esempio:
+
+       ~1+1=2         => kotlin.Int
+       ~53-3=50       => kotlin.Int
+       ~50/10=5       => kotlin.Int
+       ~1.0/2.0=0.5   => kotlin.Double
+       ~2.0*3.5=7.0   => kotlin.Double
+
+
+Per questo motivo è possibile utilizzare alcune funzioni su di esso come:
+
+       ~2.times(3)     => kotlin.Int = 6
+       ~3.5.plus(4)    => kotlin.Double=7.5
+       ~2.4.div(2)     => kotlin.Double=1.2
+
+____Variabili____
+
+Le variabili sono un potente meccanismo di inferenza di tipo, che può essere esplicitato manualmente o automaticamente inferto dal compilatore. Infatti Kotlin è un linguaggio statically-typed.
+
+       var width: Int = 12  => kotlin.Int
+       var length = 2.5     => kotlin.Double\n
+
+ Il tipo è determinato a compile time e  non può cambiare,perciò una volta che il tipo è stato dichiarato esplicitamente o inferito  dal compilatore, non può cambiare o viene generato un errore.
+Esistono due tipologie generali di variabili quelle mutabili (var) e quelle immutabili (val).
+
+        var count = 1  
+        count = 2
+        =>Corretto
+
+        val size = 1 
+        size = 2
+        => Error: val cannot be reassigned
+
+Inoltre in Kotlin non è possibile effettuare un casting implicito, ma va sempre esplicitato.
+
+        val i: Int = 6  
+        val b: Byte = i  
+        println(b)
+        => error: type mismatch: inferred type is Int but Byte was expected
+
+        val i: Int = 6
+        val b: Byte = i.toByte() 
+        println(b)
+        => 6
+
+
+
+
+_______________________________________________________________________________________________
+
+
+
+____Stringhe____
+
+Le stringhe non sono altro che sequenze di caratteri racchiuse da doppi apici.
+
+        val s1 = "Hello world!"
+
+Il testo contenuto in una stringa può contenere caratteri di escape.
+
+        val s2 = "Hello world!\n"
+
+Oppure del testo qualsiasi se racchiuso da tre doppi apici (""").
+
+        val text = """  var bikes = 50"""
+
+Le stringhe possono anche essere concatenate una all’altra attraverso l’operatore "+" o "plus" o "StringBuilder",esempio:
+
+        val first = “Hello” 
+        val second = “ world”
+        val stringaFinale = first+second
+
+ oppure
+
+        val stringaFinale = first.plus(second)
+
+ oppure
+
+        val builder = StringBuilder() 
+        builder.append("Hello")
+               .append(" ")
+               .append("world")
+
+**Nota** 
+Con StringBuilder non viene creato un nuovo oggetto Stringa ogni volta che  usiamo l’operatore di concatenazione, ma una sola volta alla ﬁne. Utile se  vanno concatenate molte stringhe tra loro.
+
+
+____Stringhe templates____
+
+Una template expression inizia con un simbolo di dollaro ($) e può contenere un  singolo valore.
+
+        val i = 10  println("i = $i")
+        => i = 10
+
+Oppure un’espressione all’interno di parentesi graffe:
+
+        val s = "abc"
+        println("$s.length is ${s.length}")
+        => abc.length is 3
+
+        val numberOfShirts = 10  
+        val numberOfPants = 5
+        println("I have ${numberOfShirts + numberOfPants} items of clothing")
+        => I have 15 items of clothing
+
+E’ anche possibile utilizzare i template insieme alle concatenazioni.
+        
+        val numberOfDogs = 3 
+        val numberOfCats = 2
+        println("I have $numberOfDogs dogs" + " and $numberOfCats cats")
+        => I have 3 dogs and 2 cats
+
+
+__________________________________________________________________________________________________
+____Espressioni If/Else____
+
+Le Espressioni if/else vengono utilizzate per verificare se determinate condizione sono vere o false e di conseguenza svolgere determinate azioni diversificate per entrambi i casi.
+
+        val numberOfCups=30
+        val numberOfPlates=50
+        if(numberOfCups > numberOfPlates) {
+        println("Too many cups!")
+        }else {
+        println("Not enough cups!")
+        }
+
+        => Not enough cups!
+
+E’ possibile avere anche degli if/else concatenati.
+
+        val guests=30
+        if (guests == 0) {  println("No guests")
+        }else if(guests < 20) {  
+        println("Small group of people")
+        }else {
+        println("Large group of people!")
+        }
+    
+        =>Large group of people!
+
+
+____Range____
+
+Sono dei Data type che contengono un insieme di valori comparabili (ad esempio, gli interi da 1 a 100 inclusi), quindi sono intervalli chiusi, in cui si speciﬁca il limite inferiore, due  puntini ed il limite superiore (ad esempio, 1..100), i cui gli oggetti contenuti in un range possono essere mutable  o immutable.
+
+        val numberOfStudents = 50
+        if (numberOfStudents in 1..100) {  
+        println(numberOfStudents)
+        }
+
+        => 50
+
+**Nota** 
+Non ci sono spazi attorno all’operatore di range (1..100)
+
+
+____Espressioni e Statement When____
+
+L’espressione when è simile all’espressione switch, infatti in base alla natura di una certa variabile, posso decidere diverse serie di azioni. 
+L’espressione when può essere utilizzata come espressione e/o statement.
+Espressioni e statement sono due concetti diversi:
+
+  °Un’ "espressione" è qualsiasi porzione di codice ritorni un valore, esempio:
+
+          ~1+1
+          ~sumOf(1,2,3) 
+  **Nota**
+  Ciascuna funzione in Kotlin ritorna qualcosa, incluso println().
+
+  Esempio con when espressione:
+
+          val risultato= when{
+              bmi < 18.5 -> ”Sottopeso”
+              bmi < 25 -> 0”Normopeso”
+              else -> ”Sovrappeso”
+
+
+  °Un "statement" è qualsiasi porzione di codice non produca valori di ritorno,esempio:
+
+          ~Dichiarazioni di variabili, 
+           es: val x = 1
+          ~Assegnamento, 
+           es: x = 20 (a differenza di Java)
+          ~Dichiarazione di classi locali, 
+           es: class A{}
+
+  Esempio con when statement:
+
+          when (results) {
+                0 -> println("No results")
+                in 1..39 -> println("Got results!")
+                else -> println("That's a lot of results!")}
+
+          => That's a lot of results! 
+
+
+____Cicli For____
+
+I cicli vengono utilizzati quando ho bisogno di ripetere delle azioni una serie di volte o finché una determinata condizione si verifica.
+In Kotlin nel ciclo for non è necessario definire una variabile per iterare, e si può iterare  anche su stringhe, array, range…
+
+        val pets = arrayOf("dog", "cat", "canary")
+        for (element in pets) {  
+             print(element + " ")
+            }
+
+        => dog cat canary
+
+        for (c in "I like Pink Floyd") {  
+             print(c)
+            }
+
+        => I like Pink Floyd
+
+**Nota**
+La variabile element viene automaticamente dichiarata val, dunque non  può essere modiﬁca all’interno del ciclo.
+
+Ecco alcuni esempi di iterazione con il ciclo for:
+
+        ~for (i in 1..5) print(i)  => 12345
+        ~for (i in 5 downTo 1) print(i)  => 54321
+        ~for (i in 3..6 step 2) print(i)  => 35
+        ~for (i in 'd'..'g') print (i)  => defg
+
+
+____Cicli While____
+
+Il ciclo while svolge la stessa funzione del ciclo for, ma a differenza di quest’ultimo è necessario aggiornare la variabile di iterazione manualmente.
+
+        var bicycles = 0
+        while (bicycles < 50) {
+               bicycles++
+              }
+        println("$bicycles bicycles in the bicycle rack\n")
+       
+        => 50 bicycles in the bicycle rack
+
+        
+        do {
+            bicycles--
+           }
+        while (bicycles > 50)
+            println("$bicycles bicycles in the bicycle rack\n")
+ 
+        => 49 bicycles in the bicycle rack
+
+____________________________________________________________________________________________________________
+
+____Definizione Array____
+
+L’array è una struttura dati che viene utilizzata per contenere molteplici elementi.
+ I vari elementi contenuti al suo interno possono essere acceduti programmaticamente tramite il loro indice(indicato tra parentesi quadre [*]) e sono mutable, quindi modificabili; mentre la dimensione di un array non può  variare, è fissa.
+Un array  può essere creato tramite il termine  arrayOf().
+
+        val pets = arrayOf("dog", "cat", "canary")
+        println(pets.contentToString())  
+        => [dog, cat, canary]
+
+**Nota**
+Se un array è deﬁnito val, non si può cambiare il riferimento, ma è possibile  cambiarne il contenuto, esempio:
+
+        val x=arrayOf(1,2,3)
+
+        x=arrayOf(4,5,6)  
+        => Error: val cannot be reassigned
+
+        x[0]=2  
+        => Correct
+
+Un array in Kotlin può contenere tipi diversi:
+
+        val mix = arrayOf("hats", 2)
+
+Oppure un tipo solo (ad esempio interi):
+
+        val numbers = intArrayOf(1, 2, 3)
+
+L’uso dell’operatore “+” consente di combinare due array:
+        
+        val numbers = intArrayOf(1,2,3)  
+        val numbers2 = intArrayOf(4,5,6) 
+        val combined = numbers2 + numbers
+        println(Arrays.toString(combined))
+
+        => [4, 5, 6, 1, 2, 3]
+
+Esistono alcuni metodi utili che possono essere utilizzati con gli array, esempio:
+
+        ~var nullArray:Array<String?> = arrayOfNulls(2) 
+         => crea un array di dimensione 2 inizializzato con valori nulli
+
+        ~Val size = array.size
+         =>Restituisce la dimensione dell’array
+
+        ~Array.reverse()
+         =>inverte l’ordine degli elementi dell’array
+
+        ~Val isIn=array.contains(1)
+         =>Verifica se l’array contiene l’elemento passato
+
+        ~val sum = array.sum()
+         =>calcola la somma di tutti gli elementi, se questi sono numerici
+
+        ~val average = array.average()
+         =>ritorna la media degli elementi presenti nell'array se numerici
+
+        ~array.min()/array.max()
+         =>ritorna il numero più piccolo o grande contenuto nell'array
+
+        ~array.sort()
+         =>organizza l'array in ordine naturale e funziona per numeri,stringhe,char e boolean
+
+____Collections____
+
+Le Collections sono utilizzate per memorizzare un numero variabile di  oggetti (elementi o items) dello stesso tipo. Le principali sono:
+        
+        1).List
+        2).Set
+        3).Map
+Esistono due varianti per ciascun tipo di collection:
+
+        ~read-only, in cui è possibile solo accedere agli elementi
+
+        ~mutable, che estende le prime con metodi per aggiungere,  modiﬁcare, rimuovere elementi
+
+Attenzione: non stiamo parlando di var vs val, ma di collection che  possono essere modiﬁcate oppure no
+
+_-_-_Liste_-_-_
+
+Le liste sono collezioni ordinate di elementi che possono ripetersi, quindi posso avere duplicati, e come gli array possono essere accedute tramite i loro indici.
+
+Dichiaro una lista usando listOf():
+
+        val instruments = listOf("trumpet", "piano", "violin")  
+        println(instruments)
+        println(instruments.size)
+        println(instruments[1])
+        println(instruments.get(2))
+
+        =>[trumpet, piano, violin]
+        =>3
+        =>piano
+        =>violin
+
+Una lista può essere deﬁnita mutable usando mutableListOf()
+
+        val myList = mutableListOf("trumpet", "piano", "violin")  
+        myList.remove("violin")
+
+        => kotlin.Boolean = true
+
+**Nota**
+Se una lista è dichiarata val, ciò che non può cambiare è l’oggetto a cui si  riferisce la variabile, mentre il suo contenuto può farlo.
+
+Alcuni metodi utili da utilizzare con le liste:
+
+        ~add(elem: E) : Boolean /aggiungere un elemento
+        
+        ~addAll(col: Collection<E>): Boolean /aggiunge una collection alla lista
+
+        ~set(ind: Int, elem: E) / sostituisce l’elemento ind-esimo con elem
+
+        ~remove(elem: E) / rimuove l’elemento indicato
+
+        ~removeAt(ind: Int) / rimuove un elemento dalla posizione indicata
+
+        ~clear() /  svuota la lista
+
+        ~lastIndex() //ritorna l’indice dell’ultimo elemento
+
+        ~subList(from:Int, to:Int) //ritorna la mutableList nel range indicato
+
+        ~indexOf(elem: E) / ritorna l’indice del primo elemento uguale a elem
+
+E' possibile confrontare se due liste sono uguali (==) se hanno la stessa dimensione ed elementi  strutturalmente equivalenti nelle stesse posizioni:
+
+        val bob= Person("Bob", 31)
+        val people= listOf(Person("Adam", 20), bob, bob)
+        val people2= listOf(Person("Adam", 20), person("Bob", 31), bob)
+        println(people== people2)
+        bob.age=32
+        println(people== people2)
+
+        => true
+           false
+
+_-_-_Set_-_-_
+
+Set viene usato per memorizzare elementi unici senza duplicazioni (anche il null  può comparire una sola volta) e in questo caso due set sono uguali se hanno la stessa dimensione  e gli stessi elementi (in qualsiasi ordine).
+L’implementazione di default è quello del  LinkedHashSet che mantiene l’ordine degli elementi  (opzionalmente si può usare HashSet che non  mantiene un ordine ma è più eﬃciente)
+
+Esempi:
+
+        val numbers = setOf(1, 2, 3, 4)
+        println("Number of elements: ${numbers.size}")
+        if (numbers.contains(1)) println("1 is in the set")
+
+        val numbersBackwards = setOf(4, 3, 2, 1)
+        println("The sets are equal: ${numbers == numbersBackwards}")
+
+        =>Number of elements: 4
+          1 is in the set
+          The sets are equal: true
+
+        val numbers = setOf(1, 2, 3, 4)  // LinkedHashSet is the default implementation
+        val numbersBackwards = setOf(4, 3, 2, 1)
+
+        println(numbers.first() == numbersBackwards.first())
+        println(numbers.first() == numbersBackwards.last())
+
+        =>false
+          true
+
+_-_-_Map_-_-_
+
+Sebbene non erediti dalla classe Collection, è comunque un tipo  particolare di collection, che memorizza coppie key-value, dove  le key sono uniche, inoltre una Map viene implementata come  LinkedHashMap, che mantiene l’ordine  di inserimento degli elementi, mentre  HashMap non lo fa.
+
+Esempio:
+
+        val numbersMap = mutableMapOf("one" to 1, "two" to 2)
+        numbersMap.put("three", 3)
+        numbersMap["one"] = 11
+        println(numbersMap)
+        println("All keys: ${numbersMap.keys}")  
+        println("All values: ${numbersMap.values}")
+        if ("key2" in numbersMap) println("Value by key \"key2\": ${numbersMap["key2"]}")  
+        if (1 in numbersMap.values) println("The value 1 is in the map")
+        if (numbersMap.containsValue(1)) println("The value 1 is in the map")
+
+        =>{one=11, two=2, three=3}
+          All keys: [key1, key2, key3, key4]
+          All values: [1, 2, 3, 1]
+          Value by key "key2": 2
+          The value 1 is in the map
+          The value 1 is in the map
+
+Due map che contengono coppie equivalenti sono uguali indipendentemente dall'ordine delle coppie.
+
+        val numbersMap = mapOf("key1" to 1, "key2" to 2, "key3" to 3, "key4" to 1)    
+        val anotherMap = mapOf("key2" to 2, "key1" to 1, "key4" to 1, "key3" to 3)
+        println("The maps are equal: ${numbersMap == anotherMap}")
+
+        =>The maps are equal: true
+
+________________________________________________________________________________
+
+____ Definizione Null-Safety____
+
+
+Molti linguaggi, come il Java, consentono ad una variabile di assumere il  valore null, ma se il null viene trattato come un valore normale, possono veriﬁcarsi problemi  critici.
+Per questo in Kotlin di default, i tipi non possono essere mai nulli (cioè sono non-nullable).
+Proviamo a dichiarare una variabile Int e assegnarle il valore null:
+
+        var numberOfBooks: Int = null
+        => error: null can not be a value of a non-null type Int
+
+E' necessario consentire dei meccanismi per dichiarare esplicitamente dei tipi che  potrebbero contenere valori nulli (cioè nullable).
+        
+        ● E’ possibile assegnare esplicitamente un valore null ad una  variabile tramite il safe-call operator “?”
+	● E’ possibile testare la presenza di valori nulli con l’operatore elvis  “?:”
+	● E’ possibile consentire null-pointer exceptions tramite  l’operatore “!!”
+
+
+_-_-_Safe_call Operator_-_-_
+
+Dichiariamo la variabile di tipo Int? come “nullable”:
+
+        var numberOfBooks: Int? = null
+
+Il safe call operator (?) dopo il tipo indica che una variabile potrebbe essere null. 
+In  questo modo stiamo speciﬁcando un tipo diverso.
+
+**Nota**
+In generale, è meglio non settare mai una variabile a null perché potrebbe  comportare conseguenze indesiderate.
+
+Se una variabile è nullable, non è possibile dereferenziarla (cioè accedere all’oggetto  a cui punta) direttamente.
+
+        val s1: String = “abc”
+        val s2: String? = s1
+        println(s2.length) / non compila
+
+Prima del dereferenziamento è necessario veriﬁcare che non sia nulla.
+Quindi controlliamo se la variabile numberOfBooks non è null. Poi decrementiamo la variabile:
+
+        var numberOfBooks = 6
+        if(numberOfBooks != null) {
+        numberOfBooks = numberOfBooks.dec()
+        }
+
+Si può fare la stessa cosa in modo più conciso usando il safe call operator:
+
+        var numberOfBooks = &
+        numberOfBooks =numberOfBooks?.dec()
+
+        val a = "Kotlin"
+        val b: String? = null
+        println(b?.length)
+        println(a?.length) // Unnecessary safe call
+
+        =>null
+          6
+
+
+_-_-_Operatore Elvis_-_-_
+
+Alcuni linguaggi hanno un null coalescing operator, che testa se una variabile è nulla, e in caso produce un valore convenzionale.
+In Kotlin, l’operatore (?: ) consente di determinare un valore alternativo valido nel caso in cui la variabile sia nulla:
+
+        numberOfBooks = numberOfBooks?.dec() ?: 0
+
+Quando hai un riferimento nullable, b, puoi dire "se b non è null, usalo, altrimenti usa un valore non nullo":
+ 
+        val l: Int = if (b != null) b.length else -1
+
+Invece di scrivere l'espressione if completa, puoi anche esprimerla con l'operatore di "Elvis ?:":
+
+        val l = b?.length ?: -1
+
+_-_-_L'operatore !!_-_-_
+
+Se siamo certi che una variabile non sarà nulla, possiamo usare una non-null  assertion (!!) per forzare l’interpretazione della variabile come non nullable.
+ A  questo punto è possibile eseguire qualsiasi metodo su di essa.
+
+        val len = s!!.length //throws NullPointerException if s is null
+
+**Nota**
+Dato che !! lancia un’eccezione nel caso la variabile sia nulla,  sarebbe preferibile usarla di rado.
+
+__________________________________________________________________________________
+
+____Definizione di una Funzione_____
+
+Un blocco di codice che esegue un compito speciﬁco e divide un problema più grande in parti modulari più piccole.
+Viene dichiarata usando la keyword fun e può avere argomenti, i quali possono assumere valori di  default o nomi speciﬁci.
+
+Una semplice funzione che stampa a video "Hello World".
+
+        fun printHello() {  
+            println("Hello World")
+        }
+
+        printHello()
+
+Se una funzione non ritorna alcun valore particolare, il suo tipo di ritorno è Unit.
+
+        fun printHello(name: String?): Unit {  
+            println("Hi there!")
+        }
+
+Unit è un tipo con un solo possibile valore: Unit.
+La dichiarazione del tipo di ritorno Unit è opzionale:
+
+        fun printHello(name: String?): Unit {  
+            println("Hi there!")
+        }
+
+ed è equivalente a non indicarlo:
+
+        fun printHello(name: String?) {  
+            println("Hi there!")
+        }
+
+____Argomenti di una Funzione____
+
+Le funzioni possono avere:
+        ●Default parameters
+        ●Required parameters
+        ●Named arguments
+
+
+_-_-_Parametri di Default_-_-_
+
+I valori di default forniscono un fallback se non viene passato alcun parametro:
+
+        fun drive(speed: String = "fast") {  
+        //si usa "=" dopo il tipo per definire un parametro di default 
+            println("driving $speed")
+        }
+
+        drive() => driving fast  
+        drive("slow") => driving slowly
+        drive(speed = "turtle-like") => driving turtle-like
+
+_-_-_Parametri Richiesti_-_-_
+
+Se nessun valore di default è speciﬁcato per un parametro, questo sarà obbligatorio  (required).
+
+        fun tempToday(day: String, temp: Int) {  
+            println("Today is $day and it's $temp degrees.")
+        }
+
+_-_-_Parametri diDefault vs. Richiesti_-_-_
+
+Una funzione può avere sia parametri di default che obbligatori:
+
+        fun reformat(str: String,
+                     divideByCamelHumps: Boolean,  
+                     wordSeparator: Char,
+                     normalizeCase: Boolean = true){ //Ha un valore di Default
+
+Passaggio dei parametri obbligatori:
+
+        reformat("Today is a day like no other day", false, '_')
+
+
+_-_-_Parametri Nominati_-_-_
+
+Per aumentare la leggibilità, si usano spesso argomenti con un nome (named) per  i parametri obbligatori:
+
+        reformat(str, divideByCamelHumps = false, wordSeparator = '_')
+
+**Nota**
+Viene considerata una best practice speciﬁcare i default arguments dopo quelli  posizionali, in modo che il chiamante possa indicare anche soltanto i primi e  tralasciare i secondi.
+
+____Funzioni Compatte____
+
+Le funzioni compatte, o single-expression functions, rendono il codice più conciso  e leggibile:
+
+        fun double(x: Int): Int {     //Versione Completa
+            x * 2
+        }
+
+        
+        fun double(x: Int):Int = x * 2   //Versione Compatta
+
+
+____Vararg e Tailrec____
+
+E’ possibile deﬁnire che una funzione accetta un numero variabile di parametri di  un certo tipo.
+In questo caso si marca il parametro con vararg:
+
+        fun calcolaMediaVoti(matricola: String, vararg voti:Int): Double { 
+            return voti.average()
+        }
+
+        calcolaMediaVoti(“123456”,18,30,28,25) // Elenco variabili di Int
+
+Se ho un array posso passarlo come parametro utilizzando l’operatore spread (*)
+
+        fun calcolaMediaVoti(matricola: String, vararg voti:Int): Double {  
+            return voti.average()
+        }
+
+        val voti = intArrayOf(18,30,28,25)
+        calcolaMediaVoti(“123456”, *voti)
+
+Kotlin supporta inoltre uno stile di programmazione funzionale chiamata tail recursion:  per alcuni algoritmi implementabili con un ciclo è possibile scrivere una versione  ricorsiva eﬃciente senza rischi di stack overﬂow.
+
+        tailrec fun factorial(n: Long, accum: Long = 1) : Long { 
+            val soFar = n * accum
+            return if (n <= 1) {
+               soFar
+           } else {
+                factorial(n - 1, soFar)
+           }
+         }
+
+**Nota**
+Questo non è possibile se la funzione non ha la chiamata ricorsiva come  ultima istruzione, come nel caso seguente in cui l’ultima istruzione è la  moltiplicazione tra n ed il risultato della chiamata, qui infatti c'è una occupazione dello stack.
+
+        fun recursiveFactorial(n: Long) : Long {  
+            return if (n <= 1) {
+                n
+            } else {
+               n * recursiveFactorial(n - 1)
+            }
+          }
+
+____Extension functions____
+
+ Sono delle funzioni aggiunte ad una classe già esistente senza modiﬁcarla  internamente ed appare come se l’avesse creata l’implementatore della classe.
+Non modiﬁca realmente la classe esistente e non può accedere alle variabili private dell’istanza
+
+Questo e il suo formato: fun ClassName.functionName( params ) { body }
+
+Vengono utilizzate per aggiungere delle funzionalità alle classi che non sono open o che sono state create da altri ed è una best practice deﬁnire le extension functions in un luogo facile da ricordare, ad  esempio lo stesso ﬁle della classe, e dare loro nomi signiﬁcativi.
+
+Esempio, aggiungiamo isDispari() alla classe Int:
+
+        fun Int.isDispari(): Boolean { return this % 2 == 1 }
+
+Chiamiamo isDispari() su un Int:
+
+        3.isDispari()
+
+Le extension functions sono strumenti molto potenti in Kotlin!
+
+_________________________________________________________________________________
+
+In Kotlin le funzioni possono essere memorizzate in variabili, strutture dati, possono anche essere passate come argomento ad (e ritornate da)  altre funzioni di ordine superiore (higher-order)
+Si possono usare le higher-order functions per creare nuove  funzioni "built-in"
+
+____Lambda Functions___
+
+Una lambda è un’espressione che crea una funzione senza nome.
+
+        var dirtLevel = 20
+        //{parametro e tipo -> codice da eseguire}
+        val waterFilter = {level: Int -> level/2}
+        //sintassi completa
+        //val waterFilter:(Int)-> Int = {level -> level/2}
+        println(waterFilter(dirtLevel))
+
+        =>10
+
+____Funzioni di Ordine Superiore____
+
+Le higher-order functions sono funzioni che prendono altre funzioni come  parametro, oppure come tipo di ritorno.
+
+        fun encodeMsg(msg: String, encode: (String) -> String): String {
+            return encode(msg)
+        }
+
+**Nota**
+encodeMsg chiama la funzione che le è stata passata come secondo argomento,  e le passa il primo argomento come parametro.
+
+Per chiamare questa funzione, occorre passare come parametri una stringa ed  una funzione:
+
+        val enc1: (String) -> String = { input -> input.toUpperCase() }  
+        println(encodeMsg("abc", enc1))	//passo una lambda function
+
+Usare un tipo di funzione aiuta a separare la sua implementazione dal suo utilizzo.
+Si può anche usare l’operatore :: per passare una funzione con nome come argomento  di un’altra:
+
+        fun enc2(input:String): String = input.reversed()
+
+        encodeMsg("abc", ::enc2)//passaggio di una funzione con nome (non una lambda function)
+
+Kotlin preferisce che l’eventuale parametro che prende una funzione sia posto per  ultimo:
+
+        encodeMessage("acronym", { input -> input.toUpperCase() })
+
+E’ anche possibile passare una funzione lambda come parametro senza inserirla  tra le parentesi, ma immediatamente fuori:
+
+        encodeMsg("acronym") { input -> input.toUpperCase() }
+
+_______________________________________________________________________________
+
+____Definizione di Classi______
+
+Le classi non sono altro che contenutori che descrivono le caratterische e le funzioni di un relativo oggetto.
+Le variabili descrivono le proprietà dell'oggetto, mentre i metodi, le azioni che quell'oggetto può compiere e per essere utilizzati vengono dichiarate delle istanze di quello oggetto, da cui si può accedere alle relative proprietà o applicare le sue relative funzioni.
+
+Definizione di una classe:
+   
+        class House {
+          val color: String = "white" 
+          val numberOfWindows: Int = 2  
+          val isForSale: Boolean = false
+
+          fun updateColor(newColor: String){...}
+          ...
+        }
+
+Creazione di un'istanza
+
+        val myHouse = House()  println(myHouse)
+
+____Costruttori____
+
+Un costruttore viene deﬁnito nell’intestazione della classe e può contenere:
+        ●Nessun parametro
+
+         class A
+
+        ●Parametri
+       
+         ~Non marcati con var or val → la variabile esiste nell’ambito del costruttore  o nel corpo della funzione ma solo per inizializzare delle variabili
+
+           class B(x: Int)
+
+         ~Marcati var or val → la variabile è trattata come una proprietà della classe
+
+           class C(val y: Int)
+
+Esempi:
+
+   class A   =>    val aa = A()
+
+   class B(x: Int)   =>   val bb = B(12)  
+                          println(bb.x)
+                          => compiler error unresolved  
+                             reference
+
+   class C(val y: Int)   =>   val cc = C(42)  
+                              println(cc.y)
+                              => 42
+
+Le istanze di una classe possono avere valori di default, in questo modo si ha una sintassi più concisa (si evitano varianti multiple dei costruttori)
+I parametri di default  possono essere usati assieme a parametri obbligatori
+
+        class Box(val length: Int, val width:Int = 20, val height:Int = 40)
+        val box1 = Box(100, 20,	40)
+        val box2 = Box(length =	100)
+        val box3 = Box(length =	100, width = 20, height = 40)
+
+_-_-_Blocchi di Inizializzazione_-_-_
+
+Se necessario è possibile eseguire il codice di inizializzazione  in uno speciale blocco init, che diventa il corpo del costruttore principale e sono consentiti più blocchi init.
+
+Esempio:
+
+        class Square(val side: Int) {
+             init {
+                  println(side * 2)
+             }
+        }
+
+
+        val s = Square(10)
+        => 20
+
+Si usa la keyword constructor per deﬁnire dei costruttori secondari, però questi ultimi devono chiamare (delegare):
+
+  ● Il costruttore principale usando la keyword this
+OPPURE
+  ● Un altro costruttore secondario che a sua volta chiamerà il  costruttore primario
+
+Non è obbligatorio deﬁnire il corpo di un costruttore secondario
+
+Esempio:
+
+        class Circle(val radius:Double) {  
+             constructor(name:String) : this(1.0)  
+             constructor(diameter:Int) : this(diameter / 2.0) {
+                 println("in diameter constructor")
+             }
+             init {
+                 println("Area: ${Math.PI * radius * radius}")
+             }
+        }
+        val c = Circle(3)    //stampa: Area: 7.0685834705770345
+                                       in diameter constructor
+
+
+        val c1 = Circle(2.5)    //stampa: Area: 19.634954084936208
+        val c2 = Circle("mio Cerchio")     //stampa: Area: 3.141592653589793
+
+_-_-_Proprietà_-_-_  
+
+Le proprietà sono variabili deﬁnite in una classe e possono essere dichiarate val o var.
+L’accesso alle proprietà in lettura e la modiﬁca delle proprietà(solo se  dichiarata var) avviene con la dot notation  (esempio: variabile.proprietà)
+
+        class Person(var name: String)
+
+        fun main() {
+            val person = Person("Alex")
+            println(person.name)  // Accesso con .<property name>
+            person.name  "Joey"   //Modifica con .<property name>
+            println(person.name)
+        }
+
+        =>Alex
+          Joey
+
+Normalmente, le proprietà dichiarate non-nullable devono essere inizializzate nel costruttore, ma questo a volte non è conveniente (ad esempio se le inizializzo in un metodo speciﬁco o tramite dependency-injection).
+Kotlin permette la deﬁnizione di proprietà non-nullable che possono non essere inizializzate, utilizzando la keyword lateinit.
+
+       lateinit var subject: TestSubject
+
+Le condizioni del suo utilizzo sono:
+
+   ● La proprietà deve essere var (altrimenti non potremmo inizializzarla dopo)
+   ● La proprietà è dichiarata nel corpo della classe (e non nel costruttore primario)
+   ● Il tipo deve essere non nullable
+   ● Il tipo non deve essere “primitivo” (nel senso di Java, ossia Int, Double,...)
+
+Esempio:
+
+        class Dipartimento(val nome: String)
+        class Persona(val nome: String){  
+              lateinit var dipart: Dipartimento 
+ 
+              fun config(){
+                  dipart = Dipartimento("DII")
+              }
+
+              //O tramite injection dall’esterno  
+              fun config(d: Dipartimento){
+                  dipart = d
+              }
+
+
+
+
+
+_-_-_Getter e Setter Personalizzati_-_-_ 
+ 
+Se non si vuole l’approccio di default per leggere/modiﬁcare una variabile, è possibile definire dei get e set personalizzati per una determinata variabile:
+
+         Formato: var propertyName: DataType = initialValue  
+                      get() = ...
+                      set(value) {
+                                  ...
+                      }
+
+Esempio getter personalizzato:
+
+        class Person(val firstName: String, val lastName:String) {  
+             val fullName:String
+             get() {
+                 return "$firstName $lastName"
+             }
+        }
+
+        val person = Person("John", "Doe")  
+        println(person.fullName)
+        => John Doe
+
+Esempio setter personalizzato:
+
+       var fullName:String = ""
+           get() = "$firstName $lastName"
+           set(value) {
+              val components = value.split(" ")  
+              firstName = components[0]  
+              lastName = components[1]
+              field = value
+           }
+        person.fullName = "Jane Smith"
+
+__________________________________________________________________________________
+
+____Interfaccie____
+   
+Sono delle classi particolari che forniscono un contratto a cui devono aderire tutte le classi che  la implementano, può contenere le signature dei metodi e i nomi di proprietà e può derivare da altre interfaccie.
+
+        Formato: interface NameOfInterface { interfaceBody }
+
+Esempio:
+
+        interface Shape {
+             fun computeArea() : Double
+        }
+
+        class Circle(val radius:Double) : Shape {
+              override fun computeArea() = Math.PI * radius * radius
+        }
+
+
+         val c = Circle(3.0)  
+         println(c.computeArea())
+         => 28.274333882308138
+
+Possono includere proprietà astratte oppure proprietà non astratte a  patto che si deﬁniscano dei metodi getter o setter.
+Possono anche includere dichiarazione di metodi astratti o la loro  implementazione.
+
+        interface X {
+             val x: Int  
+             get() = 5  
+             fun foo(){
+                 println( "hello")
+             }
+             fun foo2()
+
+         }
+Una classe può implementare più di una interfaccia, ma possono avvenire conﬂitti  se esistono più implementazioni di un metodo. 
+In questi casi occorre fare override  del metodo indicando quale scegliere (o reimplementandolo).
+
+    interface A {                      interface B {
+       fun foo() { print("A") }            fun foo() { print("B") }
+       fun bar()                           fun bar() { print("bar")} 
+    }                                  }
+
+
+           class D : A, B {
+               override fun foo() {  
+                   super<A>.foo()  
+                   super<B>.foo()
+               }
+
+               override fun bar() {
+                   super<B>.bar()
+               }
+            }
+
+____Ereditarietà____
+
+Kotlin ha un approccio single-parent class all’ereditarietà, infatti ogni classe ha esattamente una classe genitore, chiamata  superclasse e ogni sottoclasse eredita tutti i membri della sua superclasse  inclusi quelli eventualmente ereditati dalla superclasse.
+**Nota**
+Per superare il limite della singola superclasse, è possibile usare le interfacce,  perché una classe può implementarne più di una.
+
+Quindi per estendere una classe posso:
+
+    ● Aggiungere funzionalità ad una classe senza crearne una nuova  (extension functions)
+
+    ● Creare una nuova classe che usa una classe esistente come  base (sottoclasse)
+        
+      Le classi in Kotlin sono ﬁnal (non subclassable) per default
+      Dichiariamo una classe:
+
+         class A
+
+      Proviamo a deﬁnire una sottoclasse:
+
+         class B : A()
+
+      =>Error: A is final and cannot be inherited from
+
+      Per questo si usare la keyword open per consentire il subclassing, per dichiarare una classe sarà possibile deﬁnirne sottoclassi.
+
+      Dichiarazione:
+        open class C
+
+      Sottoclasse di C:
+        class D: C()  //Come per le interfacce, ma qui si usano le parentesi  perché occorre chiamare il costruttore.
+
+      In conclusione bisogna usare open per le proprietà ed i metodi che possono essere  sovrascritti (altrimenti viene generato un errore in compilazione)
+      E' necessario usare override quando si sovrascrivono proprietà e metodi e 
+      ogni cosa indicata come override può essere sovrascritta nelle  sottoclassi (a meno che non sia marcata come final, ed in quel  caso non potrà essere più ereditata)
+
+_-_-_Superclassi ed Interfacce_-_-_ 
+
+Se una classe eredita implementazioni multiple dello stessa funzione, ad  esempio da una classe e da un’interfaccia, occorre effettuare l’override
+
+        open class Rectangle {
+            open fun draw() { /* ... */ }
+        }
+ 
+        interface Polygon {
+            fun draw() { /* ... */ } // interface members are 'open' by default
+        }
+
+        class Square() : Rectangle(), Polygon {
+             // The compiler requires draw() to be overridden:
+             override fun draw() {
+                     super<Rectangle>.draw() // call to Rectangle.draw()
+                     super<Polygon>.draw() // call to Polygon.draw()
+             }
+        }
+…ma se l’interfaccia non avesse fornito l’implementazione, l’override non  sarebbe stato necessario perché Square ha già una implementazione della  funzione,. fornita da Rectangle
+
+        open class Rectangle {
+             open fun draw() { /* ... */ }
+        }
+
+        interface Polygon {
+             fun draw()
+        }
+
+        class Square() : Rectangle(), Polygon {
+        }
+
+____Classi Astratte____
+
+La classe viene marcata come abstract e non possono essere istanziate ma devono essere estese da  sottoclassi.
+Sono simili ad un’interfaccia, ma con la capacità di memorizzare dati (cioè  posseggono uno stato).
+Le proprietà e funzioni marcate abstract devono essere sovrascritte e possono includere proprietà e funzioni non astratte
+
+Esempio:
+
+        abstract class Food {  
+            abstract val kcal : Int
+            abstract val name : String  
+            val canBeEaten = true
+            fun consume() = println("I'm eating ${name}")
+        }
+        class Pizza() : Food() {  
+             override val kcal = 600  
+             override val name = "Pizza"
+        }
+        fun main() {
+            Pizza().consume()	// "I'm eating Pizza"
+        }
+
+____Classi Speciali____
+
+_-_-_Data Class_-_-_
+
+Una classe creata per memorizzare un insieme di dati ed è suﬃciente marcare la classe con la keyword data.
+Genera automaticamente i metodi getter per ogni proprietà (ed  i setter per le variabili var) e 
+genera automaticamente anche i metodi toString(), equals(),  hashCode(), copy(), e gli operatori di destructuring
+
+        Formato: data class <NameOfClass>( parameterList )
+
+Esempio,deﬁniamo una data class:
+
+        data class Player(val name: String, val score: Int)
+
+Utilizziamo la data class:
+
+        val firstPlayer = Player("Lauren", 10)
+        println(firstPlayer) //viene implicitamente chiamato toString()
+        => Player(name=Lauren, score=10) 
+
+Se una proprietà viene dichiarata nel corpo, non verrà valutata  nell’esecuzione di toString, equals, hashCode e copy
+
+        data class Person(val name: String) {  
+             var age: Int = 0
+        }
+
+        val p1 = Person(“Pippo”)  
+        p1.age = 25 // non viene valutata
+        val p2 = Person(“Pippo”)
+        println(p1 == p2) // si può usare anche al posto di equals
+        => true
+
+_-_-_Enum Class_-_-_
+
+Un tipo di dato deﬁnito dall’utente per un insieme di valori ﬁniti.
+Utilizza this per richiedere che le istanze siano uno dei valori costanti di  una lista ed il valore costante non è visibile di default.
+Utilizzare enum prima della keyword class.
+
+        Formato: enum class EnumName { NAME1, NAME2, … NAMEn }
+
+Si può accedere tramite EnumName.<ConstantName>
+Esempio, deﬁzione di un enum con tre colori:
+
+        enum class Color(val r: Int, val g: Int, val b: Int) {
+             RED(255, 0,0),GREEN(0, 255,0), BLUE(0,	0, 255)
+        }
+        println("" + Color.RED.r + " " + Color.RED.g	+ " " + Color.RED.b)
+        => 255 0 0
+
+_-_-_Object_-_-_
+
+A volte vogliamo che possa esistere una singola istanza di una  classe, quindi utilizziamo la keyword object invece di class.
+Si accede con NameOfObject.<function o variable> e possono essere incluse in altre classi
+
+Esempio:
+
+        object Singleton{
+             var variableName = "I am Var"  
+             fun printVarName(){
+                 println(variableName)
+             }
+        }
+        ...
+        Singleton.variableName= "Nuovo valore"
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+   
+
+
+   
+  
+    
+   
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+      
