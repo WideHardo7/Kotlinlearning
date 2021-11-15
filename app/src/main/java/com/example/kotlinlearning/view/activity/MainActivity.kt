@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
             sharedTime.edit().putBoolean("firstTime",false).apply()
 
             startActivity(intent)
+            finish()
 
 
 

@@ -13,6 +13,7 @@ import androidx.navigation.findNavController
 import com.example.kotlinlearning.R
 import com.example.kotlinlearning.databinding.TestConoscenzeBinding
 import com.example.kotlinlearning.view.activity.MainActivity
+import com.example.kotlinlearning.view.activity.MainActivity2
 import com.example.kotlinlearning.viewmodel.TestConoscenzeViewModel
 
 
